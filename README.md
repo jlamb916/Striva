@@ -1,0 +1,2 @@
+# Striva
+aA Fullstack Project
