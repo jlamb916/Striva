@@ -1,13 +1,24 @@
-# Striva
-aA Fullstack Project
+# README
 
-#MVP Features
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-Strava
-Creating Routes
-Saving Workouts
-Workout Feed
-Workout Stats/Totals
-Bonus: Friends
-Bonus: Workout Comments
-Bonus: Social Feed
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
