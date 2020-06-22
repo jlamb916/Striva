@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 
 import Root from './components/root';
 
+import { signup } from './util/session_api_util';
+
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
 
@@ -14,4 +16,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // window.getState = store.getState;
     // window.dispatch = store.dispatch;
+    window.signup = signup;
 })

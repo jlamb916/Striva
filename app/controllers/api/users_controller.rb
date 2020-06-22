@@ -4,7 +4,6 @@ class Api::UsersController < ApplicationController
     skip_before_action :verify_authenticity_token
     
     def create
-        debugger
         @user = User.new(user_params)
         if @user.save
             login(@user)
