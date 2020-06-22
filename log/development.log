@@ -1,0 +1,24 @@
+Started GET "/" for ::1 at 2020-06-22 11:16:38 -0700
+
+ActiveRecord::NoDatabaseError - FATAL:  database "strav_development" does not exist
+:
+
+Started POST "/__better_errors/aa5be2adbf08a4cb/variables" for ::1 at 2020-06-22 11:16:39 -0700
+  [1m[35m (136.9ms)[0m  [1m[35mCREATE DATABASE "strav_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (106.4ms)[0m  [1m[35mCREATE DATABASE "strav_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2020-06-22 11:17:23 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 1609ms (Views: 1607.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-06-22 11:18:42 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 24ms (Views: 22.6ms | ActiveRecord: 0.0ms)
+
+
