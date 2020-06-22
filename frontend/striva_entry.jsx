@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import Root from './components/root';
+
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
 
 
     // const store = configureStore(preloadedState);
-    ReactDOM.render(<h1>HELLO</h1>, root);
+    ReactDOM.render(<Root />, root);
 
     // tests
 
