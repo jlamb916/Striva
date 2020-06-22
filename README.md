@@ -72,7 +72,11 @@ react-redux
 @babel/preset-env
 babel-loader
 
-10. Create a webpack.config.js file.
+10. adds routing to our app
+
+* npm install --save react-router-dom
+
+11. Create a webpack.config.js file.
 
 The entry point should be in frontend, e.g. entry: 'frontend/index.jsx'.
 The output path should be 'app/assets/javascripts'.
