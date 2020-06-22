@@ -4,5 +4,12 @@ import ReactDOM from 'react-dom';
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
 
-    ReactDOM.render(<h1>Welcome to Striva!</h1>, root);
+
+    // const store = configureStore(preloadedState);
+    ReactDOM.render(<h1>HELLO</h1>, root);
+
+    // tests
+
+    // window.getState = store.getState;
+    // window.dispatch = store.dispatch;
 })
