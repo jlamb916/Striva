@@ -1,11 +1,9 @@
 import React from 'react';
-import GreetingContainer from './greeting_container';
-
+import Splash from './splash/splash';
 const App = () => {
     return (
         <div>
-            <header>Welcome to Striva</header>
-            <GreetingContainer />
+            <Splash />
         </div>
         // <Route path="/login" component={LoginFormContainer} />
         // <Route path="/signup" component={SigninFormContainer} />
