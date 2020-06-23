@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 class Nav extends React.Component {
 
-    render () {
+    sessionLinks () {
         return (
-            <div className="nav">
+            <div className = "nav" >
                 <header className="nav-header">
                     <nav className="nav-header-nav">
                         <div className="nav-header-logo">
@@ -17,16 +17,21 @@ class Nav extends React.Component {
                         </div>
                     </nav>
                 </header>
-                <main className="nav-main">
-                    <header className="nav-main-header">
-
-                    </header>
-                    <section className="nav-main-content">
-
-                    </section>
-                </main>
             </div>
         )
+    }
+
+    greetUser () {
+        return (
+            <div className="greet-user">
+                <h1>Welcome {this.props.currentUser.username}</h1>
+                <button className="logout" onClick={this.props.signout}>Log Out</button>
+            </div>
+        )
+    }
+
+    render () {
+        return this.props.currentUser ? this.greetUser() : this.sessionLinks();
     }
 }
 

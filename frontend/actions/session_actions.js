@@ -32,6 +32,7 @@ const logoutCurrentUser = () => {
 // thunk action creators
 
 export const signin = (user) => (dispatch) => {
+    debugger
     return APIUtil.signin(user)
         .then(currentUser => dispatch(receiveCurrentUser(currentUser)));
 }
