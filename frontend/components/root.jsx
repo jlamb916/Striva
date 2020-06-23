@@ -1,10 +1,18 @@
 import React from 'react';
+import { Provider } from 'react-redux';
+import { HashRouter } from 'react-router-dom';
+import App from './app';
 
-const Root = () => {
+//provider makes the redux store available to all nested components
+// that have been wrapped in connect
+
+const Root = ({store}) => {
     return (
-        <div>
-            <h1>Hello! Welcome To Strava!</h1>
-        </div>
+        <Provider store={store}>
+            <HashRouter>
+                <App />
+            </HashRouter>
+        </Provider>
     )
 }
 
