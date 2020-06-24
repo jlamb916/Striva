@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Nav from './nav';
-import { signout } from '../../actions/session_actions';
+import { signout, signin } from '../../actions/session_actions';
 
 
 const mapStateToProps = (state) => {
@@ -11,7 +11,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        signout: () => dispatch(signout())
+        signout: () => dispatch(signout()),
     }
 };
 

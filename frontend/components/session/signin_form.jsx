@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 class SigninForm extends React.Component {
     constructor(props) {
         super(props);
@@ -8,6 +9,7 @@ class SigninForm extends React.Component {
             password: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.demoUserLogin = this.demoUserLogin.bind(this);
     }
 
     update(field) {
@@ -20,6 +22,14 @@ class SigninForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
+    }
+
+    demoUserLogin (e) {
+        const demoUser = {
+            username: "demo",
+            password: "password"
+        }
+        this.props.processForm(demoUser);
     }
 
     renderErrors() {
@@ -60,6 +70,7 @@ class SigninForm extends React.Component {
                         </label>
                         <br />
                         <input className="session-submit" type="submit" value={this.props.formType} />
+                        <input className="demo-submit" type="submit" value="Demo User" onClick={this.demoUserLogin}/>
                     </div>
                 </form>
             </div>
