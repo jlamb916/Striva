@@ -2,6 +2,7 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   font-weight: 400;
+  min-height: 80%;
 }
 
 .nav-header {
@@ -23,13 +24,25 @@ border-bottom: 1px solid #ccc
     color: orange;
 }
 
-
+.main-content {
+    min-height: 600px;
+}
 
 .session-links {
 
+}
+
+.footer {
+    background-color: black;
+    height: 50px;
+}
+
+.footer > h2 {
+    color: white;
 }
 
 /* .nav-nav {
     display: flex;
     background: white;
 } */
+

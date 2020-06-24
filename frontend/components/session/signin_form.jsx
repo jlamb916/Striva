@@ -46,6 +46,7 @@ class SigninForm extends React.Component {
 
     render() {
         return (
+            <div className="main-content">
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit} className="login-form-box">
                     <br />
@@ -73,6 +74,7 @@ class SigninForm extends React.Component {
                         <input className="demo-submit" type="submit" value="Demo User" onClick={this.demoUserLogin}/>
                     </div>
                 </form>
+                </div>
             </div>
         );
     }

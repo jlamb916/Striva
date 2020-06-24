@@ -37,6 +37,7 @@ class SignupForm extends React.Component {
 
     render() {
         return (
+            <div className="main-content">
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit} className="login-form-box">
                 <br />
@@ -72,6 +73,7 @@ class SignupForm extends React.Component {
                         <Link to="/login">Try Demo User!</Link>
                     </div>
                 </form>
+            </div>
             </div>
         );
     }
