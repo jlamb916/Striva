@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch, Link, HashRouter} from 'react-router-dom';
+import { Route, Switch, Link, withRouter} from 'react-router-dom';
 
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
@@ -20,9 +20,10 @@ const App = () => {
                 <AuthRoute exact path="/login" component={SigninFormContainer} />
                 <AuthRoute exact path="/signup" component={SignupFormContainer} />
             </Switch>
-            <Footer />
+            
+            {   (location.hash === '#/login' ||
+                location.hash === '#/signup') ? <Footer /> : "" }
         </div>
     )
 }
-
-export default App;
+export default withRouter(App);

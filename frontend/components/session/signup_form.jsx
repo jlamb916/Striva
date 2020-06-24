@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
 class SignupForm extends React.Component {
     constructor(props) {
         super(props);
@@ -9,12 +9,21 @@ class SignupForm extends React.Component {
             email: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.demoUserLogin = this.demoUserLogin.bind(this);
     }
 
     update(field) {
         return e => this.setState({
             [field]: e.currentTarget.value
         });
+    }
+
+    demoUserLogin(e) {
+        const demoUser = {
+            username: "demo",
+            password: "password"
+        }
+        this.props.processDemo(demoUser);
     }
 
     handleSubmit(e) {
@@ -70,7 +79,7 @@ class SignupForm extends React.Component {
                         </label>
                         <br />
                         <input className="session-submit" type="submit" value={this.props.formType} />
-                        <Link to="/login">Try Demo User!</Link>
+                        <input className="session-submit" type="submit" value="Try Demo" onClick={this.demoUserLogin}/>
                     </div>
                 </form>
             </div>

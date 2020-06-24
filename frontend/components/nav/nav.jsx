@@ -21,10 +21,12 @@ class Nav extends React.Component {
 
     greetUser () {
         return (
-            <div className="nav-content">
-                <h1>Welcome {this.props.currentUser.username}</h1>
-                <button className="logout" onClick={this.props.signout}>Log Out</button>
-            </div>
+            <header className="nav-header">
+                <div className="nav-content">
+                    <h1>Welcome {this.props.currentUser.username}</h1>
+                    <button className="logout" onClick={this.props.signout}>Log Out</button>
+                </div>
+            </header>
         )
     }
 
