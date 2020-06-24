@@ -18,6 +18,10 @@ class SignupForm extends React.Component {
         });
     }
 
+    componentWillUnmount() {
+        this.props.clearErrors();
+    }
+    
     demoUserLogin(e) {
         const demoUser = {
             username: "demo",

@@ -8,7 +8,7 @@ class Nav extends React.Component {
             <header className="nav-header">
                 <nav className="nav-content">
                     <div className="nav-header-logo">
-                        <a href="#">Welcome To Strava!</a>
+                        <a href="#">Strava</a>
                     </div>
                     <div className="session-links">
                         <Link to='/login'>Log In</Link>

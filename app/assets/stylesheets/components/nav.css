@@ -22,14 +22,13 @@ border-bottom: 1px solid #ccc
 
 .nav-header-logo {
     color: orange;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 25px;
 }
 
 .main-content {
     min-height: 600px;
-}
-
-.session-links {
-
 }
 
 .footer {
