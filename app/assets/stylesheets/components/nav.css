@@ -1,0 +1,35 @@
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.nav-header {
+border-bottom: 1px solid #ccc
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: 800px;
+    /* margin-left: auto;
+    margin-right: auto; */;
+    min-height: 55px;
+}
+
+.nav-header-logo {
+    color: orange;
+}
+
+
+
+.session-links {
+
+}
+
+/* .nav-nav {
+    display: flex;
+    background: white;
+} */

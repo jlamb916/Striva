@@ -5,25 +5,23 @@ class Nav extends React.Component {
 
     sessionLinks () {
         return (
-            <div className = "nav" >
-                <header className="nav-header">
-                    <nav className="nav-header-nav">
-                        <div className="nav-header-logo">
-                            <a href="#">Welcome To Strava!</a>
-                        </div>
-                        <div className="session-links">
-                            <Link to='/login'>Log In</Link>
-                            <Link to='/signup'>Sign Up</Link>
-                        </div>
-                    </nav>
-                </header>
-            </div>
+            <header className="nav-header">
+                <nav className="nav-content">
+                    <div className="nav-header-logo">
+                        <a href="#">Welcome To Strava!</a>
+                    </div>
+                    <div className="session-links">
+                        <Link to='/login'>Log In</Link>
+                        <Link to='/signup'>Sign Up</Link>
+                    </div>
+                </nav>
+            </header>
         )
     }
 
     greetUser () {
         return (
-            <div className="greet-user">
+            <div className="nav">
                 <h1>Welcome {this.props.currentUser.username}</h1>
                 <button className="logout" onClick={this.props.signout}>Log Out</button>
             </div>
