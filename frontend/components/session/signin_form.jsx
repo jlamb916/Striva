@@ -51,15 +51,14 @@ class SigninForm extends React.Component {
 
     render() {
         return (
-            <div className="main-content">
+            <div className="content container">
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit} className="login-form-box">
-                    <br />
-                    Please {this.props.formType}
+                        <h2 className="session-name">{this.props.formType}</h2>
                     {this.renderErrors()}
                     <div className="login-form">
                         <br />
-                        <label>Username:
+                        <label>Username <br />
                             <input type="text"
                                 value={this.state.username}
                                 onChange={this.update('username')}
@@ -67,7 +66,7 @@ class SigninForm extends React.Component {
                             />
                         </label>
                         <br />
-                        <label>Password:
+                        <label>Password <br />
                             <input type="password"
                                 value={this.state.password}
                                 onChange={this.update('password')}
@@ -76,7 +75,7 @@ class SigninForm extends React.Component {
                         </label>
                         <br />
                         <input className="session-submit" type="submit" value={this.props.formType} />
-                        <input className="demo-submit" type="submit" value="Demo User" onClick={this.demoUserLogin}/>
+                            <input className="session-submit" type="submit" value="Demo User" onClick={this.demoUserLogin}/>
                     </div>
                 </form>
                 </div>

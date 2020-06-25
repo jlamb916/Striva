@@ -9,20 +9,38 @@ import Footer from './footer/footer'
 import SignupFormContainer from './session/signup_form_container';
 import SigninFormContainer from './session/signin_form_container';
 
+const Splash = (props) => {
+    return (
+        <div className="content container">
+            <h2 className="center-header">The #1 app for athletes</h2>
+            <div className="main-content container">
+                <div className="splash-pic">
+                    <p>splash pic</p>
+                </div>
+                <div className="buttons">
+                    <p>buttons</p>
+                </div>
+            </div>
+        </div>
+    )
+}
 
 const App = () => {
     return (
         <div>
             {/* nav will dispay differently depending on if user is logged in or not */}
             <NavContainer />
+            {/* <Route exact path="/" component={Spash} /> */}
+            
             <Switch>
-                {/* <AuthRoute exact path="/" component={Splash} /> */}
                 <AuthRoute exact path="/login" component={SigninFormContainer} />
                 <AuthRoute exact path="/signup" component={SignupFormContainer} />
+                <Splash />
             </Switch>
             
             {   (location.hash === '#/login' ||
-                location.hash === '#/signup') ? <Footer /> : "" }
+                location.hash === '#/signup' ||
+                location.hash === '#/') ? <Footer /> : "" }
         </div>
     )
 }

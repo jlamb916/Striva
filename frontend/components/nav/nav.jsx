@@ -6,13 +6,13 @@ class Nav extends React.Component {
     sessionLinks () {
         return (
             <header className="nav-header">
-                <nav className="nav-content">
+                <nav className="container nav-content">
                     <div className="nav-header-logo">
-                        <a href="#">Strava</a>
+                        <a className="striva-logo" href="#">STRIVA</a>
                     </div>
                     <div className="session-links">
-                        <Link to='/login'>Log In</Link>
-                        <Link to='/signup'>Sign Up</Link>
+                        <Link className="session-link" to='/login'>Log In</Link>
+                        <Link className="session-link" to='/signup'>Sign Up</Link>
                     </div>
                 </nav>
             </header>
@@ -24,7 +24,7 @@ class Nav extends React.Component {
             <header className="nav-header">
                 <div className="nav-content">
                     <h1>Welcome {this.props.currentUser.username}</h1>
-                    <button className="logout" onClick={this.props.signout}>Log Out</button>
+                    <button className="session-link" onClick={this.props.signout}>Log Out</button>
                 </div>
             </header>
         )
