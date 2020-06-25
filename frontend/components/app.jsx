@@ -9,7 +9,20 @@ import Footer from './footer/footer'
 import SignupFormContainer from './session/signup_form_container';
 import SigninFormContainer from './session/signin_form_container';
 
-const Splash = (props) => {
+import { signin } from '../actions/session_actions';
+
+const Splash = () => {
+
+    const processDemo = (user) => dispatch(signin(user))
+
+    const demoUserLogin = () => {
+        const demoUser = {
+            username: "demo",
+            password: "password"
+        }
+        processDemo(demoUser);
+    }
+
     return (
         <div className="content container">
             <h2 className="center-header">The #1 app for athletes</h2>
@@ -19,6 +32,7 @@ const Splash = (props) => {
                 </div>
                 <div className="buttons">
                     <p>buttons</p>
+                    <button className="session-submit demo" onClick={demoUserLogin}>Try Demo</button>
                 </div>
             </div>
         </div>
@@ -35,7 +49,7 @@ const App = () => {
             <Switch>
                 <AuthRoute exact path="/login" component={SigninFormContainer} />
                 <AuthRoute exact path="/signup" component={SignupFormContainer} />
-                <Splash />
+                <AuthRoute component={Splash} />
             </Switch>
             
             {   (location.hash === '#/login' ||

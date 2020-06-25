@@ -1,15 +1,23 @@
+.form-content {
+    background-color: yellow;
+    z-index: 2;
+    width: 100%;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+}
+
 .login-form-container {
-    min-height: 500px;
-    width: 400px;
-    height: 400px;
-    margin: 60px auto;
-    background-color: rgba(0,0,0,0.75);
+    width: 300px;
+    margin: 0px auto;
+    background-color: rgba(0,0,0,0.80);
     padding: 50px;
     text-align: center;
+    
 }
 
 .login-form {
-       display: flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
 }
@@ -17,16 +25,25 @@
 .session-name {
     font-weight: bolder;
     font-size: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     color: white;
 }
 
 .login-input {
-    border: 1px solid #666;
+    border: 1px solid whitesmoke;
+    color: white;
     border-radius: 4px;
-    margin: 10px;
+    margin: 6px;
     height: 35px;
-    width: 300px;
+    width: 250px;
+    text-align: left;
+    padding-left: 35px;
+}
+
+.login-input:focus {
+    background-color: whitesmoke;
+    box-shadow:  2px 2px 2px 1px whitesmoke;
+    color: black;
 }
 
 .session-submit {
@@ -34,7 +51,19 @@
     border: 1px solid black;
     color: white;
     border-radius: 4px;
-    margin: 10px;
+    margin: 5px;
     height: 35px;
-    width: 300px;
+    width: 280px;
+}
+
+::placeholder {
+    color: white;
+}
+
+.login-input:focus::placeholder{
+    color: black;
+}
+
+.demo {
+    border-color: white;
 }

@@ -18,6 +18,13 @@ class SignupForm extends React.Component {
         });
     }
 
+    componentDidMount () {
+        this.setState({
+            username: '',
+            password: '',
+            email: ''
+        })
+    }
     componentWillUnmount() {
         this.props.clearErrors();
     }
@@ -50,36 +57,39 @@ class SignupForm extends React.Component {
 
     render() {
         return (
-            <div className="content">
+            <div className="form-content">
             <div className="login-form-container">
+                    <h2 className="session-name">{this.props.formType}</h2>
                 <form id="login-form" onSubmit={this.handleSubmit} className="login-form-box">
-                        <h2 className="session-name">{this.props.formType}</h2>
                     {this.renderErrors()}
                     <div className="login-form">
-                        <label>Username <br/>
+                        <label>
                             <input type="text"
                                 value={this.state.username}
+                                placeholder="Username"
                                 onChange={this.update('username')}
                                 className="login-input"
                             />
                         </label>
-                        <label>Password <br />
+                        <label>
                             <input type="password"
                                 value={this.state.password}
+                                placeholder="Password"
                                 onChange={this.update('password')}
                                 className="login-input"
                             />
                         </label>
-                        <label>Email <br />
+                        <label>
                             <input type="text"
                                 value={this.state.email}
                                 onChange={this.update('email')}
+                                placeholder="Email"
                                 className="login-input"
                             />
                         </label>
                         <br />
                         <input className="session-submit" type="submit" value={this.props.formType} />
-                        <input className="session-submit" type="submit" value="Try Demo" onClick={this.demoUserLogin}/>
+                        <input className="session-submit demo" type="submit" value="Try Demo" onClick={this.demoUserLogin}/>
                     </div>
                 </form>
             </div>
