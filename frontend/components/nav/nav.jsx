@@ -25,7 +25,7 @@ class Nav extends React.Component {
         return (
             <header className="nav-header">
                 <div className="nav-content">
-                    <h1>Welcome {this.props.currentUser.username}</h1>
+                    <a className="striva-logo nav-header-logo" href='#'>STRIVA</a>
                     <button className="session-link" onClick={this.props.signout}>Log Out</button>
                 </div>
             </header>

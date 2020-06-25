@@ -4,11 +4,11 @@ import { Route, Switch, Link, withRouter} from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 import NavContainer from './nav/nav_container';
-import Footer from './footer/footer'
+import DashboardContainer from './dashboard/dashboard_container';
+import Footer from './footer/footer';
 
 import SignupFormContainer from './session/signup_form_container';
 import SigninFormContainer from './session/signin_form_container';
-
 import { signin } from '../actions/session_actions';
 
 const Splash = () => {
@@ -39,6 +39,8 @@ const Splash = () => {
     )
 }
 
+
+
 const App = () => {
     return (
         <div>
@@ -49,7 +51,8 @@ const App = () => {
             <Switch>
                 <AuthRoute exact path="/login" component={SigninFormContainer} />
                 <AuthRoute exact path="/signup" component={SignupFormContainer} />
-                <AuthRoute component={Splash} />
+                <AuthRoute exact path="/" component={Splash} />
+                <ProtectedRoute exact path="/dashboard" component={DashboardContainer}/>
             </Switch>
             
             {   (location.hash === '#/login' ||
