@@ -39,7 +39,7 @@ class SigninForm extends React.Component {
 
     renderErrors() {
         return (
-            <ul>
+            <ul className="error-messages">
                 {this.props.errors.map((error, i) => (
                     <li key={`error-${i}`}>
                         {error}
@@ -51,14 +51,11 @@ class SigninForm extends React.Component {
 
     render() {
         return (
-            <div className="form-content">
+            <div className="login-image-content">
             <div className="login-form-container">
-                    <h2 className="session-name">{this.props.formType}</h2>
-
-                <form onSubmit={this.handleSubmit} className="login-form-box">
+                <h2 className="session-name">{this.props.formType}</h2>
+                <form className="login-form" onSubmit={this.handleSubmit}>
                     {this.renderErrors()}
-                    <div className="login-form">
-                        <br />
                         <label>
                             <input type="text"
                                 value={this.state.username}
@@ -78,7 +75,6 @@ class SigninForm extends React.Component {
                         <br />
                         <input className="session-submit" type="submit" value={this.props.formType} />
                             <input className="session-submit demo" type="submit" value="Demo User" onClick={this.demoUserLogin}/>
-                    </div>
                 </form>
                 </div>
             </div>

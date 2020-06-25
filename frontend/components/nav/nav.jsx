@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 class Nav extends React.Component {
 
 
@@ -11,8 +11,10 @@ class Nav extends React.Component {
                         <a className="striva-logo" href="#">STRIVA</a>
                     </div>
                     <div className="session-links">
-                        <Link className="session-link" to='/login'>Log In</Link>
-                        <Link className="session-link" to='/signup'>Sign Up</Link>
+                        <NavLink className="session-link" to='/login' 
+                        activeClassName="active-link">Log In</NavLink>
+                        <NavLink className="session-link" to='/signup'
+                        activeClassName="active-link">Sign Up</NavLink>
                     </div>
                 </nav>
             </header>
