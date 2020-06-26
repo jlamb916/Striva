@@ -9,7 +9,6 @@ span, article, footer, time, small {
   padding: 0;
   border: 0;
   outline: 0;
-  font: inherit;
   color: inherit;
   text-align: inherit;
   text-decoration: inherit;
@@ -41,4 +40,8 @@ button {
 button,
 input[type="submit"] {
   cursor: pointer;
+}
+
+* {
+  font-family: "Helvetica Neue", Helvetica, Arial;
 }
