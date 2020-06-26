@@ -25,7 +25,7 @@ const Splash = () => {
 
     return (
         <div className="content container">
-            <h2 className="center-header">The #1 app for athletes</h2>
+            <h2 className="center-header">IF YOU AINT FIRST YOUR LAST</h2>
             <div className="main-content container">
                 <div className="splash-pic">
                     <p>splash pic</p>
