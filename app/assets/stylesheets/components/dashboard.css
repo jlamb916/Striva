@@ -1,0 +1,42 @@
+.dashboard-container {
+    display: flex;
+    min-height: 600px;
+    width: 1200px;
+    margin: auto;
+}
+
+.dash-container-left {
+    background: cornflowerblue;
+    width: 300px;
+}
+
+.dash-container-right {
+    background-color: rgb(31, 26, 19);
+    width: 300px;
+}
+
+.dash-container-mid {
+    background-color: green;
+    width: 600px;
+    
+}
+
+
+.feed-container {
+    display: flex;
+    justify-content: center;
+
+}
+
+.feeds-list {
+    margin: 30px;
+}
+
+.feed {
+    display: block;
+    margin: 30px auto;
+    background-color: red;
+    width: 525px;
+    height: 225px;
+}
+

@@ -1,0 +1,9 @@
+.buttons {
+    width: 50%;
+    background-color: yellow;
+}
+
+.center-header {
+    font-size: 48px;
+    text-align: center;
+}
