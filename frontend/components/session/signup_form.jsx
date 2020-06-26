@@ -30,6 +30,7 @@ class SignupForm extends React.Component {
     }
 
     demoUserLogin(e) {
+        e.preventDefault();
         const demoUser = {
             username: "demo",
             password: "password"
