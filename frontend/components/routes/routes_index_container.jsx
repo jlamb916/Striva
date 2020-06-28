@@ -10,10 +10,10 @@ const mapStateToProps = (state) => {
     }
 }
 
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-//         fetchAllRoutes: () => dispatch(fetchAllRoutes()),
-//     }
-// }
+const mapDispatchToProps = (dispatch) => {
+    return {
+        fetchAllRoutes: () => dispatch(fetchAllRoutes()),
+    }
+}
 
-export default connect(mapStateToProps, null)(RouteIndex);
+export default connect(mapStateToProps, mapDispatchToProps)(RouteIndex);

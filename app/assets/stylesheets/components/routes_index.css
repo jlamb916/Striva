@@ -1,0 +1,29 @@
+.route-index-container {
+    font-size: 14px;
+    margin: 20px 82px 80px;
+    padding: 0 16px;
+}
+
+.route-index-header {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+.route-index-title-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.route-index-title {
+    font-size: 2.5em;
+    padding-top: 0;
+    padding-bottom: 16px;
+}
+
+.map-img {
+  width: 175px;
+  height: 100px;
+}
