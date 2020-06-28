@@ -1,7 +1,6 @@
 class Api::RoutesController < ApplicationController
 
     def show
-        debugger
         @route = Route.find(params[:id])
         render '/api/routes/show'
     end

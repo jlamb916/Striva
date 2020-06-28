@@ -4,7 +4,7 @@ export const RECEIVE_ALL_ROUTES = "RECEIVE_ROUTE";
 export const RECEIVE_ROUTE = "RECEIVE_ROUTE";
 export const RECEIVE_ROUTE_ERRORS = "RECEIVE_ROUTE_ERRORS";
 export const CLEAR_ROUTE_ERRORS = "CLEAR_ROUTE_ERRORS";
-export const DELETE_ROUTE = "REMOVE_ROUTE";
+export const REMOVE_ROUTE = "REMOVE_ROUTE";
 
 // action creators
 const receiveAllRoutes = (routes) => {
@@ -35,7 +35,7 @@ const clearRouteErrors = () => {
     }
 }
 
-const deleteRoute = (routeId) => {
+const removeRoute = (routeId) => {
     return {
         type: REMOVE_ROUTE,
         routeId
@@ -58,7 +58,7 @@ export const fetchRoute = (routeId) => (dispatch) => {
 
 export const deleteRoute = (routeId) => (dispatch) => {
     return APIRouteUtil.deleteRoute(routeId)
-        .then(() => dispatch(deleteRoute(routeId))
+        .then(() => dispatch(removeRoute(routeId))
     );
 }
 
