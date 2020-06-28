@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
 import { signup } from './util/session_api_util';
-
+import { fetchAllRoutes, fetchRoute, createRoute } from './util/route_map_util';
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
 
@@ -29,4 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
     window.signup = signup;
     window.dispatch = store.dispatch;
     window.getState = store.getState;
+    window.fetchAllRoutes = fetchAllRoutes;
+    window.fetchRoute = fetchRoute;
+    window.createRoute = createRoute;
+
 })
