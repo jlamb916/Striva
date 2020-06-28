@@ -1,4 +1,4 @@
-.route-index-container {
+.route-container {
     font-size: 14px;
     margin: 20px 82px 80px;
     padding: 0 16px;
@@ -26,4 +26,32 @@
 .map-img {
   width: 175px;
   height: 100px;
+}
+
+.route-index-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.route-index-container {
+    margin-top: 20px;
+}
+
+.route-index-item {
+
+    width: 225px;
+}
+
+.map-canvas-route {
+    height: 175px;
+    background-color: grey;
+}
+
+.route-data {
+    height: 200px;
+    background-color: lightgray;
+}
+
+h3.route-name {
+    margin: 0;
 }
