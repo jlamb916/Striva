@@ -14233,3 +14233,224 @@ Migrating to CreateRoutes (20200628004406)
   ↳ db/seeds.rb:15
   [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
   [1m[36mRoute Load (1.0ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+Started GET "/" for ::1 at 2020-06-27 18:22:19 -0700
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jameslam/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered static_pages/root.html.erb within layouts/application (62.7ms)
+Completed 200 OK in 401ms (Views: 393.8ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-06-27 18:23:15 -0700
+Processing by Api::RoutesController#index as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.8ms)
+
+
+
+NoMethodError - undefined method `routes' for nil:NilClass:
+  app/controllers/api/routes_controller.rb:9:in `index'
+
+Started GET "/api/routes" for ::1 at 2020-06-27 18:23:49 -0700
+Processing by Api::RoutesController#index as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mCACHE User Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 500 Internal Server Error in 16666ms (ActiveRecord: 6.0ms)
+
+
+
+NoMethodError - undefined method `routes' for nil:NilClass:
+  app/controllers/api/routes_controller.rb:10:in `index'
+
+Started GET "/api/routes" for ::1 at 2020-06-27 18:24:19 -0700
+Processing by Api::RoutesController#index as JSON
+Started GET "/" for ::1 at 2020-06-27 18:24:34 -0700
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jameslam/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered static_pages/root.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 1020ms (Views: 1016.0ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-06-27 18:24:42 -0700
+Processing by Api::RoutesController#index as JSON
+Completed 500 Internal Server Error in 18810ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - uninitialized constant Api::RoutesController::Routes:
+  app/controllers/api/routes_controller.rb:10:in `index'
+
+Started GET "/" for ::1 at 2020-06-27 18:25:04 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered static_pages/root.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 44ms (Views: 41.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-06-27 18:25:10 -0700
+Processing by Api::RoutesController#index as JSON
+  [1m[36mRoute Load (0.5ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/api/routes_controller.rb:11
+  Rendering api/routes/show.json.jbuilder
+  [1m[36mCACHE Route Load (0.0ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/api/routes_controller.rb:11
+  Rendered api/routes/show.json.jbuilder (6.6ms)
+Completed 500 Internal Server Error in 11850ms (ActiveRecord: 6.8ms)
+
+
+
+ActionView::Template::Error - undefined method `id' for #<Route::ActiveRecord_Relation:0x00007fa8392afe48>
+Did you mean?  ids:
+  app/views/api/routes/show.json.jbuilder:1:in `view template'
+  app/controllers/api/routes_controller.rb:11:in `index'
+
+Started GET "/" for ::1 at 2020-06-27 18:28:18 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered static_pages/root.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 38ms (Views: 34.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-06-27 18:28:20 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (0.4ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (13.6ms)
+Completed 200 OK in 4240ms (Views: 13.1ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/api/routes/1" for ::1 at 2020-06-27 18:28:58 -0700
+Processing by Api::RoutesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:4
+  Rendering api/routes/show.json.jbuilder
+  Rendered api/routes/show.json.jbuilder (3.1ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 6.2ms)
+
+
+
+ActionView::Template::Error - undefined method `id' for nil:NilClass:
+  app/views/api/routes/show.json.jbuilder:1:in `view template'
+  app/controllers/api/routes_controller.rb:5:in `show'
+
+Started GET "/api/routes/" for ::1 at 2020-06-27 18:29:38 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (0.4ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (1.6ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/routes/1" for ::1 at 2020-06-27 18:29:45 -0700
+Processing by Api::RoutesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:4
+  Rendering api/routes/show.json.jbuilder
+  Rendered api/routes/show.json.jbuilder (3.3ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.3ms)
+
+
+
+ActionView::Template::Error - undefined method `id' for nil:NilClass:
+  app/views/api/routes/show.json.jbuilder:1:in `view template'
+  app/controllers/api/routes_controller.rb:5:in `show'
+
+Started GET "/api/routes" for ::1 at 2020-06-27 18:29:49 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (0.4ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (1.6ms)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/routes/1" for ::1 at 2020-06-27 18:30:07 -0700
+Processing by Api::RoutesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:5
+  Rendering api/routes/show.json.jbuilder
+  Rendered api/routes/show.json.jbuilder (2.5ms)
+Completed 500 Internal Server Error in 40959ms (ActiveRecord: 5.4ms)
+
+
+
+ActionView::Template::Error - undefined method `id' for nil:NilClass:
+  app/views/api/routes/show.json.jbuilder:1:in `view template'
+  app/controllers/api/routes_controller.rb:6:in `show'
+
+Started GET "/api/routes/1" for ::1 at 2020-06-27 18:30:51 -0700
+Processing by Api::RoutesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.5ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mCACHE Route Load (0.0ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:5
+  Rendering api/routes/show.json.jbuilder
+  Rendered api/routes/show.json.jbuilder (3.3ms)
+Completed 500 Internal Server Error in 21221ms (ActiveRecord: 0.5ms)
+
+
+
+ActionView::Template::Error - undefined method `id' for nil:NilClass:
+  app/views/api/routes/show.json.jbuilder:1:in `view template'
+  app/controllers/api/routes_controller.rb:6:in `show'
+
+Started GET "/api/routes/1" for ::1 at 2020-06-27 18:31:42 -0700
+Processing by Api::RoutesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (1.5ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mCACHE Route Load (0.0ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mCACHE Route Load (0.0ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mCACHE Route Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:5
+  Rendering api/routes/show.json.jbuilder
+  Rendered api/routes/show.json.jbuilder (42.7ms)
+Completed 500 Internal Server Error in 113460ms (ActiveRecord: 1.9ms)
+
+
+
+ActionView::Template::Error - undefined method `id' for nil:NilClass:
+  app/views/api/routes/show.json.jbuilder:1:in `view template'
+  app/controllers/api/routes_controller.rb:6:in `show'
+
+Started GET "/" for ::1 at 2020-06-27 18:33:39 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered static_pages/root.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 47ms (Views: 42.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/api/routes/1" for ::1 at 2020-06-27 18:33:41 -0700
+Processing by Api::RoutesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mRoute Load (0.5ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:5
+  Rendering api/routes/show.json.jbuilder
+  Rendered api/routes/show.json.jbuilder (0.6ms)
+Completed 200 OK in 4009ms (Views: 5.7ms | ActiveRecord: 0.5ms)
+
+

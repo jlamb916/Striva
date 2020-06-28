@@ -1,20 +1,21 @@
 class Api::RoutesController < ApplicationController
 
     def show
+        debugger
         @route = Route.find(params[:id])
-        render '/api/route/show'
+        render '/api/routes/show'
     end
 
     def index
-        @routes = current_user.routes
-        render '/api/route/show'
+        @routes = Route.all
+        render '/api/routes/index'
     end
 
     def create
         @route = Route.new(route_params)
 
         if @route.save
-            render 'api/route/show'
+            render 'api/routes/show'
         else
             render json: ["Invalid Route"], status: 422
         end
