@@ -6,21 +6,22 @@
 }
 
 .dash-container-left {
-    background: cornflowerblue;
+    background: grey;
+    filter: brightness(80%);
     width: 300px;
 }
 
 .dash-container-right {
-    background-color: rgb(31, 26, 19);
+    background-color: grey;
+    filter: brightness(30%);
     width: 300px;
 }
 
 .dash-container-mid {
-    background-color: green;
+    background-color: black;
     width: 600px;
     
 }
-
 
 .feed-container {
     display: flex;
@@ -35,7 +36,7 @@
 .feed {
     display: block;
     margin: 30px auto;
-    background-color: red;
+    background-color: grey;
     width: 525px;
     height: 225px;
 }

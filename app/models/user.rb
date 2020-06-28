@@ -7,6 +7,8 @@ class User < ApplicationRecord
 
     attr_reader :password
 
+    has_many :routes
+
     #SPIRE
 
     def self.find_by_credentials(username, password)
