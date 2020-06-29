@@ -8,6 +8,7 @@ class User < ApplicationRecord
     attr_reader :password
 
     has_many :routes
+    has_one_attached :profile_picture
 
     #SPIRE
 

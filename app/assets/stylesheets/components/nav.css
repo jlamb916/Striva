@@ -1,12 +1,13 @@
 body {
-  font-family: "MaisonNeue";
+  font-family: "Helvetica Neue", Helvetica, Arial;
   font-size: 14px;
   font-weight: 400;
-  min-height: 80%;
 }
 
 .nav-header {
-    border-bottom: 1px solid #ccc
+    border-bottom: 1px solid #ccc;
+    position: relative;
+    z-index: 1;
 }
 
 .container {
@@ -19,11 +20,8 @@ body {
 .nav-content {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     margin: 0px 70px 0px 70px;
     padding: 0 16px;
-    min-height: 55px;
-    /* margin: 0 70px 70px 0; */
 }
 
 .nav-header-logo {
@@ -67,3 +65,55 @@ body {
     font-weight: bold;
 }
 
+.nav-left  {
+    display: flex;
+}
+
+
+.nav-bar-main {
+    background: pink;
+    margin-left: 50px;
+    
+}
+.nav-bar-list {
+    display: flex;
+   
+}
+
+.nav-bar-list > li {
+    font-size: 14px;
+    position: relative;
+    display: block;
+    padding: 10px 16px;
+}
+
+.dashboard-list-hide {
+  display: none;
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 40px;
+  font-size: 14px;
+  white-space: nowrap;
+  background: #fff;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  overflow: hidden;
+  width: 125px;
+}
+
+.dashboard-list-hide > li:hover {
+  background: #eee;
+}
+
+li:hover .dashboard-list-hide {
+  display: block;
+}
+
+.downarrow {
+  display: inline;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 1px 6px;
+}

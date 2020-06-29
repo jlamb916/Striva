@@ -21,11 +21,29 @@ class Nav extends React.Component {
         )
     }
 
-    greetUser () {
+greetUser() {
+
         return (
             <header className="nav-header">
                 <div className="nav-content">
-                    <a className="striva-logo nav-header-logo" href='#'>STRIVA</a>
+                    <div className="nav-left">
+                        <a className="striva-logo nav-header-logo" href='#'>STRIVA</a>
+                        <div className="nav-bar-main">
+                            <ul className="nav-bar-list"> 
+                                <li><NavLink to="/dashboard">Dashboard<strong className="downarrow">⌄</strong></NavLink>
+                                    <ul className="dashboard-list-hide">
+                                        <li><NavLink to="/dashboard">Activity Feed</NavLink></li>
+                                        <li><NavLink to="/routes">My Routes</NavLink></li>
+                                    </ul>
+                                </li>
+                                <li><NavLink to="/activities">Activities<strong className="downarrow">⌄</strong></NavLink>
+                                    <ul className="dashboard-list-hide">
+                                        <li><NavLink to="/activies">My Activities</NavLink></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                     <button className="session-link" onClick={this.props.signout}>Log Out</button>
                 </div>
             </header>

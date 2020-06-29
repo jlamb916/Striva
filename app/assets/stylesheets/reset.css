@@ -10,6 +10,7 @@ span, article, footer, time, small {
   border: 0;
   outline: 0;
   color: inherit;
+  /* font: inherit; */
   text-align: inherit;
   text-decoration: inherit;
   vertical-align: inherit;
