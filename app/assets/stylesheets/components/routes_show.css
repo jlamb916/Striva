@@ -2,10 +2,6 @@
 .route-show-container {
     display: flex;
 }
-.map-show-canvas {
-    min-width: 650px;
-    height:350px;
-}
 
 .route-show-data {
     min-width: 300px;
@@ -16,4 +12,12 @@
 }
 .route-title {
     margin: 20px 0;
+}
+
+.my-routes-link {
+    color: grey;
+}
+
+.my-routes-link:hover {
+    text-decoration: underline;
 }

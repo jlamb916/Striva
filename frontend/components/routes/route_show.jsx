@@ -1,4 +1,6 @@
 import React from 'react';
+import MapBox from '../map/map';
+import { Link } from 'react-router-dom';
 
 class RouteShow extends React.Component {
     constructor(props) {
@@ -39,20 +41,26 @@ class RouteShow extends React.Component {
                 </div>
             </div>) : "";
 
+        {if (route) {
         return (
         <div className="route-container">
+                <div>
+                    <h5><Link className="my-routes-link" to="/routes">My Routes</Link> / {route.route_name}</h5>
+                </div>
                 <div className="route-title">
-                    <h1>Route name</h1>
+                    <h1>{route.route_name}</h1>
                 </div>
                 <div className="route-show-container">
                     <div className="map-show-canvas">
-                        <img className="map-static-img" src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/-77.5235,38.2217,15.73,0/300x200?access_token=pk.eyJ1IjoiamxhbXo5MTYiLCJhIjoiY2tidGt2a25vMGF5MDMybWltNWJraGI0ZCJ9.kIC31SeL5aFQcKdnqFac7g" alt="placeholder" />
-                        <p className="placeholder">placeholder img</p>
+                        <MapBox route={route} />
                     </div>
                    {renderData}
                 </div>
         </div>
-        )
+        )}
+        else {
+            return ""
+        };}
     }
 }
 

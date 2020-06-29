@@ -1,0 +1,15 @@
+.map-container {
+    position: relative;
+    min-width: 650px;
+    height: 350px;
+    float: left;
+}
+
+.mapContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+}

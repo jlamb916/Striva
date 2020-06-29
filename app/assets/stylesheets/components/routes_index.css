@@ -1,6 +1,6 @@
 .route-container {
     font-size: 14px;
-    margin: 20px 70px 70px;
+     margin: 20px 100px 20px 100px;
     padding: 0 16px;
 }
 
@@ -8,7 +8,8 @@
     display: flex;
     border-bottom: 1px solid #ccc;
     justify-content: space-between;
-    padding-bottom: 20px;
+    padding-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .route-index-title-container {
@@ -31,8 +32,8 @@
 .route-index-list {
     display: flex;
     flex-wrap: wrap;
-    /* justify-content: flex-start; */
-    justify-content: space-evenly;
+    justify-content: flex-start;
+    /* justify-content: space-evenly; */
     align-content: flex-start;
 }
 
@@ -42,6 +43,7 @@
 
 .route-index-item {
     width: 225px;
+      margin: 0 1.6% 40px 0;
 }
 
 
