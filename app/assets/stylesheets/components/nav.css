@@ -20,9 +20,10 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 auto;
-    width: 80%;
+    margin: 0px 70px 0px 70px;
+    padding: 0 16px;
     min-height: 55px;
+    /* margin: 0 70px 70px 0; */
 }
 
 .nav-header-logo {

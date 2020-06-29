@@ -1,0 +1,19 @@
+
+.route-show-container {
+    display: flex;
+}
+.map-show-canvas {
+    min-width: 650px;
+    height:350px;
+}
+
+.route-show-data {
+    min-width: 300px;
+    width: 325px;
+    height: 350px;
+    padding: 0 16px;
+    text-align: center;
+}
+.route-title {
+    margin: 20px 0;
+}

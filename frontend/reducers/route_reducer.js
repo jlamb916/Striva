@@ -6,7 +6,6 @@ const routeReducer = (state = {}, action) => {
     let newState = Object.assign({}, state)
     switch (action.type) {
         case RECEIVE_ROUTE:
-            debugger
             newState = { [action.route.id]: action.route };
             return Object.assign({}, state, newState);
         case RECEIVE_ALL_ROUTES:

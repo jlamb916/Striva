@@ -24,7 +24,7 @@ class RouteShow extends React.Component {
         }
         let renderData;
         renderData = routeData ?
-             (<div className="route-data">
+             (<div className="route-show-data">
                 <h3 className="route-name">{route.route_name}</h3>
                 <ul>
                     <li>
@@ -38,11 +38,14 @@ class RouteShow extends React.Component {
                     <p>{route.created_at}</p>
                 </div>
             </div>) : "";
+
         return (
         <div className="route-container">
-            <h1>routes page!</h1>
-                <div className="route-index-item">
-                    <div className="map-canvas-route">
+                <div className="route-title">
+                    <h1>Route name</h1>
+                </div>
+                <div className="route-show-container">
+                    <div className="map-show-canvas">
                         <img className="map-static-img" src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/-77.5235,38.2217,15.73,0/300x200?access_token=pk.eyJ1IjoiamxhbXo5MTYiLCJhIjoiY2tidGt2a25vMGF5MDMybWltNWJraGI0ZCJ9.kIC31SeL5aFQcKdnqFac7g" alt="placeholder" />
                         <p className="placeholder">placeholder img</p>
                     </div>
