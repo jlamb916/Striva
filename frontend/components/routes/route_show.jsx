@@ -3,7 +3,6 @@ import React from 'react';
 class RouteShow extends React.Component {
     constructor(props) {
         super(props);
-        debugger
     }
 
     componentDidMount() {

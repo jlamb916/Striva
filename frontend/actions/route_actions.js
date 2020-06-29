@@ -1,6 +1,6 @@
 import * as APIRouteUtil from '../util/route_map_util';
 
-export const RECEIVE_ALL_ROUTES = "RECEIVE_ROUTE";
+export const RECEIVE_ALL_ROUTES = "RECEIVE_ALL_ROUTES";
 export const RECEIVE_ROUTE = "RECEIVE_ROUTE";
 export const RECEIVE_ROUTE_ERRORS = "RECEIVE_ROUTE_ERRORS";
 export const CLEAR_ROUTE_ERRORS = "CLEAR_ROUTE_ERRORS";
