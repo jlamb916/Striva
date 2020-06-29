@@ -7,6 +7,7 @@ export const fetchAllRoutes = () => {
 }
 
 export const fetchRoute = (routeId) => {
+    
     return $.ajax({
         url: `/api/routes/${routeId}`,
         method: 'GET',

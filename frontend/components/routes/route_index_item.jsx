@@ -26,7 +26,7 @@ class RouteIndexItem extends React.Component {
         return (
             <div className="route-index-item">
                 <div className="map-canvas-route">
-                    <img className="map-static-img"src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/-77.5235,38.2217,15.73,0/300x200?access_token=pk.eyJ1IjoiamxhbXo5MTYiLCJhIjoiY2tidGt2a25vMGF5MDMybWltNWJraGI0ZCJ9.kIC31SeL5aFQcKdnqFac7g" alt=""/>
+                    <Link to={`/routes/${route.id}`}><img className="map-static-img" src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/-77.5235,38.2217,15.73,0/300x200?access_token=pk.eyJ1IjoiamxhbXo5MTYiLCJhIjoiY2tidGt2a25vMGF5MDMybWltNWJraGI0ZCJ9.kIC31SeL5aFQcKdnqFac7g" alt="placeholder" /></Link>
                     <p className="placeholder">placeholder img</p>
                 </div>
                 <div className="route-data">

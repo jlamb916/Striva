@@ -15,6 +15,7 @@ const receiveAllRoutes = (routes) => {
 }
 
 const receiveRoute = (route) => {
+    
     return {
         type: RECEIVE_ROUTE,
         route

@@ -1,24 +1,22 @@
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import RouteIndex from './routes_index';
-import { fetchAllRoutes } from '../../actions/route_actions';
+import { fetchRoute, deleteRoute } from '../../actions/route_actions';
+import RouteShow from './route_show';
 
-const msp = (state, { match }) => {
+const mapStateToProps = (state, { match }) => {
     const routeId = parseInt(match.params.routeId);
-    const route = selectRoute(state.entities.routes, routeId);
+    const route = state.entities.routes[routeId] || undefined;
+
     return ({
         routeId,
         route
     })
 }
 
-const mdp = dispatch => {
+const mapDispatchToProps = dispatch => {
     return ({
         fetchRoute: (id) => dispatch(fetchRoute(id)),
         deleteRoute: (id) => dispatch(deleteRoute(id))
     })
 }
 
-export default connect(msp, mdp)(RouteShow);
-
-export default connect(mapStateToProps, mapDispatchToProps)(RouteIndex);
+export default connect(mapStateToProps, mapDispatchToProps)(RouteShow);
