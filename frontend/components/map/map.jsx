@@ -34,13 +34,13 @@ class MapBox extends React.Component {
                 zoom: map.getZoom().toFixed(2)
             });
         });
-        debugger
+        
         var draw = new MapboxDraw({
             // Instead of showing all the draw tools, show only the line string and delete tools
             displayControlsDefault: false,
             controls: {
-                line_string: true,
-                trash: true
+                line_string: false,
+                trash: false
             },
             styles: [
                 // Set the line style for the user-input coordinates
@@ -89,7 +89,6 @@ class MapBox extends React.Component {
                 },
             ]
         });
-        debugger
         // Add the draw tool to the map
         map.addControl(draw);
         // Use the coordinates you drew to make the Map Matching API request
@@ -102,7 +101,7 @@ class MapBox extends React.Component {
             // var coords = data.features[lastFeature].geometry.coordinates;
             var coords = routeData
             // Format the coordinates
-            debugger
+            
             var newCoords = coords.join(';')
             // Set the radius for each coordinate pair to 25 meters
             var radius = [];
@@ -115,7 +114,7 @@ class MapBox extends React.Component {
 
         // Make a Map Matching request
         function getMatch(coordinates, radius, profile) {
-            debugger
+           
             // Separate the radiuses with semicolons
             var radiuses = radius.join(';')
             // Create the query
@@ -158,24 +157,35 @@ class MapBox extends React.Component {
                             "line-width": 8,
                             "line-opacity": 0.8
                         }
-                    });
+                    }
+                    );
                 };
             }
+
+
         }
-        map.on('load', updateRoute(this.routeData.matchings[0].geometry.coordinates));
-    }
+
+        map.on('load',  updateRoute(this.routeData.matchings[0].geometry.coordinates));
+    
+        
+
+
+}
+
     // specifies the mapContainer to be drawn on the new div
     render() {
         return (
             <div className="index-container">
                 <div className="map-container">
-                    <div ref={el => this.mapContainer = el} className='mapContainer' >
+                    <div ref={el => this.mapContainer = el} id='map-leaflet' className='mapContainer' >
                     </div>
                 </div>
             </div>
-        )
+        );
     }
 }
 
 
 export default MapBox;
+
+
