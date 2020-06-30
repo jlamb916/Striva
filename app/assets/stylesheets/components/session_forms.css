@@ -23,9 +23,9 @@
 .login-form-container {
     margin: 0px auto;
     background-color: rgba(0,0,0,0.80);
-    padding: 50px;
+    padding: 40px 30px;
     text-align: center;
-    
+    border-radius: 3px;
 }
 
 .login-form {
@@ -37,10 +37,21 @@
 .session-name {
     font-weight: bolder;
     font-size: 30px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     color: white;
 }
+.two {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
 
+.session-signup {
+    font-weight: bolder;
+    font-size: 30px;
+    margin-bottom: 0;
+    color: white;
+
+}
 .login-input {
     border: 1px solid whitesmoke;
     color: white;

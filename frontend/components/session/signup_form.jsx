@@ -60,7 +60,8 @@ class SignupForm extends React.Component {
         return (
             <div className="form-content">
             <div className="login-form-container">
-                <h2 className="session-name">{this.props.formType}</h2>
+                    <p className="session-signup">Join Strava today,</p>
+                    <p className="session-signup two">it's Free.</p>
                 <form id="login-form" onSubmit={this.handleSubmit}>
                     {this.renderErrors()}
                     <div className="login-form">
