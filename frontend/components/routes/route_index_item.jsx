@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import MapBox from '../map/map';
 class RouteIndexItem extends React.Component {
     constructor (props) {
         super(props);
@@ -23,21 +23,26 @@ class RouteIndexItem extends React.Component {
     render () {
         
         const { route } = this.props
+        const miles = (this.routeDistance / 1609).toFixed(2);
         return (
             <div className="route-index-item">
                 <div className="map-canvas-route">
-                    <Link to={`/routes/${route.id}`}><img className="map-static-img" src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/-77.5235,38.2217,15.73,0/300x200?access_token=pk.eyJ1IjoiamxhbXo5MTYiLCJhIjoiY2tidGt2a25vMGF5MDMybWltNWJraGI0ZCJ9.kIC31SeL5aFQcKdnqFac7g" alt="placeholder" /></Link>
-                    <p className="placeholder">placeholder img</p>
+                    <Link to={`/routes/${route.id}`}><img className="map-static-img" src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/-122.337798,37.810550,9.67,0.00,0.00/1000x600@2x?access_token=pk.eyJ1IjoiamxhbXo5MTYiLCJhIjoiY2tidGt2a25vMGF5MDMybWltNWJraGI0ZCJ9.kIC31SeL5aFQcKdnqFac7g" alt="placeholder" /></Link> 
+                    { <p className="placeholder">placeholder img</p>}
+                    {/* <MapBox route={route} /> */}
                 </div>
                 <div className="route-data">
                     <Link to="/routes"><h3 className="route-name">{route.route_name}</h3></Link>
                     <ul className="route-stats">
                         <li>
-                            Distance: {this.routeDistance}
+                            {miles} mi
+                        </li>
+                       <li>
+                            Distance
                         </li>
                     </ul>
                     <div className="route-moving-time">
-                        Est. Moving Time {this.routeDuration}
+                        Est. Moving Time {this.routeDuration} / 
                     </div>
                     <div className="route-timestamp">
                         <p>{route.created_at}</p>

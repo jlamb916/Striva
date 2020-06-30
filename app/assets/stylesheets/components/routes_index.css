@@ -56,7 +56,7 @@
 
 .route-data {
     height: 200px;
-    background-color: lightgray;
+    background-color: #f0f0f0;
 }
 
 h3.route-name {
@@ -73,4 +73,19 @@ h3.route-name {
  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+
+
+.route-name {
+    color:  #007FB6;
+    padding: 15px;
+}
+
+.route-name:hover {
+    text-decoration: underline;
+}
+
+.route-stats {
+    padding: 15px;
 }
