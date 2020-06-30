@@ -32949,3 +32949,284 @@ Processing by Api::RoutesController#show as JSON
 Completed 200 OK in 44ms (Views: 10.2ms | ActiveRecord: 11.8ms)
 
 
+Started GET "/api/routes" for ::1 at 2020-06-29 22:18:45 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (1.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (7.2ms)
+Completed 200 OK in 16ms (Views: 14.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2020-06-29 22:19:30 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "G35qeW8HONKDd6ZJOMb_Nw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 406ms (Views: 404.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/routes/2" for ::1 at 2020-06-29 22:19:31 -0700
+Processing by Api::RoutesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mRoute Load (0.5ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:4
+  Rendering api/routes/show.json.jbuilder
+  Rendered api/routes/show.json.jbuilder (1.1ms)
+Completed 200 OK in 10ms (Views: 8.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-06-29 22:23:12 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "G35qeW8HONKDd6ZJOMb_Nw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 433ms (Views: 430.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/routes/2" for ::1 at 2020-06-29 22:23:13 -0700
+Processing by Api::RoutesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mRoute Load (0.7ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:4
+  Rendering api/routes/show.json.jbuilder
+  Rendered api/routes/show.json.jbuilder (1.4ms)
+Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-06-29 22:36:53 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "G35qeW8HONKDd6ZJOMb_Nw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 929ms (Views: 926.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2020-06-29 22:37:43 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "G35qeW8HONKDd6ZJOMb_Nw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 373ms (Views: 371.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/routes/2" for ::1 at 2020-06-29 22:37:43 -0700
+Processing by Api::RoutesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mRoute Load (0.6ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:4
+  Rendering api/routes/show.json.jbuilder
+  Rendered api/routes/show.json.jbuilder (0.7ms)
+Completed 200 OK in 8ms (Views: 6.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-06-29 22:38:00 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "G35qeW8HONKDd6ZJOMb_Nw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 399ms (Views: 396.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/routes/2" for ::1 at 2020-06-29 22:38:01 -0700
+Processing by Api::RoutesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mRoute Load (0.4ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:4
+  Rendering api/routes/show.json.jbuilder
+  Rendered api/routes/show.json.jbuilder (2.5ms)
+Completed 200 OK in 12ms (Views: 10.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-06-29 22:38:29 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "G35qeW8HONKDd6ZJOMb_Nw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 510ms (Views: 508.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/routes/2" for ::1 at 2020-06-29 22:38:30 -0700
+Processing by Api::RoutesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mRoute Load (0.4ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:4
+  Rendering api/routes/show.json.jbuilder
+  Rendered api/routes/show.json.jbuilder (1.0ms)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-06-29 22:39:09 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "G35qeW8HONKDd6ZJOMb_Nw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 379ms (Views: 376.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/routes/2" for ::1 at 2020-06-29 22:39:10 -0700
+Processing by Api::RoutesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:4
+  Rendering api/routes/show.json.jbuilder
+  Rendered api/routes/show.json.jbuilder (0.9ms)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-06-29 22:40:42 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "G35qeW8HONKDd6ZJOMb_Nw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 376ms (Views: 374.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/routes/2" for ::1 at 2020-06-29 22:40:43 -0700
+Processing by Api::RoutesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mRoute Load (19.6ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:4
+  Rendering api/routes/show.json.jbuilder
+  Rendered api/routes/show.json.jbuilder (1.3ms)
+Completed 200 OK in 31ms (Views: 10.1ms | ActiveRecord: 19.6ms)
+
+
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/" for ::1 at 2020-06-29 22:56:04 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "G35qeW8HONKDd6ZJOMb_Nw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (1.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 405ms (Views: 401.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2020-06-29 22:56:14 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "G35qeW8HONKDd6ZJOMb_Nw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 407ms (Views: 405.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/routes/2" for ::1 at 2020-06-29 22:56:14 -0700
+Processing by Api::RoutesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mRoute Load (0.6ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:4
+  Rendering api/routes/show.json.jbuilder
+  Rendered api/routes/show.json.jbuilder (0.9ms)
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-06-29 22:58:41 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "G35qeW8HONKDd6ZJOMb_Nw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 402ms (Views: 400.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/routes/2" for ::1 at 2020-06-29 22:58:42 -0700
+Processing by Api::RoutesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mRoute Load (1.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:4
+  Rendering api/routes/show.json.jbuilder
+  Rendered api/routes/show.json.jbuilder (0.9ms)
+Completed 200 OK in 10ms (Views: 6.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2020-06-29 22:59:07 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "G35qeW8HONKDd6ZJOMb_Nw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 382ms (Views: 380.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/routes/2" for ::1 at 2020-06-29 22:59:08 -0700
+Processing by Api::RoutesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mRoute Load (0.4ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:4
+  Rendering api/routes/show.json.jbuilder
+  Rendered api/routes/show.json.jbuilder (0.8ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-06-29 23:06:10 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "G35qeW8HONKDd6ZJOMb_Nw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 382ms (Views: 378.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/routes/2" for ::1 at 2020-06-29 23:06:11 -0700
+Processing by Api::RoutesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mRoute Load (2.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:4
+  Rendering api/routes/show.json.jbuilder
+  Rendered api/routes/show.json.jbuilder (0.6ms)
+Completed 200 OK in 21ms (Views: 4.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2020-06-29 23:06:27 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "G35qeW8HONKDd6ZJOMb_Nw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 391ms (Views: 388.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/routes/2" for ::1 at 2020-06-29 23:06:28 -0700
+Processing by Api::RoutesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mRoute Load (0.6ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:4
+  Rendering api/routes/show.json.jbuilder
+  Rendered api/routes/show.json.jbuilder (0.9ms)
+Completed 200 OK in 12ms (Views: 10.0ms | ActiveRecord: 0.6ms)
+
+
