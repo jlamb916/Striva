@@ -28,7 +28,10 @@ class RouteShow extends React.Component {
         let splitStr = timeStr.split("T");
         let dates = splitStr[0].split("-")
         let newDate = new Date(dates[0], dates[1], dates[2]);
-        return newDate.toDateString();
+        let justDate = newDate.toDateString().split(" ")
+        justDate.shift();
+        return justDate.join(" ")
+
     }
 
     render () {
