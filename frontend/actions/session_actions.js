@@ -6,6 +6,7 @@ export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 export const LOG_OUT_CURRENT_USER = 'LOG_OUT_CURRENT_USER';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
+export const RECEIVE_USER = 'RECEIVE_USER';
 
 // action creators
 

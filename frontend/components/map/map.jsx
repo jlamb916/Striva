@@ -165,10 +165,50 @@ class MapBox extends React.Component {
 
         }
 
-        map.on('load',  updateRoute(this.routeData.matchings[0].geometry.coordinates));
+        map.on('load',  () => {
+
+            updateRoute(this.routeData.matchings[0].geometry.coordinates);
+            let coordArr = this.routeData.matchings[0].geometry.coordinates;
+            map.addSource('pointSource', {
+                type: 'geojson',
+                data: {
+                    type: 'FeatureCollection',
+                    features: [
+                        {
+                            type: 'Feature',
+                            properties: {},
+                            geometry: {
+                                type: 'Point',
+                                coordinates: coordArr[0],
+                            }
+                        },
+                        {
+                            type: 'Feature',
+                            properties: {},
+                            geometry: {
+                                type: 'Point',
+                                coordinates: coordArr[coordArr.length - 1],
+                            }
+                        }]
+                }
+            });
+            map.addLayer({
+                id: 'point',
+                source: 'pointSource',
+                type: 'circle',
+                paint: {
+                    'circle-radius': 10,
+                    'circle-color': '#3887be'
+                }
+            });
+
+
+        });
     
         
+       
 
+ 
 
 }
 

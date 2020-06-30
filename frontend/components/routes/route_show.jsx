@@ -47,6 +47,12 @@ class RouteShow extends React.Component {
                 <div>
                     <h5><Link className="my-routes-link" to="/routes">My Routes</Link> / {route.route_name}</h5>
                 </div>
+                <div className="user-info">
+                    <ul>
+                        <li>By </li>
+                        <li></li>
+                    </ul>
+                </div>
                 <div className="route-title">
                     <h1>{route.route_name}</h1>
                 </div>

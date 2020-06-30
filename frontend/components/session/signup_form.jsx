@@ -60,7 +60,7 @@ class SignupForm extends React.Component {
         return (
             <div className="form-content">
             <div className="login-form-container">
-                    <p className="session-signup">Join Strava today,</p>
+                    <p className="session-signup">Join Striva today,</p>
                     <p className="session-signup two">it's Free.</p>
                 <form id="login-form" onSubmit={this.handleSubmit}>
                     {this.renderErrors()}
