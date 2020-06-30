@@ -1,17 +1,50 @@
+.route-main-container {
+    font-size: 14px;
+     margin: 25px 100px 100px 100px;
+    padding: 0 16px;
+}
 
 .route-show-container {
     display: flex;
 }
 
 .route-show-data {
-    min-width: 300px;
-    width: 325px;
-    height: 350px;
-    padding: 0 16px;
-    text-align: center;
+    min-width: 230px;
+    margin: 0 16px;
+    
 }
 .route-title {
     margin: 20px 0;
+}
+
+
+.data-flex {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px 0 15px 0;
+    border-bottom: 1px solid gainsboro;
+}
+.route-stat-date {
+    padding: 16px;
+}
+.route-date {
+    display: block;
+    border-bottom: 1px solid gainsboro;
+}
+
+
+.route-moving-time {
+    padding: 12px;
+}
+
+.stat-data {
+    font-size: 20px;
+}
+
+
+.stat-label {
+    color: gray;
+    font-size: 15;
 }
 
 .my-routes-link {
@@ -20,4 +53,35 @@
 
 .my-routes-link:hover {
     text-decoration: underline;
+}
+
+.route-description {
+    font-size: 14px;
+    padding: 14px 0;
+    padding-left: 14px;
+}
+
+.description-title {
+    padding: 15px 0 0 12px;
+}
+
+.route-btns {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.route-btn {
+     font-weight: bold;
+    font-size: 14px;
+    border-radius: 4px;
+    border: .5px solid #dfdfe8;
+    padding: 8px 16px;
+    /* margin: px; */
+    margin-top: 10px;
+    align-self: right;
+}
+
+.route-btn:hover {
+   background-color: gainsboro;
+    filter: brightness(90%);
 }

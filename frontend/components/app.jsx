@@ -30,10 +30,10 @@ const App = () => {
                 <ProtectedRoute exact path="/routes/:routeId" component={RouteShowContainer} />
                 
             </Switch>
-            
-            {   (location.hash === '#/login' ||
+            <Footer />
+            {/* {   (location.hash === '#/login' ||
                 location.hash === '#/signup' ||
-                location.hash === '#/') ? <Footer /> : "" }
+                location.hash === '#/') ? <Footer /> : "" } */}
         </div>
     )
 }

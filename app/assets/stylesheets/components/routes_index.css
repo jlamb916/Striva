@@ -42,7 +42,7 @@
 }
 
 .route-index-item {
-    width: 225px;
+    width: 275px;
       margin: 0 1.6% 40px 0;
 }
 
@@ -53,6 +53,7 @@
   text-align: center;
     width: 100%;
 }
+
 
 .route-data {
     height: 200px;
@@ -88,4 +89,23 @@ h3.route-name {
 
 .route-stats {
     padding: 15px;
+}
+
+.data-flex-index {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 10px;
+}
+
+.moving-time-index {
+    padding-left: 12px;
+    padding-bottom: 12px;
+}
+
+.route-timestamp {
+    background-color: #f0f0f0;
+    filter: brightness(90%);
+    padding: 12px;
+    font-size: 12px;
+    color: grey;
 }

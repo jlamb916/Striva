@@ -11,9 +11,6 @@ class RouteShow extends React.Component {
         if (this.props.route === undefined) {
             this.props.fetchRoute(this.props.routeId);
         }
-        if (this.props.route) {
-            this.props.fetchUser
-        }
     }
 
     convertTime (timestamp) {
@@ -21,7 +18,7 @@ class RouteShow extends React.Component {
         let minutes = Math.floor(timestamp / 60) - (hours * 60);
         let seconds = Math.floor(timestamp % 60);
         let formatted = hours.toString().padStart(2, '0') + ':' + minutes.toString().padStart(2, '0') + ':' + seconds.toString().padStart(2, '0');
-        return formatted
+        return formatted;
     }
 
     convertDate (timeStr) {
@@ -30,8 +27,7 @@ class RouteShow extends React.Component {
         let newDate = new Date(dates[0], dates[1], dates[2]);
         let justDate = newDate.toDateString().split(" ")
         justDate.shift();
-        return justDate.join(" ")
-
+        return justDate.join(" ");
     }
 
     render () {
@@ -43,6 +39,8 @@ class RouteShow extends React.Component {
         let movingTime; 
         let miles;
         let createdDate;
+        let elevation = 0;
+        let runType = "Road";
         if (route) {
             routeData = JSON.parse(route.route_data);
             routeDuration = routeData.matchings[0].duration;
@@ -55,28 +53,39 @@ class RouteShow extends React.Component {
         renderData = routeData ?
              (<div className="route-show-data">
                 <div className="user-info">
-                    <ul>
-                        <li></li>
-                        <li></li>
+                    <div className="route-date-box">
+                        <ul className="route-stat-date">
+                            <li className="stat-data"> {createdDate} </li>
+                            <li className="stat-label">Created on  </li>
+                        </ul>
+                        <p className="route-date" ></p>
+                    </div>
+                    <div className="data-flex">
+                    <ul className="route-moving-time">
+                        <li className="stat-data"> {miles} </li>
+                        <li className="stat-label">Distance </li>
                     </ul>
+                    <ul className="route-moving-time">
+                        <li className="stat-data" >{movingTime}</li>
+                        <li className="stat-label">Est. Moving Time </li>
+                    </ul>
+                        <ul className="route-moving-time">
+                            <li className="stat-data" >{elevation}</li>
+                            <li className="stat-label">Elevation </li>
+                        </ul>
+                        <ul className="route-moving-time">
+                            <li className="stat-data" >{runType}</li>
+                            <li className="stat-label">Run Type</li>
+                        </ul>
+                    </div>
                 </div>
-                <ul>
-                    <li>
-                        Distance: {miles} mi
-                    </li>
-                </ul>
-                <div className="route-moving-time">
-                    Est. Moving Time {movingTime}
-                </div>
-                <div className="route-timestamp">
-                    <p>{createdDate}</p>
-                </div>
-                <h3 className="route-name">{route.route_name}</h3>
+                <div className="stat-label description-title">Description </div>
+                <h1 className="route-description">{route.route_description}</h1>
             </div>) : "";
 
         {if (route) {
         return (
-        <div className="route-container">
+        <div className="route-main-container">
                 <div>
                     <h5><Link className="my-routes-link" to="/routes">My Routes</Link> / {route.route_name}</h5>
                 </div>
@@ -89,6 +98,10 @@ class RouteShow extends React.Component {
                     </div>
                    {renderData}
                 </div>
+                <div className="route-btns">
+                <button className="route-btn">Edit</button>
+                <button className="route-btn" onClick={() => this.props.deleteRoute(route.id)}>Delete</button>
+            </div>
         </div>
         )}
         else {
