@@ -54,6 +54,31 @@
 textarea {
   resize: none;
 }
-.route-form-data {
-    
+
+.create_route_submit {
+    background-color: orangered;
+    border: 1px solid black;
+    color: white;
+    border-radius: 4px;
+    margin-left: 30px;
+    height: 35px;
+    width: 160px;
+    text-align: center;
+
+}
+
+.center-submit {
+    /* display: flex;
+    justify-content: center; */
+}
+.create_route_submit:hover {
+    background: orangered;
+    filter: brightness(90%);
+}
+
+.create-route-error-messages {
+    color: red;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 16px;
 }

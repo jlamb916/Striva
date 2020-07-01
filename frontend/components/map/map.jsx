@@ -125,7 +125,6 @@ class MapBox extends React.Component {
                 url: query
             }).done(function (data) {
                 // Get the coordinates from the response
-                console.log(JSON.stringify(data));
                 var coords = data.matchings[0].geometry;
                 // Code from the next step will go here
                 addRoute(coords);

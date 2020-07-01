@@ -133,11 +133,7 @@ class NewRouteForm extends React.Component {
             });
         } 
 
-        function updateState(data) {
-            return () => this.setState({
-                route_data: data
-            });
-        }
+    
         // Draw the Map Matching route as a new layer on the map
         function addRoute(coords) {
             // updateState(JSON.stringify(routeData));
@@ -182,7 +178,6 @@ class NewRouteForm extends React.Component {
         map.on('draw.create', updateRoute);
 
         map.on('draw.update', updateRoute);
-        console.log(routeData);
         map.on('draw.update', updateRoute);
         map.on('draw.delete', removeRoute);
     }
@@ -251,8 +246,9 @@ class NewRouteForm extends React.Component {
                         </label>
                                 </div>
                             {this.renderErrors()}
+                            <div className="center-submit">
                         <input className="create_route_submit" type="submit" value="Save to My Routes"/>
-
+                            </div>
                         </form>
                         
                     </div>
