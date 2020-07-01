@@ -12,7 +12,7 @@ class RouteIndex extends React.Component {
     }
 
     render() {
-        const allRoutes = this.props.routes.map((route) => (
+        const allRoutes = this.props.routes.reverse().map((route) => (
             <RouteIndexItem key={`${route.id}`} route={route} />
         ));
         

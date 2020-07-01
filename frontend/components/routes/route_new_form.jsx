@@ -13,6 +13,9 @@ class NewRouteForm extends React.Component {
             route_name: "",
             route_description: "",
             route_data: "",
+            distance: 0,
+            elevation: 0,
+            estTime: 0,
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.updateState = this.updateState.bind(this);
@@ -215,6 +218,7 @@ class NewRouteForm extends React.Component {
     }
 
     render () {
+        
         return (
         <div className='route-new-container-page'>
             <div className="route-new-container">
@@ -257,24 +261,29 @@ class NewRouteForm extends React.Component {
                         </div>
                     </div>
             </div>
-            <div className='new-form-stats'>
-                <ul className="route-new-time">
-                    <li className="stat-label">Type</li>
-                    <li className="stat-data">Run</li>
-                </ul>
-                <ul className="route-new-time">
-                    <li className="stat-label">Distance </li>
-                    <li className="stat-data"> 142 mi </li>
-                </ul>
-                <ul className="route-new-time">
-                        <li className="stat-label">Elevation </li>
-                        <li className="stat-data" >123 ft</li>
-                </ul>
-                <ul className="route-new-time">
-                        <li className="stat-label">Est. Moving Time </li>
-                        <li className="stat-data" >12312 s</li>
-                </ul>
-         
+            <div className="bottom-info-flex">
+                <div className='new-form-stats'>
+                    <ul className="route-new-time">
+                        <li className="stat-label">Type</li>
+                        <li className="stat-data">Run</li>
+                    </ul>
+                    <ul className="route-new-time">
+                        <li className="stat-label">Distance </li>
+                        <li className="stat-data"> {this.state.distance} </li>
+                    </ul>
+                    <ul className="route-new-time">
+                            <li className="stat-label">Elevation </li>
+                            <li className="stat-data" >{this.state.elevation} ft</li>
+                    </ul>
+                    <ul className="route-new-time">
+                            <li className="stat-label">Est. Moving Time </li>
+                            <li className="stat-data" >{this.state.estTime} s</li>
+                    </ul>
+                </div>
+                <div className="use-info">
+                        <h5 className="help"> Use line string icon on the top right corner of map to create a route <br />the route line must be solid before considered a valid route</h5>
+                        
+                </div>
             </div>
         </div>
         )

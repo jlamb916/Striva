@@ -44,8 +44,8 @@ body {
 }
 
 .session-link:hover {
-    background-color: gainsboro;
-    filter: brightness(90%);
+    background-color: #dfdfe8;
+     filter: brightness(95%);
 }
 
 .active-link {
@@ -54,7 +54,7 @@ body {
 
 .active-link:hover {
     background-color: orangered;
-    filter: brightness(90%)
+     filter: brightness(85%);
 }
 
 .footer {
@@ -198,7 +198,7 @@ li:hover .dashboard-list-hide {
 }
 .go-back-route:hover {
     color: #47a2ca;
-    filter: brightness(80%);
+     filter: brightness(95%);
     text-decoration: underline;
 }
 

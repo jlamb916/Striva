@@ -73,7 +73,7 @@ textarea {
 }
 .create_route_submit:hover {
     background: orangered;
-    filter: brightness(90%);
+     filter: brightness(85%);
 }
 
 .create-route-error-messages {
@@ -82,3 +82,14 @@ textarea {
     margin-bottom: 10px;
     font-size: 16px;
 }
+.bottom-info-flex {
+   display: flex;
+   justify-content: space-between; 
+}
+
+.help {
+    color: grey;
+    padding-right: 10px;
+    margin: 5px 5px 5px 5px;
+}
+

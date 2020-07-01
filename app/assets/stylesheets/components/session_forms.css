@@ -81,7 +81,7 @@
 
 .session-submit:hover {
     background-color: orangered;
-    filter: brightness(90%)
+    filter: brightness(85%);
 }
 
 ::placeholder {

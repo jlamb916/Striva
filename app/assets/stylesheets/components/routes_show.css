@@ -68,7 +68,7 @@
 
 .route-btn:hover {
    background-color: gainsboro;
-    filter: brightness(90%);
+     filter: brightness(95%);
 }
 .route-moving-time {
     padding: 16px;

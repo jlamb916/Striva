@@ -5,21 +5,100 @@
     margin-right: auto;
 }
 
+
 .content {
     margin-top: 80px;
     margin-bottom: 80px;
 }
 
-.main-content {
-    display: flex;
-    width: 80%; 
-    height: 400px;
-    margin-top: 30px;
-    
+.splash-title {
+    text-align: center;
+    font-size: 42px;
+    padding: 16px 0;
 }
 
-.splash-pic {
-    width: 50%;
-    background-color: black;
-    margin-right: 10px;
+.splash-main {
+    margin: 80px auto;
+    width: 972px;
+}
+
+.splash-containers {
+    display: flex;
+}
+
+.splash-img-container{
+    width: 370px;
+    height: 400px;
+}
+
+.splash-right-container {
+    width: 375px;
+    height: 400px;
+
+}
+
+.splash-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.main-content {
+    display: flex;
+    width: 100%; 
+    height: 600px;
+    margin-top: 30px;
+}
+
+.splash-demo {
+    background-color: orangered;
+    border: 1px solid black;
+    color: white;
+    border-radius: 4px;
+    
+    margin: 14px;
+    height: 40px;
+    width: 200px;
+    text-align: center;
+}
+
+.splash-demo:hover {
+    background-color: orangered;
+      filter: brightness(85%);
+}
+
+.splash-login {
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+    border-radius: 2px;
+    margin: 6px;
+    height: 40px;
+    width: 200px;
+    text-align: center;
+}
+
+.splash-login:hover {
+    background-color: white;
+    filter: brightness(95%);
+}
+
+.or-divider {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 16px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #dfdfe8;
+    height: 6px;
+    display: block; 
+    width: 55%;
+}
+
+.or-text {
+    background-color: white;    
+    color: #6d6d78;
+    display: inline-block;
+    padding: 0 12px;
 }
