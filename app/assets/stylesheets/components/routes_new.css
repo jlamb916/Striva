@@ -45,3 +45,15 @@
     color: gray;
     font-size: 15;
 }
+
+.create-route-form {
+    display: flex;
+    flex-direction: column;
+}
+
+textarea {
+  resize: none;
+}
+.route-form-data {
+    
+}

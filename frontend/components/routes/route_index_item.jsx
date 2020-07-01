@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import MapBox from '../map/map';
+
+let polyline = require('@mapbox/polyline');
+
 class RouteIndexItem extends React.Component {
     constructor (props) {
         super(props);
@@ -49,11 +52,21 @@ class RouteIndexItem extends React.Component {
         const miles = (this.routeDistance / 1609).toFixed(2);
         const routeDuration = this.convertTime(this.routeDuration);
         const createdDate = this.convertDate(route.created_at);
+        const coords = this.routeData.matchings[0].geometry.coordinates;
+        const startLat = coords[0][0];
+        const startLong = coords[0][1];
+        const endLat = coords[coords.length - 1][0];
+        const endLong = coords[coords.length - 1][1];
+        
+        const poly = polyline.fromGeoJSON(this.routeData.matchings[0].geometry);
+        
+        const imgUrl = "https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/pin-s-a+2196f3(" + startLat + "," + startLong + "),pin-s-b+43a25c(" + endLat + "," + endLong + ")" + ",path-3+FF4500-2(" + poly + ")/auto/800x600@2x?access_token=" + mapboxgl.accessToken;
+        debugger
         return (
             <div className="route-index-item">
                 <div className="map-canvas-route">
-                    <Link className="route-card-title" to={`/routes/${route.id}`}><img className="map-static-img" src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/-122.337798,37.810550,9.67,0.00,0.00/1000x600@2x?access_token=pk.eyJ1IjoiamxhbXo5MTYiLCJhIjoiY2tidGt2a25vMGF5MDMybWltNWJraGI0ZCJ9.kIC31SeL5aFQcKdnqFac7g" alt="placeholder" /></Link> 
-                    { <p className="placeholder">placeholder img</p>}
+                    <Link className="route-card-title" to={`/routes/${route.id}`}><img className="map-static-img" src={imgUrl} /></Link> 
+                    
                     {/* <MapBox route={route} /> */}
                 </div>
                 <div className="route-data">

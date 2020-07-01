@@ -73,3 +73,60 @@
 .route-moving-time {
     padding: 16px;
 }
+
+.route-form-data {
+    border: 1px solid grey;
+    color: black;
+    margin-top: 6px;
+    /* border-radius: 4px; */
+    height: 30px;
+    width: 190px;
+    font-size: 16px;
+}
+
+.route-form-data:focus {
+    box-shadow:  2px 2px 2px 1px whitesmoke;
+    color: black;
+    border: 1px solid lightskyblue;
+}
+
+.form-section-name {
+    padding: 12px;
+}
+
+.create-form-title {
+    padding: 12px;
+}
+
+.form-section-name {
+
+}
+.route-form-text {
+    font-size: 16px;
+    border: 1px solid grey;
+}
+
+.route-form-text:focus {
+    box-shadow:  2px 2px 2px 1px whitesmoke;
+    color: black;
+    border: 1px solid lightskyblue;
+}
+
+.create_route_submit {
+    background-color: orangered;
+    border: 1px solid black;
+    color: white;
+    border-radius: 4px;
+    margin: 5px;
+    height: 35px;
+    width: 150px;
+}
+
+.create-route-error-messages {
+    color: red;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+

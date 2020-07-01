@@ -153,7 +153,7 @@ class MapBox extends React.Component {
                             "line-cap": "round"
                         },
                         "paint": {
-                            "line-color": "#03AA46",
+                            "line-color": "#e47b43",
                             "line-width": 8,
                             "line-opacity": 0.8
                         }

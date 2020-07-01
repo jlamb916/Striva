@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { createRoute } from '../../actions/route_actions';
 import NewRouteForm from './route_new_form';
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
     const currentUserId = state.session.id;
     const errors = state.errors.route;
     return ({

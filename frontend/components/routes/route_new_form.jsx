@@ -9,7 +9,7 @@ class NewRouteForm extends React.Component {
             lng: -122.4213644,
             lat: 37.80176523,
             user_id: this.props.userId,
-            zoom: 10,
+            zoom: 12,
             route_name: "",
             route_description: "",
             route_data: "",
@@ -57,7 +57,7 @@ class NewRouteForm extends React.Component {
                         "line-join": "round"
                     },
                     "paint": {
-                        "line-color": "#438EE4",
+                        "line-color": "#e47b43",
                         "line-dasharray": [0.2, 2],
                         "line-width": 4,
                         "line-opacity": 0.7
@@ -86,7 +86,7 @@ class NewRouteForm extends React.Component {
                     ],
                     "paint": {
                         "circle-radius": 8,
-                        "circle-color": "#438EE4",
+                        "circle-color": "#4643e4",
                     }
                 },
             ]
@@ -163,7 +163,7 @@ class NewRouteForm extends React.Component {
                         "line-cap": "round"
                     },
                     "paint": {
-                        "line-color": "#03AA46",
+                        "line-color": "#e47b43",
                         "line-width": 8,
                         "line-opacity": 0.8
                     }
@@ -203,7 +203,7 @@ class NewRouteForm extends React.Component {
 
     renderErrors() {
         return (
-            <ul className="error-messages">
+            <ul className="create-route-error-messages">
                 {this.props.errors.map((error, i) => (
                     <li key={`error-${i}`}>
                         {error}
@@ -224,10 +224,11 @@ class NewRouteForm extends React.Component {
         <div className='route-new-container-page'>
             <div className="route-new-container">
                     <div className="route-form">
-                        <h1>My Route</h1>
+                        <h1 className="create-form-title">My Route</h1>
                        
                         <form className="create-route-form" onSubmit={this.handleSubmit}>
                     <h1> {this.state.route_data }</h1>
+                    <div className="form-section-name">
                         <label>Route Name (Required)
                             <input type="text" 
                                     value={this.state.route_name}
@@ -235,26 +236,25 @@ class NewRouteForm extends React.Component {
                                     placeholder="Route name"
                                     onChange={this.update('route_name')} 
                             />
-                            <label>COMON
-                            <input type="text"
-                                    value={this.state.route_data}
-                                    onChange={this.update('route_data')}/>
-                                </label>
                         </label>
-
+                            </div>
+                            <div className="form-section-name">
                         <label>Description
                             <textarea
+                                rows="7" cols="22"
                                 placeholder="Add some more details or notes" 
                                 value={this.state.route_description}
-                                    className="route-form-data"
-                                    onChange={this.update('route_description')}
+                                className="route-form-text"
+                                onChange={this.update('route_description')
+                                }
                                  />
                         </label>
-         
+                                </div>
+                            {this.renderErrors()}
                         <input className="create_route_submit" type="submit" value="Save to My Routes"/>
 
                         </form>
-                        {this.renderErrors()}
+                        
                     </div>
                     <div className="new-map-container">
                         <div ref={el => this.mapContainer = el} id='map-leaflet' className='mapContainer' >

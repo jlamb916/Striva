@@ -104,7 +104,7 @@ class RouteShow extends React.Component {
                    {renderData}
                 </div>
                 <div className="route-btns">
-                <button className="route-btn">Edit</button>
+                {/* <button className="route-btn">Edit</button> */}
                     <button className="route-btn" onClick={this.handleDelete}>Delete</button>
             </div>
         </div>
