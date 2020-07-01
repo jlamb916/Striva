@@ -1,18 +1,25 @@
 import React from 'react';
 
+let routeData;
+
 class NewRouteForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             lng: -122.4213644,
             lat: 37.80176523,
-            zoom: 10
+            user_id: this.props.userId,
+            zoom: 10,
+            route_name: "",
+            route_description: "",
+            route_data: "",
         };
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.updateState = this.updateState.bind(this);
+        
     }
 
     componentDidMount() {
-
-
         const map = new mapboxgl.Map({
             // tells mapbox to render map inside a specific dom element
             container: this.mapContainer,
@@ -30,7 +37,6 @@ class NewRouteForm extends React.Component {
                 zoom: map.getZoom().toFixed(2)
             });
         });
-       
         var draw = new MapboxDraw({
             // Instead of showing all the draw tools, show only the line string and delete tools
             displayControlsDefault: false,
@@ -90,7 +96,7 @@ class NewRouteForm extends React.Component {
         // Use the coordinates you drew to make the Map Matching API request
         function updateRoute() {
             // Set the profile
-            var profile = "driving";
+            var profile = "walking";
             // Get the coordinates that were drawn on the map
             var data = draw.getAll();
             var lastFeature = data.features.length - 1;
@@ -105,13 +111,14 @@ class NewRouteForm extends React.Component {
             getMatch(newCoords, radius, profile);
         }
 
+      
+        
         // Make a Map Matching request
         function getMatch(coordinates, radius, profile) {
             // Separate the radiuses with semicolons
             var radiuses = radius.join(';')
             // Create the query
-            debugger
-            var query = 'https://api.mapbox.com/matching/v5/mapbox/' + profile + '/' + coordinates + '?geometries=geojson&radiuses=' + radiuses + '&steps=true&access_token=' + mapboxgl.accessToken;
+            var query = 'https://api.mapbox.com/matching/v5/mapbox/' + profile + '/' + coordinates + '?geometries=geojson&radiuses=' + radiuses + '&steps=false&access_token=' + mapboxgl.accessToken;
 
             $.ajax({
                 method: 'GET',
@@ -119,14 +126,22 @@ class NewRouteForm extends React.Component {
             }).done(function (data) {
                 // Get the coordinates from the response
                 var coords = data.matchings[0].geometry;
-                console.log(coords);
                 // Code from the next step will go here
+                // updateDataState(JSON.stringify(data))
+                routeData = data
                 addRoute(coords);
             });
         } 
-           
+
+        function updateState(data) {
+            return () => this.setState({
+                route_data: data
+            });
+        }
         // Draw the Map Matching route as a new layer on the map
         function addRoute(coords) {
+            // updateState(JSON.stringify(routeData));
+
             // If a route is already loaded, remove it
             if (map.getSource('route')) {
                 map.removeLayer('route')
@@ -165,8 +180,31 @@ class NewRouteForm extends React.Component {
             }
         }
         map.on('draw.create', updateRoute);
+
+        map.on('draw.update', updateRoute);
+        console.log(routeData);
         map.on('draw.update', updateRoute);
         map.on('draw.delete', removeRoute);
+    }
+
+    updateState(data) {
+    return () => this.setState({
+        route_data: data
+    });
+}
+    handleSubmit(e) {
+        e.preventDefault();
+        let routeDataString = JSON.stringify(routeData);
+        const route = (({ route_name, route_description, user_id }) => ({ route_name, route_description, user_id }))(this.state);
+        route["route_data"] = routeDataString;
+        
+        this.props.routeProcessForm(route).then(() => this.props.history.push("/routes"))
+    }
+
+    update(field) {
+        return (e) => this.setState({
+            [field]: e.currentTarget.value
+        })
     }
 
     render () {
@@ -175,20 +213,32 @@ class NewRouteForm extends React.Component {
             <div className="route-new-container">
                     <div className="route-form">
                         <h1>My Route</h1>
-                        <form>
-                    
+                        <form className="create-route-form" onSubmit={this.handleSubmit}>
+                    <h1> {this.state.route_data }</h1>
                         <label>Route Name (Required)
-                            <input type="text" className="login-input"/>
+                            <input type="text" 
+                                    value={this.state.route_name}
+                                    className="route-form-data"
+                                    placeholder="Route name"
+                                    onChange={this.update('route_name')} 
+                            />
+                            <label>COMON
+                            <input type="text"
+                                    value={this.state.route_data}
+                                    onChange={this.update('route_data')}/>
+                                </label>
                         </label>
 
                         <label>Description
-                            <textarea 
+                            <textarea
                                 placeholder="Add some more details or notes" 
-                                value="Add some more details or notes"
-                                className="login-input"></textarea>
+                                value={this.state.route_description}
+                                    className="route-form-data"
+                                    onChange={this.update('route_description')}
+                                 />
                         </label>
-
-                        <button>Save to My Routes</button>
+         
+                        <input className="create_route_submit" type="submit" value="Save to My Routes"/>
 
                         </form>
                     </div>

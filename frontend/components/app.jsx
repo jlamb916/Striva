@@ -34,10 +34,7 @@ const App = () => {
                 <ProtectedRoute exact path="/routes" component={RoutesIndexContainer} />
                 <ProtectedRoute exact path="/routes/:routeId" component={RouteShowContainer} />
             </Switch>
-            <Footer />
-            {/* {   (location.hash === '#/login' ||
-                location.hash === '#/signup' ||
-                location.hash === '#/') ? <Footer /> : "" } */}
+            {   (location.hash !== '#/dashboard') ? <Footer /> : "" }
         </div>
     )
 }

@@ -4,7 +4,6 @@ import React from 'react';
 
 class MapBox extends React.Component {
     constructor(props) {
-        debugger
         super(props);
         this.routeData = JSON.parse(this.props.route.route_data);
         this.center = this.routeData.matchings[0].geometry.coordinates[0]

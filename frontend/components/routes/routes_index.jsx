@@ -15,7 +15,7 @@ class RouteIndex extends React.Component {
         const allRoutes = this.props.routes.map((route) => (
             <RouteIndexItem key={`${route.id}`} route={route} />
         ));
-
+        
         return (
             <div className="route-container">
                 <header className="route-index-header">
@@ -39,7 +39,7 @@ class RouteIndex extends React.Component {
                     </div>
                     <div className="route-index-items-container">
                         <ul className="route-index-list">
-                            {allRoutes}
+                             {allRoutes}
                         </ul>
                     </div>
                 </div>

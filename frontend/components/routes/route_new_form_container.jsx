@@ -7,7 +7,7 @@ const mapStateToProps = (state, ownProps) => {
     const errors = state.errors.routes;
     
     return ({
-        user: currentUserId,
+        userId: currentUserId,
         errors
     })
 }

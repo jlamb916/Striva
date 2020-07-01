@@ -37,6 +37,11 @@
     align-content: flex-start;
 }
 
+.no-routes {
+    text-align: center;
+    min-height: 300px;
+}
+
 .route-index-container {
     margin-top: 20px;
 }

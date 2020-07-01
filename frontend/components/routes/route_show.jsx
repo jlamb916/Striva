@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 class RouteShow extends React.Component {
     constructor(props) {
         super(props);
+        this.handleDelete = this.handleDelete.bind(this);
     }
 
     componentDidMount() {
@@ -28,6 +29,10 @@ class RouteShow extends React.Component {
         let justDate = newDate.toDateString().split(" ")
         justDate.shift();
         return justDate.join(" ");
+    }
+
+    handleDelete () {
+        this.props.deleteRoute(this.props.route.id).then(() => this.props.history.push("/routes"));
     }
 
     render () {
@@ -100,7 +105,7 @@ class RouteShow extends React.Component {
                 </div>
                 <div className="route-btns">
                 <button className="route-btn">Edit</button>
-                <button className="route-btn" onClick={() => this.props.deleteRoute(route.id)}>Delete</button>
+                    <button className="route-btn" onClick={this.handleDelete}>Delete</button>
             </div>
         </div>
         )}

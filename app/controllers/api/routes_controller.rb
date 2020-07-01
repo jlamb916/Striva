@@ -1,6 +1,7 @@
 class Api::RoutesController < ApplicationController
 
     def show
+        
         @route = Route.find(params[:id])
         render '/api/routes/show'
     end
@@ -22,10 +23,10 @@ class Api::RoutesController < ApplicationController
 
     def destroy
         @route = Route.find(params[:id])
-        if @route && @route.destroy
-            render json: ["Route Removal Successful"]
+        if @route   
+            @route.destroy
         else
-            render json: ["Could Not Remove Route"]
+            render json:['This route does not exist'], status: 422
         end
     end
 

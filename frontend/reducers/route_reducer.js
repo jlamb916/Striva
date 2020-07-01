@@ -11,7 +11,7 @@ const routeReducer = (state = {}, action) => {
         case RECEIVE_ALL_ROUTES:
             return action.routes;
         case REMOVE_ROUTE:
-            delete newState[action.route.id]
+            delete newState[action.routeId]
             return newState
         default:
             return state;
