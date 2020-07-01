@@ -4,8 +4,7 @@ import NewRouteForm from './route_new_form';
 
 const mapStateToProps = (state, ownProps) => {
     const currentUserId = state.session.id;
-    const errors = state.errors.routes;
-    
+    const errors = state.errors.route;
     return ({
         userId: currentUserId,
         errors

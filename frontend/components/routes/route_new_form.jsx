@@ -201,6 +201,18 @@ class NewRouteForm extends React.Component {
         this.props.routeProcessForm(route).then(() => this.props.history.push("/routes"))
     }
 
+    renderErrors() {
+        return (
+            <ul className="error-messages">
+                {this.props.errors.map((error, i) => (
+                    <li key={`error-${i}`}>
+                        {error}
+                    </li>
+                ))}
+            </ul>
+        );
+    }
+
     update(field) {
         return (e) => this.setState({
             [field]: e.currentTarget.value
@@ -213,6 +225,7 @@ class NewRouteForm extends React.Component {
             <div className="route-new-container">
                     <div className="route-form">
                         <h1>My Route</h1>
+                       
                         <form className="create-route-form" onSubmit={this.handleSubmit}>
                     <h1> {this.state.route_data }</h1>
                         <label>Route Name (Required)
@@ -241,6 +254,7 @@ class NewRouteForm extends React.Component {
                         <input className="create_route_submit" type="submit" value="Save to My Routes"/>
 
                         </form>
+                        {this.renderErrors()}
                     </div>
                     <div className="new-map-container">
                         <div ref={el => this.mapContainer = el} id='map-leaflet' className='mapContainer' >

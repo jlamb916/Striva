@@ -24,13 +24,13 @@ const receiveRoute = (route) => {
 
 const receiveRouteErrors = (errors) => {
     return {
-        type: RECEIVE_ROUTES,
+        type: RECEIVE_ROUTE_ERRORS,
         errors
     }
 }
 
 
-const clearRouteErrors = () => {
+const removeRouteErrors = () => {
     return {
         type: CLEAR_ROUTE_ERRORS
     }
@@ -71,4 +71,6 @@ export const createRoute = (route) => (dispatch) => {
     );
 }
 
-
+export const clearRouteErrors = () => (dispatch) => {
+    return dispatch(removeRouteErrors());
+}
