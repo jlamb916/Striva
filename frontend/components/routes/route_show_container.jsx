@@ -5,7 +5,6 @@ import RouteShow from './route_show';
 const mapStateToProps = (state, { match }) => {
     const routeId = parseInt(match.params.routeId);
     const route = state.entities.routes[routeId] || undefined;
-
     return ({
         routeId,
         route

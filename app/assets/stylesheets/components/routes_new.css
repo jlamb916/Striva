@@ -1,0 +1,47 @@
+.route-new-container {
+    display: flex;
+   border-bottom: 1px solid gainsboro;
+}
+
+.new-map-container {
+    position: relative;
+    min-width: 500px;
+    width: 75%;
+    height: 500px;
+    float: left;
+ 
+}
+
+.mapContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+}
+
+.route-form {
+    width: 25%;
+}
+
+.new-form-stats {
+    display: flex;
+}
+
+
+.route-new-time {
+    padding: 14px 16px 14px 16px;
+    border-left: 1px solid whitesmoke;
+    border-right: 1px solid whitesmoke;
+}
+
+.stat-data {
+    font-size: 20px;
+}
+
+
+.stat-label {
+    color: gray;
+    font-size: 15;
+}

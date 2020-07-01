@@ -1,17 +1,12 @@
 import React from 'react';
 
-
-
-class MapBox extends React.Component {
+class NewRouteForm extends React.Component {
     constructor(props) {
-        debugger
         super(props);
-        this.routeData = JSON.parse(this.props.route.route_data);
-        this.center = this.routeData.matchings[0].geometry.coordinates[0]
         this.state = {
-            lng: this.center[0],
-            lat: this.center[1],
-            zoom: 13
+            lng: -122.4213644,
+            lat: 37.80176523,
+            zoom: 10
         };
     }
 
@@ -35,13 +30,13 @@ class MapBox extends React.Component {
                 zoom: map.getZoom().toFixed(2)
             });
         });
-        
+       
         var draw = new MapboxDraw({
             // Instead of showing all the draw tools, show only the line string and delete tools
             displayControlsDefault: false,
             controls: {
-                line_string: false,
-                trash: false
+                line_string: true,
+                trash: true
             },
             styles: [
                 // Set the line style for the user-input coordinates
@@ -93,16 +88,14 @@ class MapBox extends React.Component {
         // Add the draw tool to the map
         map.addControl(draw);
         // Use the coordinates you drew to make the Map Matching API request
-        function updateRoute(routeData) {
+        function updateRoute() {
             // Set the profile
-            var profile = "cycling";
+            var profile = "driving";
             // Get the coordinates that were drawn on the map
             var data = draw.getAll();
-            // var lastFeature = data.features.length - 1;
-            // var coords = data.features[lastFeature].geometry.coordinates;
-            var coords = routeData
+            var lastFeature = data.features.length - 1;
+            var coords = data.features[lastFeature].geometry.coordinates;
             // Format the coordinates
-            
             var newCoords = coords.join(';')
             // Set the radius for each coordinate pair to 25 meters
             var radius = [];
@@ -112,121 +105,120 @@ class MapBox extends React.Component {
             getMatch(newCoords, radius, profile);
         }
 
-
         // Make a Map Matching request
         function getMatch(coordinates, radius, profile) {
-           
             // Separate the radiuses with semicolons
             var radiuses = radius.join(';')
             // Create the query
-            var query = 'https://api.mapbox.com/matching/v5/mapbox/' + profile + '/' + coordinates + '?geometries=geojson&radiuses=' + radiuses + '&steps=false&access_token=' + mapboxgl.accessToken;
-            console.log(query);
+            debugger
+            var query = 'https://api.mapbox.com/matching/v5/mapbox/' + profile + '/' + coordinates + '?geometries=geojson&radiuses=' + radiuses + '&steps=true&access_token=' + mapboxgl.accessToken;
+
             $.ajax({
                 method: 'GET',
                 url: query
             }).done(function (data) {
                 // Get the coordinates from the response
-                console.log(JSON.stringify(data));
                 var coords = data.matchings[0].geometry;
+                console.log(coords);
                 // Code from the next step will go here
                 addRoute(coords);
-                // getInstructions(data.matchings[0]);
             });
-            function addRoute(coords) {
-                // If a route is already loaded, remove it
-                if (map.getSource('route')) {
-                    map.removeLayer('route')
-                    map.removeSource('route')
-                } else { // Add a new layer to the map
-                    map.addLayer({
-                        "id": "route",
-                        "type": "line",
-                        "source": {
-                            "type": "geojson",
-                            "data": {
-                                "type": "Feature",
-                                "properties": {},
-                                "geometry": coords
-                            }
-                        },
-                        "layout": {
-                            "line-join": "round",
-                            "line-cap": "round"
-                        },
-                        "paint": {
-                            "line-color": "#03AA46",
-                            "line-width": 8,
-                            "line-opacity": 0.8
+        } 
+           
+        // Draw the Map Matching route as a new layer on the map
+        function addRoute(coords) {
+            // If a route is already loaded, remove it
+            if (map.getSource('route')) {
+                map.removeLayer('route')
+                map.removeSource('route')
+            } else { // Add a new layer to the map
+                map.addLayer({
+                    "id": "route",
+                    "type": "line",
+                    "source": {
+                        "type": "geojson",
+                        "data": {
+                            "type": "Feature",
+                            "properties": {},
+                            "geometry": coords
                         }
+                    },
+                    "layout": {
+                        "line-join": "round",
+                        "line-cap": "round"
+                    },
+                    "paint": {
+                        "line-color": "#03AA46",
+                        "line-width": 8,
+                        "line-opacity": 0.8
                     }
-                    );
-                };
-            }
-
-
+                });
+            };
         }
-
-        map.on('load',  () => {
-
-            updateRoute(this.routeData.matchings[0].geometry.coordinates);
-            let coordArr = this.routeData.matchings[0].geometry.coordinates;
-            map.addSource('pointSource', {
-                type: 'geojson',
-                data: {
-                    type: 'FeatureCollection',
-                    features: [
-                        {
-                            type: 'Feature',
-                            properties: {},
-                            geometry: {
-                                type: 'Point',
-                                coordinates: coordArr[0],
-                            }
-                        },
-                        {
-                            type: 'Feature',
-                            properties: {},
-                            geometry: {
-                                type: 'Point',
-                                coordinates: coordArr[coordArr.length - 1],
-                            }
-                        }]
-                }
-            });
-            map.addLayer({
-                id: 'point',
-                source: 'pointSource',
-                type: 'circle',
-                paint: {
-                    'circle-radius': 10,
-                    'circle-color': '#3887be'
-                }
-            });
-
-
-        });
-    
         
-       
+        function removeRoute() {
+            if (map.getSource('route')) {
+                map.removeLayer('route');
+                map.removeSource('route');
+            } else {
+                return;
+            }
+        }
+        map.on('draw.create', updateRoute);
+        map.on('draw.update', updateRoute);
+        map.on('draw.delete', removeRoute);
+    }
 
- 
-
-}
-
-    // specifies the mapContainer to be drawn on the new div
-    render() {
+    render () {
         return (
-            <div className="index-container">
-                <div className="map-container">
-                    <div ref={el => this.mapContainer = el} id='map-leaflet' className='mapContainer' >
+        <div className='route-new-container-page'>
+            <div className="route-new-container">
+                    <div className="route-form">
+                        <h1>My Route</h1>
+                        <form>
+                    
+                        <label>Route Name (Required)
+                            <input type="text" className="login-input"/>
+                        </label>
+
+                        <label>Description
+                            <textarea 
+                                placeholder="Add some more details or notes" 
+                                value="Add some more details or notes"
+                                className="login-input"></textarea>
+                        </label>
+
+                        <button>Save to My Routes</button>
+
+                        </form>
                     </div>
-                </div>
+                    <div className="new-map-container">
+                        <div ref={el => this.mapContainer = el} id='map-leaflet' className='mapContainer' >
+                        </div>
+                    </div>
             </div>
-        );
+            <div className='new-form-stats'>
+                <ul className="route-new-time">
+                    <li className="stat-label">Type</li>
+                    <li className="stat-data">Run</li>
+                </ul>
+                <ul className="route-new-time">
+                    <li className="stat-label">Distance </li>
+                    <li className="stat-data"> 142 mi </li>
+                </ul>
+                <ul className="route-new-time">
+                        <li className="stat-label">Elevation </li>
+                        <li className="stat-data" >123 ft</li>
+                </ul>
+                <ul className="route-new-time">
+                        <li className="stat-label">Est. Moving Time </li>
+                        <li className="stat-data" >12312 s</li>
+                </ul>
+         
+            </div>
+        </div>
+        )
     }
 }
 
-
-export default MapBox;
-
-
+export default NewRouteForm;

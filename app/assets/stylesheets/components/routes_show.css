@@ -32,21 +32,6 @@
     border-bottom: 1px solid gainsboro;
 }
 
-
-.route-moving-time {
-    padding: 12px;
-}
-
-.stat-data {
-    font-size: 20px;
-}
-
-
-.stat-label {
-    color: gray;
-    font-size: 15;
-}
-
 .my-routes-link {
     color: grey;
 }
@@ -84,4 +69,7 @@
 .route-btn:hover {
    background-color: gainsboro;
     filter: brightness(90%);
+}
+.route-moving-time {
+    padding: 16px;
 }

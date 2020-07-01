@@ -32,13 +32,13 @@ greetUser() {
                         <a className="striva-logo nav-header-logo" href='#'>STRIVA</a>
                         <div className="nav-bar-main">
                             <ul className="nav-bar-list"> 
-                                <li className="top-bar"><NavLink to="/dashboard" activeClassName="nav-link-active">Dashboard<strong className="downarrow">⌄</strong></NavLink>
+                                <li className="top-bar"><NavLink className="top-link" to="/dashboard" activeClassName="nav-link-active">Dashboard<strong className="downarrow">⌄</strong></NavLink>
                                     <ul className="dashboard-list-hide">
                                         <li><NavLink activeClassName="nav-link-active-bold" className="nav-link" to="/dashboard">Activity Feed</NavLink></li>
                                         <li><NavLink activeClassName="nav-link-active-bold" to="/routes">My Routes</NavLink></li>
                                     </ul>
                                 </li>
-                                <li className="top-bar"><NavLink className="nav-link" activeClassName="nav-link-active" to="/activities">Activities<strong className="downarrow">⌄</strong></NavLink>
+                                <li className="top-bar"><NavLink className="nav-link top-link" activeClassName="nav-link-active" to="/activities">Activities<strong className="downarrow">⌄</strong></NavLink>
                                     <ul className="dashboard-list-hide">
                                         <li><NavLink to="/activies" activeClassName="nav-link-active-bold">My Activities</NavLink></li>
                                     </ul>
