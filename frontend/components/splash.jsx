@@ -24,8 +24,8 @@ const Splash = () => {
                     <div className="splash-buttons">
                         
                         
-                        <Link><button className="splash-login" >Log In</button></Link>
-                        <Link><button className="splash-login" >Sign Up</button></Link>
+                        <Link to="/login"><button className="splash-login"  >Log In</button></Link>
+                        <Link to="/signup"><button className="splash-login" >Sign Up</button></Link>
 
                         <span className="or-divider"> <span className="or-text">or</span></span>
                         <button className="splash-demo" onClick={demoUserLogin}>Try Demo</button>
