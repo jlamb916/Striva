@@ -5,17 +5,17 @@
 
 .dash-container-left {
     background: #f7f7fa;
-    width: 30%
+    width: 33%
 }
 
 .dash-container-right {
     background-color: #f7f7fa;
-    width: 10%;
+    width: 17%;
 }
 
 .dash-container-mid {
     background-color: #f7f7fa;
-    width: 55%;
+    width: 50%;
     margin-top: 43px;
 }
 
@@ -32,5 +32,6 @@
     background-color: white;
     width: 550px;
     height: 225px;
+    border-radius: 3px;
 }
 
