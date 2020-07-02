@@ -11,7 +11,6 @@ Rails.application.routes.draw do
     #http verbs and url's to controller action
     resources :users, only: [:create]
     resource :session, only: [:create, :destroy]
-
     resources :routes, only: [:create, :index, :show, :destroy]
   end
 

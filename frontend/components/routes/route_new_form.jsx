@@ -122,20 +122,22 @@ class NewRouteForm extends React.Component {
             var radiuses = radius.join(';')
             // Create the query
             var query = 'https://api.mapbox.com/matching/v5/mapbox/' + profile + '/' + coordinates + '?geometries=geojson&radiuses=' + radiuses + '&steps=false&access_token=' + mapboxgl.accessToken;
-
             $.ajax({
                 method: 'GET',
                 url: query
             }).done(function (data) {
                 // Get the coordinates from the response
+                if (data.code === 'NoMatch') {
+                    console.log("route couldn't be found")
+                }
                 var coords = data.matchings[0].geometry;
                 // Code from the next step will go here
                 // updateDataState(JSON.stringify(data))
-                routeData = data
+                routeData = data;
                 addRoute(coords);
             });
         } 
-
+    
     
         // Draw the Map Matching route as a new layer on the map
         function addRoute(coords) {
@@ -179,8 +181,6 @@ class NewRouteForm extends React.Component {
             }
         }
         map.on('draw.create', updateRoute);
-
-        map.on('draw.update', updateRoute);
         map.on('draw.update', updateRoute);
         map.on('draw.delete', removeRoute);
     }
@@ -225,33 +225,36 @@ class NewRouteForm extends React.Component {
                     <div className="route-form">
                         <h1 className="create-form-title">My Route</h1>
                        
-                        <form className="create-route-form" onSubmit={this.handleSubmit}>
-                    <h1> {this.state.route_data }</h1>
-                    <div className="form-section-name">
-                        <label>Route Name (Required)
-                            <input type="text" 
-                                    value={this.state.route_name}
-                                    className="route-form-data"
-                                    placeholder="Route name"
-                                    onChange={this.update('route_name')} 
-                            />
-                        </label>
-                            </div>
-                            <div className="form-section-name">
-                        <label>Description
-                            <textarea
-                                rows="7" cols="22"
-                                placeholder="Add some more details or notes" 
-                                value={this.state.route_description}
-                                className="route-form-text"
-                                onChange={this.update('route_description')
-                                }
-                                 />
-                        </label>
-                                </div>
+                    <form className="create-route-form" onSubmit={this.handleSubmit}>
+                        <h1> {this.state.route_data }</h1>
+                        <div className="form-section-name">
+                                <label><div>Name (Required)</div>
+                                <input type="text" 
+                                        value={this.state.route_name}
+                                        className="route-form-data"
+                                        placeholder="Route name"
+                                        onChange={this.update('route_name')} 
+                                />
+                            </label>
+                        </div>
+                        <div className="form-section-name">
+                            <label>Description
+                                <textarea
+                                    rows="7" cols="30"
+                                    placeholder="Add some more details or notes" 
+                                    value={this.state.route_description}
+                                    className="route-form-text"
+                                    onChange={this.update('route_description')
+                                    }
+                                    />
+                            </label>
+                        </div>
                             {this.renderErrors()}
                             <div className="center-submit">
-                        <input className="create_route_submit" type="submit" value="Save to My Routes"/>
+                                <input className="create_route_submit" type="submit" value="Save to My Routes"/>
+                            </div>
+                            <div id="route-errors'">
+                                    
                             </div>
                         </form>
                         
@@ -281,8 +284,10 @@ class NewRouteForm extends React.Component {
                     </ul>
                 </div>
                 <div className="use-info">
-                        <h5 className="help"> Use line string icon on the top right corner of map to create a route <br />the route line must be solid before considered a valid route</h5>
-                        
+                        <h5 className="help"> Use the line string icon on the top right corner of the map to create a route <br />
+                         create 2 points on the map at minimum and a maximum of 25 <br />
+                        click on a marker a dotted line to create the route
+                        <br />the route line must be solid before it is considered a valid route</h5>
                 </div>
             </div>
         </div>

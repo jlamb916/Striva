@@ -9,9 +9,9 @@
 }
 
 .route-show-data {
-    min-width: 230px;
+    width: 280px;
     margin: 0 16px;
-    
+    min-width: 280px;
 }
 .route-title {
     margin: 20px 0;

@@ -64,7 +64,7 @@ body {
 }
 
 .footer > h2 {
-    color: rgb(202, 179, 179);
+    color: white;
     margin: 10px auto;
     font-weight: bold;
 }
@@ -113,24 +113,25 @@ line-height: 55px;
 
 .nav-bar-list li:hover { 
     display: block;
-      border-left: 1px solid #ccc;
-  border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
 }
 
 .dashboard-list-hide {
-  display: none;
-  position: absolute;
-  z-index: 2;
-  left: -1px;
-  top: 54px;
-  font-size: 14px;
-  white-space: nowrap;
-  background: #fff;
-  border: 1px solid #ccc;
-  overflow: hidden;
-   width: 140px;
-         /* border-left: 1px solid #ccc;
-  border-right: 1px solid #ccc; */
+    display: none;
+    position: absolute;
+    z-index: 2;
+    left: -1px;
+    top: 53px;
+    font-size: 14px;
+    white-space: nowrap;
+    background: #fff;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    width: 140px;
+    /* border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc; */
 }
 /* .dashboard-list-hide > li {
     width: 125px;

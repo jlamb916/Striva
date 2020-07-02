@@ -1,12 +1,15 @@
 .route-new-container {
     display: flex;
+    justify-content: center;
    border-bottom: 1px solid gainsboro;
+   
 }
+
+
 
 .new-map-container {
     position: relative;
-    min-width: 500px;
-    width: 75%;
+    width: 80%;
     height: 500px;
     float: left;
  
@@ -22,7 +25,9 @@
 }
 
 .route-form {
-    width: 25%;
+     display: flex;
+    flex-direction: column;
+    min-width: 20%;
 }
 
 .new-form-stats {
@@ -46,10 +51,7 @@
     font-size: 15;
 }
 
-.create-route-form {
-    display: flex;
-    flex-direction: column;
-}
+
 
 textarea {
   resize: none;
@@ -60,7 +62,7 @@ textarea {
     border: 1px solid black;
     color: white;
     border-radius: 4px;
-    margin-left: 30px;
+    margin-left: 60px;
     height: 35px;
     width: 160px;
     text-align: center;

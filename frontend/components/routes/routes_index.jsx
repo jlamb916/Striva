@@ -13,8 +13,8 @@ class RouteIndex extends React.Component {
 
     render() {
         const allRoutes = this.props.routes.reverse().map((route) => (
-            <RouteIndexItem key={`${route.id}`} route={route} />
-        ));
+            <RouteIndexItem key={`${route.id}`} route={route} />));
+        // )).filter((route) => route.user_id === this.props.currentUserId);
         
         return (
             <div className="route-container">

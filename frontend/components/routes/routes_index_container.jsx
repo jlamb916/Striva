@@ -5,8 +5,10 @@ import { fetchAllRoutes } from '../../actions/route_actions';
 
 const mapStateToProps = (state) => {
     let routeArr = Object.values(state.entities.routes);
+    
     return {
         routes: routeArr,
+        currentUserId: state.entities.users[state.session.id].id,
     }
 }
 

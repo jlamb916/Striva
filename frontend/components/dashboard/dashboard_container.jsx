@@ -2,13 +2,15 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { signout, signin } from '../../actions/session_actions';
 import FeedContainer from './feed_container';
+import UserProfile from './user_profile';
 
 const Dashboard = (props) => {
     //example
+    const user = props.currentUser;
     return (
         <div className="dashboard-container">
             <div className="dash-container-left">
-                <h1> welcome {props.currentUser.username} </h1>
+                <UserProfile user={user}/>
             </div>
             <div className="dash-container-mid">
                 <FeedContainer />
