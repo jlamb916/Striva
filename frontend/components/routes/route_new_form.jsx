@@ -18,7 +18,6 @@ class NewRouteForm extends React.Component {
             estTime: 0,
         };
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.updateState = this.updateState.bind(this);
         
     }
 
@@ -194,6 +193,12 @@ class NewRouteForm extends React.Component {
         this.props.routeProcessForm(route).then(() => this.props.history.push("/routes"))
     }
 
+    update (field) {
+        return (e) => this.setState({
+            [field]: e.currentTarget.value
+        })
+    }
+
     renderErrors() {
         return (
             <ul className="create-route-error-messages">
@@ -273,10 +278,10 @@ class NewRouteForm extends React.Component {
                     </ul>
                 </div>
                 <div className="use-info">
-                        <h5 className="help"> Use the line string icon on the top right corner of the map to create a route <br />
-                         create 2 points on the map at minimum and a maximum of 25 <br />
-                        click on a marker a dotted line to create the route
-                        <br />the route line must be solid before it is considered a valid route</h5>
+                        <h5 className="help"> 
+                            Draw your route using the draw tools on the right. <br />To get the most accurate route match, draw points at regular intervals.
+                            <br /> The route line must be solid before being considered a valid route
+                            </h5>
                 </div>
             </div>
         </div>
