@@ -14,7 +14,7 @@ class UserProfile extends React.Component {
                 <div className="user-profile-card">
                     <div className="profile-img">
                     </div>
-                    <h2 className="dash-username">{user.username}</h2>
+                    <h2 className="dash-username"> {user.username}</h2>
                 </div>
                 <div className="profile-stats">
                     {/* <ul>

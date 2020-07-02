@@ -129,12 +129,11 @@ class NewRouteForm extends React.Component {
                 // Get the coordinates from the response
                 if (data.code === 'NoMatch') {
                     console.log("route couldn't be found")
-                }
+                } else {
                 var coords = data.matchings[0].geometry;
-                // Code from the next step will go here
-                // updateDataState(JSON.stringify(data))
                 routeData = data;
                 addRoute(coords);
+                }
             });
         } 
     
@@ -185,11 +184,7 @@ class NewRouteForm extends React.Component {
         map.on('draw.delete', removeRoute);
     }
 
-    updateState(data) {
-    return () => this.setState({
-        route_data: data
-    });
-}
+   
     handleSubmit(e) {
         e.preventDefault();
         let routeDataString = JSON.stringify(routeData);
@@ -209,12 +204,6 @@ class NewRouteForm extends React.Component {
                 ))}
             </ul>
         );
-    }
-
-    update(field) {
-        return (e) => this.setState({
-            [field]: e.currentTarget.value
-        })
     }
 
     render () {
