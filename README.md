@@ -1,5 +1,7 @@
 # Striva
 
+[Striva Heroku](https://striva2.herokuapp.com/)
+
 Striva is a web application for users to create, share, and log their workouts. Inspired by Strava, Strive allows users to create their favorite running routes, view a list of their exercise activities overtime, and track their progress all while sharing it with friends! 
 
 # Features
