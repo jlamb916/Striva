@@ -5,7 +5,7 @@
 Striva is a web application for users to create, share, and log their workouts. Inspired by Strava, Striva allows users to create their favorite running routes, view a list of their exercise activities overtime, and track their progress all while sharing it with friends! 
 
 
-![alt text](https://github.com/jlamb916/Striva/blob/master/app/assets/images/Striva_splash.png "Striva splash page" = 250x250)
+![alt text](https://github.com/jlamb916/Striva/blob/master/app/assets/images/Striva_splash.png "Striva splash page")
 
 
 # Features
