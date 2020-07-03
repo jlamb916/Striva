@@ -7,7 +7,11 @@ Striva is a web application for users to create, share, and log their workouts. 
 
 ![alt text](https://github.com/jlamb916/Striva/blob/master/app/assets/images/Striva_splash.png "Striva splash page")
 
+![alt text](https://github.com/jlamb916/Striva/blob/master/app/assets/images/index.png?raw=true "Striva routes")
 
+![alt text](https://github.com/jlamb916/Striva/blob/master/app/assets/images/signinpage.png?raw=true "Striva sign up")
+
+![alt text](https://github.com/jlamb916/Striva/blob/master/app/assets/images/create_route.png?raw=true "Striva route creation")
 # Features
 
 * User accounts with secure frontend and backend authentication
@@ -17,9 +21,7 @@ Striva is a web application for users to create, share, and log their workouts. 
 * Advanced route creation utilizing MapBox match api
 * Feed that shows all user's recent activity
 
-![alt text](https://github.com/jlamb916/Striva/blob/master/app/assets/images/index.png?raw=true "Striva routes")
 
-![alt text](https://github.com/jlamb916/Striva/blob/master/app/assets/images/create_route.png?raw=true "Striva route creation")
 
 * A list of stats for workouts and routes the user has created
 * Follow other users to view, comment, and kudo their workouts (In Progress)
