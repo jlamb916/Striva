@@ -1,86 +1,67 @@
-# README
+# Striva
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Striva Heroku](https://striva2.herokuapp.com/)
 
-Things you may want to cover:
+Striva is a web application for users to create, share, and log their workouts. Inspired by Strava, Striva allows users to create their favorite running routes, view a list of their exercise activities overtime, and track their progress all while sharing it with friends! 
 
-* Ruby version
+# Features
 
-* System dependencies
+* User accounts with secure frontend and backend authentication
+* Advanced route creation utilizing MapBox match api
+* Feed that shows all user's recent activity
+* A list of stats for workouts and routes the user has created
+* Follow other users to view, comment, and kudo their workouts (In Progress)
+* Searching for other users and their workouts (In Progress)
 
-* Configuration
+# Project Design
 
-* Database creation
+Striva was designed and built in 10 days!
 
-* Database initialization
+A proposal was drafted alongside a database schema to help provide an implementation timeline during the development process.
 
-* How to run the test suite
+# Technology
+Striva is a single-page application built on Rails, React.js, hosted on heroku, and other additional dependencies
 
-* Services (job queues, cache servers, search engines, etc.)
+## Backend
 
-* Deployment instructions
+* Rails MVC
+  * Ruby on rails is the primary backend framework used to manage our backend data as well as the request response cycle.
 
-* ...
+* Database
+  * PostgreSQL RDBMS
 
-* Installation
+* Dependencies
+  * BCrypt for password-salting and hashing for a secure authentication system
+  * Amazon Web Services SDK for file storage on Amazon Simple Storage Service (S3)
+  
+## Frontend
 
-1. rails new
+As a single-page application, Striva utilizes React.js and redux framework to deliver the frontend. 
 
-Add --database=postgresql if using Postgres.
-Add --skip-turbolinks to skip the turbolinks gem.
-2. Update your Gemfile.
+* npm
+  * Node package manager (npm) is used to install the frontend dependencies.
 
-better_errors
-binding_of_caller
-pry-rails
-annotate
-bcrypt
-jquery-rails (When using rails 5.1+)
+* Webpack
+  * Webpack bundles all of the frontend files and includes it in the main application.js file for convenient app management.
 
-3. bundle install
+* React & Redux
+  * React is used to create our frontend component with redux as a our frontend state management tool.
 
-4. When using Rails 5.1+, update your application.js manifest to include:
+* jQuery
+  * jQuery is only used to make AJAX requests with the Rails server.
 
-//= require jquery
-//= require rails-ujs (if not already there)
+* Babel
+  * Babel is used to transpile our jsx code into html.
+  
+ * Mapbox API
+   * Mapbox is mapping software that renders a high-resolution map onto the screen with user interactivity. It enables route viewing, creation as well as the creation of the lovely static images on the site.
+  
+# Future Implementations
 
-5. git init
+Striva is far from being considered a full fledged MVP, but more features are coming soon!
 
-Update your .gitignore.
-node_modules/
-bundle.js
-bundle.js.map
-6. git remote add the proper remote.
-
-git push -u the remote.
-7. npm init --yes to create a package.json file with the default setup.
-
-8. Create a frontend folder at the root of your project with an entry file inside of it.
-
-9. npm install --save
-
-webpack
-webpack-cli
-react
-react-dom
-react-router-dom
-redux
-react-redux
-@babel/core
-@babel/preset-react
-@babel/preset-env
-babel-loader
-
-10. adds routing to our app
-
-* npm install --save react-router-dom
-
-11. Create a webpack.config.js file.
-
-The entry point should be in frontend, e.g. entry: 'frontend/index.jsx'.
-The output path should be 'app/assets/javascripts'.
-Configure your module.rules to use Babel transpilation for:
-JSX
-ES6
-Include devtool: 'source-map'.
+* Features coming soon
+  * Activities creation and viewing
+  * Social media features such as following users and giving kudos to other activities
+  * A feed of all recent activity by a user and friend
+  * Additional stat tracking features to monitor recent activity
