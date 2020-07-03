@@ -88,30 +88,32 @@ class RouteShow extends React.Component {
                 <h1 className="route-description">{route.route_description}</h1>
             </div>) : "";
 
-        {if (route) {
-        return (
-        <div className="route-main-container">
-                <div>
-                    <h5><Link className="my-routes-link" to="/routes">My Routes</Link> / {route.route_name}</h5>
-                </div>
-                <div className="route-title">
-                    <h1>{route.route_name}</h1>
-                </div>
-                <div className="route-show-container">
-                    <div className="map-show-canvas">
-                        <MapBox route={route} />
+        { if (route) {
+            return (
+                <div className="route-main-container">
+                    <div>
+                        <h5><Link className="my-routes-link" to="/routes">
+                            My Routes</Link> / {route.route_name}
+                        </h5>
                     </div>
-                   {renderData}
+                    <div className="route-title">
+                        <h1>{route.route_name}</h1>
+                    </div>
+                    <div className="route-show-container">
+                        <div className="map-show-canvas">
+                            <MapBox route={route} />
+                        </div>
+                        {renderData}
+                    </div>
+                    <div className="route-btns">
+                        <button className="route-btn" 
+                        onClick={this.handleDelete}>Delete</button>
+                    </div>
                 </div>
-                <div className="route-btns">
-                {/* <button className="route-btn">Edit</button> */}
-                    <button className="route-btn" onClick={this.handleDelete}>Delete</button>
-            </div>
-        </div>
-        )}
-        else {
-            return ""
-        };}
+        )} else {
+                return ""
+            };  
+        }
     }
 }
 
