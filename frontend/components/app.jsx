@@ -18,12 +18,10 @@ import SigninFormContainer from './session/signin_form_container';
 const App = () => {
     return (
         <div>
-            {/* nav will dispay differently depending on if user is logged in or not */}
             <Switch>
                 <ProtectedRoute exact path="/routes/new" component={NewRouteNav}/> 
                 <NavContainer />
             </Switch>
-            {/* <Route exact path="/" component={Spash} /> */}
             
             <Switch>
                 <AuthRoute exact path="/login" component={SigninFormContainer} />

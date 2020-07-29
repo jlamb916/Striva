@@ -110,7 +110,8 @@ class RouteShow extends React.Component {
                         onClick={this.handleDelete}>Delete</button>
                     </div>
                 </div>
-        )} else {
+            )}
+            else {
                 return ""
             };  
         }
