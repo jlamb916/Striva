@@ -5,6 +5,8 @@ import Root from './components/root';
 import configureStore from './store/store';
 import { signup } from './util/session_api_util';
 import { fetchAllRoutes, fetchRoute, createRoute } from './actions/route_actions';
+import { fetchActivities } from './actions/activity_actions';
+
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
 
@@ -32,5 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.fetchAllRoutes = fetchAllRoutes;
     window.fetchRoute = fetchRoute;
     window.createRoute = createRoute;
+    window.fetchActivities = fetchActivities;
 
 })

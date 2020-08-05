@@ -59,7 +59,7 @@ class RouteIndexItem extends React.Component {
         const endLong = coords[coords.length - 1][1];
         const poly = polyline.fromGeoJSON(this.routeData.matchings[0].geometry);
         const imgUrl = "https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/pin-l-a+2196f3(" + startLat + "," + startLong + "),pin-l-b+43a25c(" + endLat + "," + endLong + ")" + ",path-10+FF4500-2(" + poly + ")/auto/800x600@2x?access_token=" + mapboxgl.accessToken;
-        debugger
+
         return (
             <div className="route-index-item">
                 <div className="map-canvas-route">
