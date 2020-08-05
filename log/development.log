@@ -55884,3 +55884,22 @@ Processing by Api::RoutesController#index as JSON
 Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.6ms)
 
 
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mActivity Load (1.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  [1m[36mRoute Load (0.9ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mActivity Create (45.8ms)[0m  [1m[32mINSERT INTO "activities" ("title", "sport", "duration", "distance", "elevation", "user_id", "route_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "running"], ["sport", "running"], ["duration", "5"], ["distance", 0.0], ["elevation", 0], ["user_id", 1], ["route_id", 9], ["created_at", "2020-08-05 04:41:05.410534"], ["updated_at", "2020-08-05 04:41:05.410534"]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mActivity Create (1.9ms)[0m  [1m[32mINSERT INTO "activities" ("title", "sport", "duration", "distance", "elevation", "user_id", "route_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "running"], ["sport", "running"], ["duration", "5"], ["distance", 0.0], ["elevation", 0], ["user_id", 1], ["route_id", 9], ["created_at", "2020-08-05 04:41:21.593991"], ["updated_at", "2020-08-05 04:41:21.593991"]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mActivity Create (3.1ms)[0m  [1m[32mINSERT INTO "activities" ("title", "sport", "duration", "distance", "elevation", "description", "user_id", "route_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "running"], ["sport", "running"], ["duration", "5"], ["distance", 0.0], ["elevation", 0], ["description", "good run"], ["user_id", 1], ["route_id", 9], ["created_at", "2020-08-05 04:41:49.689686"], ["updated_at", "2020-08-05 04:41:49.689686"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActivity Load (0.6ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
