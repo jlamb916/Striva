@@ -4,7 +4,7 @@ export const RECEIVE_ALL_ACTIVITIES = "RECEIVE_ALL_ACTIVITIES";
 export const RECEIVE_ACTIVITY = "RECEIVE_ACTIVITY";
 export const REMOVE_ACTIVITY = "REMOVE_ACTIVITY";
 export const RECEIVE_ACTIVITIES_ERRORS = "RECEIVE_ACTIVITIES_ERRORS";
-
+export const CLEAR_ACTIVITY_ERRORS = "CLEAR_ACTIVITY_ERRORS"
 const receiveAllActivities = (activities) => {
     return ({
         type: RECEIVE_ALL_ACTIVITIES,
@@ -30,6 +30,13 @@ export const receiveErrors = errors => ({
     type: RECEIVE_ACTIVITIES_ERRORS,
     errors
 });
+
+const removeActivityErrors = () => {
+    return {
+        type: CLEAR_ACTIVITY_ERRORS
+    }
+}
+
 
 
 export const fetchActivities = () => dispatch => {
@@ -68,4 +75,9 @@ export const updateActivity = activity => dispatch => {
             ,err => (dispatch(receiveErrors(err.responseJSON))))
     );
 };
+
+
+export const clearActivityErrors = () => (dispatch) => {
+    return dispatch(removeActivityErrors());
+}
 
