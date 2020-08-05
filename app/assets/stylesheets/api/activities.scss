@@ -1,3 +1,77 @@
 // Place all the styles related to the api/Activities controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.activity-container {
+    font-size: 14px;
+     margin: 20px 100px 20px 100px;
+    padding: 0 16px;
+}
+
+.activity-index-header {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    justify-content: space-between;
+    padding-bottom: 30px;
+    margin-bottom: 10px;
+}
+
+.activity-index-title-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.activity-index-title {
+    font-size: 2.5em;
+    padding-top: 0;
+    padding-bottom: 16px;
+}
+
+.map-img {
+  width: 175px;
+  height: 100px;
+}
+
+.activity-index-list {
+
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+//   border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.no-activity {
+    text-align: center;
+    min-height: 300px;
+}
+
+.activity-index-container {
+    margin-top: 20px;
+}
+
+.activity-index-item {
+    width: 275px;
+      margin: 0 1.6% 40px 0;
+}
+
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+thead th {
+    background-color: #dddddd;
+    height: 40px;
+}
+
+tbody td {
+    height: 55px;
+}

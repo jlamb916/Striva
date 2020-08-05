@@ -6,8 +6,8 @@ class Api::ActivitiesController < ApplicationController
     end
 
     def index
-        @activities = current_user.activities
-        render '/api/routes/index'
+        @activities = Activity.all
+        # render '/api/activities/index'
     end
 
     def create

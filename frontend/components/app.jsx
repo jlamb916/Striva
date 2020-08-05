@@ -9,6 +9,7 @@ import DashboardContainer from './dashboard/dashboard_container';
 import RoutesIndexContainer from './routes/routes_index_container';
 import RouteShowContainer from './routes/route_show_container';
 import RouteNewFormContainer from './routes/route_new_form_container';
+import ActivitiesIndexContainer from './activities/actvities_index_container';
 import Footer from './footer/footer';
 import Splash from './splash';
 
@@ -31,6 +32,7 @@ const App = () => {
                 <ProtectedRoute exact path="/routes/new" component={RouteNewFormContainer} />
                 <ProtectedRoute exact path="/routes" component={RoutesIndexContainer} />
                 <ProtectedRoute exact path="/routes/:routeId" component={RouteShowContainer} />
+                <ProtectedRoute exact path="/activities" component={ActivitiesIndexContainer} />
             </Switch>
             {   (location.hash !== '#/dashboard') ? <Footer /> : "" }
         </div>

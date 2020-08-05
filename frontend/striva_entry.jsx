@@ -5,7 +5,7 @@ import Root from './components/root';
 import configureStore from './store/store';
 import { signup } from './util/session_api_util';
 import { fetchAllRoutes, fetchRoute, createRoute } from './actions/route_actions';
-import { fetchActivities } from './actions/activity_actions';
+import { fetchActivities } from './util/activity_api_util'
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");

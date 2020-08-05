@@ -40,7 +40,7 @@ greetUser() {
                                 </li>
                                 <li className="top-bar"><NavLink className="nav-link top-link" activeClassName="nav-link-active" to="/activities">Activities<strong className="downarrow">⌄</strong></NavLink>
                                     <ul className="dashboard-list-hide">
-                                        <li><NavLink to="/activies" activeClassName="nav-link-active-bold">My Activities</NavLink></li>
+                                        <li><NavLink to="/activities" activeClassName="nav-link-active-bold">My Activities</NavLink></li>
                                     </ul>
                                 </li>
                             </ul>
