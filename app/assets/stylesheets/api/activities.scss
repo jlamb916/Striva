@@ -62,6 +62,9 @@ td, th {
       margin: 0 1.6% 40px 0;
 }
 
+tr {
+    box-sizing: border-box;
+}
 
 tr:nth-child(even) {
   background-color: #dddddd;
@@ -69,9 +72,42 @@ tr:nth-child(even) {
 
 thead th {
     background-color: #dddddd;
+    height: 35px;
+}
+
+tr td {
     height: 40px;
 }
 
-tbody td {
-    height: 55px;
+.activity-edit-index {
+    color: #007fb6;
+}
+
+.activity-delete-index {
+    color: #007fb6;
+}
+
+.activity-edit-index:hover {
+    text-decoration: underline;
+}
+
+.activity-delete-index:hover {
+    text-decoration: underline;
+}
+
+.activity-title-index {
+    color: #007fb6;
+}
+
+.activity-title-index:hover {
+    text-decoration: underline;
+}
+
+.activity-cancel {
+    margin-left: 15px;
+    color: #007fb6;
+}
+
+.activity-cancel:hover {
+    text-decoration: underline;
 }

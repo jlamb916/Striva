@@ -1,0 +1,93 @@
+.section-one {
+    display: flex;
+}
+
+.activity-form {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+hr{
+    margin: 20px 0;
+    border: none;
+    border-top: 1px solid #ccccd1;
+}
+
+
+.error-messages {
+    color: red;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+input.form {
+    border: 1px solid #ccccd1;
+    margin-top: 15px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+    height: 25px;
+    width: 200px;
+    text-align: left;
+    padding-left: 5px;
+}
+
+input.time {
+    border: 1px solid #ccccd1;
+    margin-top: 15px;
+    // margin-right: 10px;
+    margin-bottom: 15px;
+    height: 25px;
+    width: 80px;
+    text-align: left;
+    padding-left: 5px;
+}
+input.form::placeholder {
+    color: #ccccd1;
+}
+
+input.input-title {
+    width: 634px;    
+}
+
+.section-two {
+    display: flex;
+}
+
+input.metrics {
+    width: 50px;
+}
+
+.duration-flex {
+    display: flex;
+}
+
+.elevation-container {
+    margin-left: 15px;
+}
+
+.distance-div {
+    display: flex;
+}
+
+.elevation-div {
+    display: flex;
+}
+
+input.placeholders {
+    width: 50px;
+}
+
+textarea::placeholder {
+ color: #ccccd1;
+}
+
+.description-text {
+    margin-top: 15px;
+    width: 700px;
+    height: 100px;
+    margin-bottom: 50px;
+    border: 1px solid #ccccd1;
+    padding: 5px;
+}
+

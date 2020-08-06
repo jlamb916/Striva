@@ -6,7 +6,6 @@
 }
 
 
-
 .new-map-container {
     position: relative;
     width: 80%;
@@ -34,7 +33,6 @@
     display: flex;
 }
 
-
 .route-new-time {
     padding: 14px 16px 14px 16px;
     border-left: 1px solid whitesmoke;
@@ -50,8 +48,6 @@
     color: gray;
     font-size: 15;
 }
-
-
 
 textarea {
   resize: none;

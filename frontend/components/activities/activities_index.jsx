@@ -21,7 +21,7 @@ class ActivityIndex extends React.Component {
                 <header className="activity-index-header">
                     <div className="activity-index-title-container">
                         <h1 className="activity-index-title">My Activities</h1>
-                        <NavLink className="create-activity-link" to='/activitys/new'
+                        <NavLink className="create-activity-link" to='/activities/new'
                             activeClassName="create-activity-link">Create New Activity</NavLink>
                     </div>
                 </header>
@@ -36,7 +36,6 @@ class ActivityIndex extends React.Component {
                                 <th>Title</th>
                                 <th>Time</th>
                                 <th>Distance</th>
-                                <th>Elevation</th>
                                 <th> </th>
                                 <th> </th>
                             </tr>

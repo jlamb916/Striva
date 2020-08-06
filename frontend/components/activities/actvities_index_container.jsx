@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import ActivityIndex from './activities_index';
-import { fetchActivities } from '../../actions/activity_actions';
+import { fetchActivities, deleteActivity, updateActivity } from '../../actions/activity_actions';
 
 const mSTP = (state) => {
     let activitiesArr = Object.values(state.entities.activities);
@@ -14,6 +14,8 @@ const mSTP = (state) => {
 const mDTP = (dispatch) => {
     return {
         fetchActivities: () => dispatch(fetchActivities()),
+        deleteActivity: (id) => dispatch(deleteActivity(id)),
+        updateActivity: (activity) => dispatch(updateActivity(activity))
     }
 }
 
