@@ -5,6 +5,7 @@ class ActivityForm extends React.Component {
     constructor(props) {
         super(props)
 
+
         this.state = {
             title: "",
             date: "",
@@ -15,7 +16,8 @@ class ActivityForm extends React.Component {
             distance: "0",
             description: "",
             elevation: "0",
-            sport: "",
+            sport: "Run",
+            route_id: "9"
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -30,7 +32,7 @@ class ActivityForm extends React.Component {
         e.preventDefault();
         this.props.activityProcessForm({
                 title: this.state.title,
-                // date: this.state.date,
+                duration: this.state.dHour + this.state.dMin + this.state.dSec,
                 // time: this.state.time,
                 sport: this.state.sport,
                 description: this.state.description,
@@ -44,11 +46,14 @@ class ActivityForm extends React.Component {
 
     renderErrors() {
         return (
-            <ul>
+            <ul className="create-route-error-messages">
                 {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`}>{error}</li>
+                    <li key={`error-${i}`}>
+                        {error}
+                    </li>
                 ))}
-            </ul>)
+            </ul>
+        );
     }
 
     render () {

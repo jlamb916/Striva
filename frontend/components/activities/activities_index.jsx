@@ -39,7 +39,7 @@ class ActivityIndex extends React.Component {
                                 <th>Distance</th>
                                 <th>Elevation</th>
                                 <th> </th>
-                                <th> </th>
+                                {/* <th> </th> */}
                             </tr>
                             </thead>
                             <tbody>

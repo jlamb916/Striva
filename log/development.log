@@ -60804,3 +60804,1426 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 391ms (Views: 389.0ms | ActiveRecord: 0.2ms)
 
 
+Started POST "/api/activities" for ::1 at 2020-08-05 22:09:21 -0700
+Processing by Api::ActivitiesController#create as JSON
+  Parameters: {"activity"=>{"title"=>"Afternoon Run", "sport"=>"", "description"=>"aS", "distance"=>"0", "elevation"=>"0", "user_id"=>"1"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+Completed 200 OK in 21ms (Views: 0.2ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-05 22:09:21 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.7ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (1.6ms)
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-08-05 22:11:47 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ExBJPQh4ZmOnD9DHyn4D7w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 518ms (Views: 516.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-05 22:11:48 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (1.9ms)
+Completed 200 OK in 10ms (Views: 7.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/activities" for ::1 at 2020-08-05 22:11:57 -0700
+Processing by Api::ActivitiesController#create as JSON
+  Parameters: {"activity"=>{"title"=>"afternoon run", "duration"=>"122", "sport"=>"", "description"=>"asd", "distance"=>"0", "elevation"=>"0", "user_id"=>"1"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-05 22:11:57 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (1.5ms)
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/activities" for ::1 at 2020-08-05 22:12:09 -0700
+Processing by Api::ActivitiesController#create as JSON
+  Parameters: {"activity"=>{"title"=>"asd", "duration"=>"111", "sport"=>"", "description"=>"asd", "distance"=>"0", "elevation"=>"0", "user_id"=>"1"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-05 22:12:09 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (1.7ms)
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.4ms)
+
+
+  [1m[36mActivity Load (0.8ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+Started POST "/api/activities" for ::1 at 2020-08-05 22:13:30 -0700
+Processing by Api::ActivitiesController#create as JSON
+  Parameters: {"activity"=>{"title"=>"1", "duration"=>"111", "sport"=>"", "description"=>"asd", "distance"=>"0", "elevation"=>"0", "user_id"=>"1"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-05 22:13:30 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.7ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (2.1ms)
+Completed 200 OK in 11ms (Views: 8.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-08-05 22:13:52 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ExBJPQh4ZmOnD9DHyn4D7w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 415ms (Views: 413.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-05 22:13:53 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (1.7ms)
+Completed 200 OK in 11ms (Views: 8.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/activities" for ::1 at 2020-08-05 22:14:14 -0700
+Processing by Api::ActivitiesController#create as JSON
+  Parameters: {"activity"=>{"title"=>"asd", "duration"=>"111", "sport"=>"", "description"=>"asd", "distance"=>"0", "elevation"=>"01", "user_id"=>"1"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-05 22:14:14 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (1.4ms)
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-08-05 22:14:37 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ExBJPQh4ZmOnD9DHyn4D7w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (21.4ms)
+Completed 200 OK in 75ms (Views: 66.8ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-05 22:14:37 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (12.7ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (20.1ms)
+Completed 200 OK in 41ms (Views: 13.0ms | ActiveRecord: 16.9ms)
+
+
+Started POST "/api/activities" for ::1 at 2020-08-05 22:14:47 -0700
+Processing by Api::ActivitiesController#create as JSON
+  Parameters: {"activity"=>{"title"=>"asd", "duration"=>"11111", "sport"=>"", "description"=>"asd", "distance"=>"0", "elevation"=>"01", "user_id"=>"1"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+Completed 200 OK in 57067ms (Views: 0.2ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-05 22:15:44 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.9ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (2.4ms)
+Completed 200 OK in 9ms (Views: 6.3ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/api/activities" for ::1 at 2020-08-05 22:16:03 -0700
+Processing by Api::ActivitiesController#create as JSON
+  Parameters: {"activity"=>{"title"=>"1", "duration"=>"111", "sport"=>"", "description"=>"1", "distance"=>"0", "elevation"=>"0", "user_id"=>"1"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+Completed 200 OK in 1904ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-05 22:16:05 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (2.4ms)
+Completed 200 OK in 10ms (Views: 8.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-08-05 22:16:48 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ExBJPQh4ZmOnD9DHyn4D7w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 482ms (Views: 479.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-05 22:16:48 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.8ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (3.0ms)
+Completed 200 OK in 13ms (Views: 9.9ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/api/activities" for ::1 at 2020-08-05 22:17:16 -0700
+Processing by Api::ActivitiesController#create as JSON
+  Parameters: {"activity"=>{"title"=>"asd", "duration"=>"111", "sport"=>"Run", "description"=>"asd", "distance"=>"0", "elevation"=>"0", "user_id"=>"1"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+Completed 200 OK in 16945ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-05 22:17:33 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (1.3ms)
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-08-05 22:17:41 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ExBJPQh4ZmOnD9DHyn4D7w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 49ms (Views: 47.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-05 22:17:41 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.9ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (2.1ms)
+Completed 200 OK in 11ms (Views: 7.8ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/api/activities" for ::1 at 2020-08-05 22:19:36 -0700
+Processing by Api::ActivitiesController#create as JSON
+  Parameters: {"activity"=>{"title"=>"123", "duration"=>"111", "sport"=>"Run", "description"=>"asd", "distance"=>"0", "elevation"=>"0", "user_id"=>"1"}}
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+Started GET "/" for ::1 at 2020-08-05 22:23:14 -0700
+Started GET "/" for ::1 at 2020-08-05 22:23:14 -0700
+Started GET "/" for ::1 at 2020-08-05 22:23:14 -0700
+Started GET "/" for ::1 at 2020-08-05 22:23:14 -0700
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+Completed 200 OK in 217831ms (Views: 0.2ms | ActiveRecord: 4.1ms)
+
+
+Processing by StaticPagesController#root as HTML
+Processing by StaticPagesController#root as HTML
+Processing by StaticPagesController#root as HTML
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ExBJPQh4ZmOnD9DHyn4D7w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.7ms)
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ExBJPQh4ZmOnD9DHyn4D7w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ExBJPQh4ZmOnD9DHyn4D7w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (10.2ms)
+  Rendered api/users/_user.json.jbuilder (0.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (9.7ms)
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ExBJPQh4ZmOnD9DHyn4D7w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 591ms (Views: 585.6ms | ActiveRecord: 2.4ms)
+
+
+Completed 200 OK in 618ms (Views: 613.7ms | ActiveRecord: 2.8ms)
+
+
+Completed 200 OK in 688ms (Views: 682.0ms | ActiveRecord: 3.4ms)
+
+
+Completed 200 OK in 745ms (Views: 739.3ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-05 22:23:15 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (1.7ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (25.0ms)
+Completed 200 OK in 31ms (Views: 16.5ms | ActiveRecord: 13.5ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-05 22:23:20 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (0.5ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (7.6ms)
+Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-05 22:23:21 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.7ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (1.5ms)
+Completed 200 OK in 8ms (Views: 5.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/activities" for ::1 at 2020-08-05 22:23:27 -0700
+Processing by Api::ActivitiesController#create as JSON
+  Parameters: {"activity"=>{"title"=>"123", "duration"=>"111", "sport"=>"Run", "description"=>"1", "distance"=>"0", "elevation"=>"0", "route_id"=>"1", "user_id"=>"1"}}
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+Completed 200 OK in 44023ms (Views: 0.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-05 22:24:11 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (1.3ms)
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-05 22:24:32 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (0.9ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (18.2ms)
+Completed 200 OK in 26ms (Views: 15.1ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-05 22:24:33 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (0.5ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (5.4ms)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/routes" for ::1 at 2020-08-05 22:24:56 -0700
+Processing by Api::RoutesController#create as JSON
+  Parameters: {"route"=>{"route_name"=>"mason road", "route_description"=>"mason street", "user_id"=>"1", "route_data"=>"{\"matchings\":[{\"confidence\":0.9820578604342951,\"geometry\":{\"coordinates\":[[-122.461277,37.802935],[-122.465618,37.80343],[-122.467348,37.803717],[-122.467634,37.803953],[-122.468066,37.80449],[-122.468262,37.804826],[-122.468502,37.805365]],\"type\":\"LineString\"},\"legs\":[{\"summary\":\"\",\"weight\":389.8,\"duration\":389.8,\"steps\":[],\"distance\":541.2},{\"summary\":\"\",\"weight\":152.8,\"duration\":152.8,\"steps\":[],\"distance\":212}],\"weight_name\":\"duration\",\"weight\":542.6,\"duration\":542.6,\"distance\":753.2}],\"tracepoints\":[{\"alternatives_count\":1,\"waypoint_index\":0,\"matchings_index\":0,\"distance\":13.56884068604567,\"name\":\"\",\"location\":[-122.461277,37.802935]},{\"alternatives_count\":3,\"waypoint_index\":1,\"matchings_index\":0,\"distance\":2.389918669109976,\"name\":\"\",\"location\":[-122.467348,37.803717]},{\"alternatives_count\":25,\"waypoint_index\":2,\"matchings_index\":0,\"distance\":0.453991228979681,\"name\":\"\",\"location\":[-122.468502,37.805365]}],\"code\":\"Ok\"}"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/routes_controller.rb:16
+Started POST "/api/routes" for ::1 at 2020-08-05 22:25:13 -0700
+Processing by Api::RoutesController#create as JSON
+  Parameters: {"route"=>{"route_name"=>"mason road", "route_description"=>"mason street", "user_id"=>"1", "route_data"=>"{\"matchings\":[{\"confidence\":0.9820578604342951,\"geometry\":{\"coordinates\":[[-122.461277,37.802935],[-122.465618,37.80343],[-122.467348,37.803717],[-122.467634,37.803953],[-122.468066,37.80449],[-122.468262,37.804826],[-122.468502,37.805365]],\"type\":\"LineString\"},\"legs\":[{\"summary\":\"\",\"weight\":389.8,\"duration\":389.8,\"steps\":[],\"distance\":541.2},{\"summary\":\"\",\"weight\":152.8,\"duration\":152.8,\"steps\":[],\"distance\":212}],\"weight_name\":\"duration\",\"weight\":542.6,\"duration\":542.6,\"distance\":753.2}],\"tracepoints\":[{\"alternatives_count\":1,\"waypoint_index\":0,\"matchings_index\":0,\"distance\":13.56884068604567,\"name\":\"\",\"location\":[-122.461277,37.802935]},{\"alternatives_count\":3,\"waypoint_index\":1,\"matchings_index\":0,\"distance\":2.389918669109976,\"name\":\"\",\"location\":[-122.467348,37.803717]},{\"alternatives_count\":25,\"waypoint_index\":2,\"matchings_index\":0,\"distance\":0.453991228979681,\"name\":\"\",\"location\":[-122.468502,37.805365]}],\"code\":\"Ok\"}"}}
+  [1m[35m (13.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/routes_controller.rb:16
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:16
+  [1m[36mRoute Create (4.6ms)[0m  [1m[32mINSERT INTO "routes" ("route_name", "route_data", "route_description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["route_name", "mason road"], ["route_data", "{\"matchings\":[{\"confidence\":0.9820578604342951,\"geometry\":{\"coordinates\":[[-122.461277,37.802935],[-122.465618,37.80343],[-122.467348,37.803717],[-122.467634,37.803953],[-122.468066,37.80449],[-122.468262,37.804826],[-122.468502,37.805365]],\"type\":\"LineString\"},\"legs\":[{\"summary\":\"\",\"weight\":389.8,\"duration\":389.8,\"steps\":[],\"distance\":541.2},{\"summary\":\"\",\"weight\":152.8,\"duration\":152.8,\"steps\":[],\"distance\":212}],\"weight_name\":\"duration\",\"weight\":542.6,\"duration\":542.6,\"distance\":753.2}],\"tracepoints\":[{\"alternatives_count\":1,\"waypoint_index\":0,\"matchings_index\":0,\"distance\":13.56884068604567,\"name\":\"\",\"location\":[-122.461277,37.802935]},{\"alternatives_count\":3,\"waypoint_index\":1,\"matchings_index\":0,\"distance\":2.389918669109976,\"name\":\"\",\"location\":[-122.467348,37.803717]},{\"alternatives_count\":25,\"waypoint_index\":2,\"matchings_index\":0,\"distance\":0.453991228979681,\"name\":\"\",\"location\":[-122.468502,37.805365]}],\"code\":\"Ok\"}"], ["route_description", "mason street"], ["user_id", 1], ["created_at", "2020-08-06 05:25:16.363809"], ["updated_at", "2020-08-06 05:25:16.363809"]]
+  ↳ app/controllers/api/routes_controller.rb:16
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/routes_controller.rb:16
+  Rendering api/routes/show.json.jbuilder
+  Rendered api/routes/show.json.jbuilder (0.7ms)
+Completed 200 OK in 2659ms (Views: 5.9ms | ActiveRecord: 26.1ms)
+
+
+  [1m[36mUser Load (41.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:16
+  [1m[36mRoute Create (45.1ms)[0m  [1m[32mINSERT INTO "routes" ("route_name", "route_data", "route_description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["route_name", "mason road"], ["route_data", "{\"matchings\":[{\"confidence\":0.9820578604342951,\"geometry\":{\"coordinates\":[[-122.461277,37.802935],[-122.465618,37.80343],[-122.467348,37.803717],[-122.467634,37.803953],[-122.468066,37.80449],[-122.468262,37.804826],[-122.468502,37.805365]],\"type\":\"LineString\"},\"legs\":[{\"summary\":\"\",\"weight\":389.8,\"duration\":389.8,\"steps\":[],\"distance\":541.2},{\"summary\":\"\",\"weight\":152.8,\"duration\":152.8,\"steps\":[],\"distance\":212}],\"weight_name\":\"duration\",\"weight\":542.6,\"duration\":542.6,\"distance\":753.2}],\"tracepoints\":[{\"alternatives_count\":1,\"waypoint_index\":0,\"matchings_index\":0,\"distance\":13.56884068604567,\"name\":\"\",\"location\":[-122.461277,37.802935]},{\"alternatives_count\":3,\"waypoint_index\":1,\"matchings_index\":0,\"distance\":2.389918669109976,\"name\":\"\",\"location\":[-122.467348,37.803717]},{\"alternatives_count\":25,\"waypoint_index\":2,\"matchings_index\":0,\"distance\":0.453991228979681,\"name\":\"\",\"location\":[-122.468502,37.805365]}],\"code\":\"Ok\"}"], ["route_description", "mason street"], ["user_id", 1], ["created_at", "2020-08-06 05:25:16.399325"], ["updated_at", "2020-08-06 05:25:16.399325"]]
+  ↳ app/controllers/api/routes_controller.rb:16
+Started GET "/api/routes" for ::1 at 2020-08-05 22:25:16 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  [1m[35m (20.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/routes_controller.rb:16
+  Rendering api/routes/show.json.jbuilder
+  Rendered api/routes/show.json.jbuilder (0.6ms)
+Completed 200 OK in 19479ms (Views: 7.5ms | ActiveRecord: 112.6ms)
+
+
+  [1m[36mRoute Load (7.0ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (18.6ms)
+Completed 200 OK in 29ms (Views: 22.0ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-05 22:25:30 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (0.5ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (5.5ms)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-05 22:25:32 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.8ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (8.6ms)
+Completed 200 OK in 18ms (Views: 7.6ms | ActiveRecord: 5.9ms)
+
+
+Started POST "/api/activities" for ::1 at 2020-08-05 22:25:47 -0700
+Processing by Api::ActivitiesController#create as JSON
+  Parameters: {"activity"=>{"title"=>"afternoon delight", "duration"=>"111", "sport"=>"Swim", "description"=>"213", "distance"=>"1", "elevation"=>"1", "route_id"=>"1", "user_id"=>"1"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+Completed 200 OK in 21906ms (Views: 0.2ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-05 22:26:08 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (1.8ms)
+Completed 200 OK in 8ms (Views: 6.0ms | ActiveRecord: 0.4ms)
+
+
+  [1m[36mRoute Load (1.0ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+Started POST "/api/activities" for ::1 at 2020-08-05 22:31:11 -0700
+Processing by Api::ActivitiesController#create as JSON
+  Parameters: {"activity"=>{"title"=>"123", "duration"=>"111", "sport"=>"Run", "description"=>"asd", "distance"=>"0", "elevation"=>"0", "route_id"=>"1", "user_id"=>"1"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+Completed 200 OK in 11234ms (Views: 0.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-05 22:31:22 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (1.4ms)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-08-05 22:31:35 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ExBJPQh4ZmOnD9DHyn4D7w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 392ms (Views: 390.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/activities" for ::1 at 2020-08-05 22:31:40 -0700
+Processing by Api::ActivitiesController#create as JSON
+  Parameters: {"activity"=>{"title"=>"1", "duration"=>"111", "sport"=>"Run", "description"=>"1", "distance"=>"0", "elevation"=>"0", "route_id"=>"9", "user_id"=>"1"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mActivity Create (0.6ms)[0m  [1m[32mINSERT INTO "activities" ("title", "sport", "duration", "distance", "elevation", "description", "user_id", "route_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "1"], ["sport", "Run"], ["duration", "111"], ["distance", 0.0], ["elevation", 0], ["description", "1"], ["user_id", 1], ["route_id", 9], ["created_at", "2020-08-06 05:31:46.597760"], ["updated_at", "2020-08-06 05:31:46.597760"]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[35m (228.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+Completed 500 Internal Server Error in 6572ms (ActiveRecord: 229.6ms)
+
+
+
+ActionView::MissingTemplate - Missing template api/activity/show with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/jameslam/Projects/striva/app/views"
+:
+  app/controllers/api/activities_controller.rb:17:in `create'
+
+Started POST "/api/activities" for ::1 at 2020-08-05 22:31:59 -0700
+Processing by Api::ActivitiesController#create as JSON
+  Parameters: {"activity"=>{"title"=>"1", "duration"=>"111", "sport"=>"Run", "description"=>"1", "distance"=>"0", "elevation"=>"0", "route_id"=>"9", "user_id"=>"1"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("title", "sport", "duration", "distance", "elevation", "description", "user_id", "route_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "1"], ["sport", "Run"], ["duration", "111"], ["distance", 0.0], ["elevation", 0], ["description", "1"], ["user_id", 1], ["route_id", 9], ["created_at", "2020-08-06 05:31:59.787139"], ["updated_at", "2020-08-06 05:31:59.787139"]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[35m (40.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 41.8ms)
+
+
+
+ActionView::MissingTemplate - Missing template api/activity/show with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/jameslam/Projects/striva/app/views"
+:
+  app/controllers/api/activities_controller.rb:17:in `create'
+
+Started GET "/api/activities" for ::1 at 2020-08-05 22:32:01 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (1.8ms)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/activities" for ::1 at 2020-08-05 22:32:08 -0700
+Processing by Api::ActivitiesController#create as JSON
+  Parameters: {"activity"=>{"title"=>"123", "duration"=>"123123123", "sport"=>"Run", "description"=>"213123", "distance"=>"0", "elevation"=>"0", "route_id"=>"9", "user_id"=>"1"}}
+Started POST "/api/activities" for ::1 at 2020-08-05 22:32:15 -0700
+Started POST "/api/activities" for ::1 at 2020-08-05 22:32:15 -0700
+Started POST "/api/activities" for ::1 at 2020-08-05 22:32:15 -0700
+  [1m[35m (2.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+Started GET "/api/activities" for ::1 at 2020-08-05 22:32:15 -0700
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mRoute Load (0.4ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mActivity Create (0.5ms)[0m  [1m[32mINSERT INTO "activities" ("title", "sport", "duration", "distance", "elevation", "description", "user_id", "route_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "123"], ["sport", "Run"], ["duration", "123123123"], ["distance", 0.0], ["elevation", 0], ["description", "213123"], ["user_id", 1], ["route_id", 9], ["created_at", "2020-08-06 05:32:15.649929"], ["updated_at", "2020-08-06 05:32:15.649929"]]
+  ↳ app/controllers/api/activities_controller.rb:16
+Processing by Api::ActivitiesController#create as JSON
+  Parameters: {"activity"=>{"title"=>"123", "duration"=>"123123123", "sport"=>"Run", "description"=>"213123", "distance"=>"0", "elevation"=>"0", "route_id"=>"9", "user_id"=>"1"}}
+Processing by Api::ActivitiesController#create as JSON
+  Parameters: {"activity"=>{"title"=>"123", "duration"=>"123123123", "sport"=>"Run", "description"=>"213123", "distance"=>"0", "elevation"=>"0", "route_id"=>"9", "user_id"=>"1"}}
+Processing by Api::ActivitiesController#create as JSON
+  Parameters: {"activity"=>{"title"=>"123", "duration"=>"123123123", "sport"=>"Run", "description"=>"213123", "distance"=>"0", "elevation"=>"0", "route_id"=>"9", "user_id"=>"1"}}
+  [1m[35m (215.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[35m (961.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+Completed 500 Internal Server Error in 8620ms (ActiveRecord: 966.5ms)
+
+
+
+ActionView::MissingTemplate - Missing template api/activity/show with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/jameslam/Projects/striva/app/views"
+:
+  app/controllers/api/activities_controller.rb:17:in `create'
+
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::ActivitiesController#index as JSON
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  ↳ app/controllers/api/activities_controller.rb:16
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRoute Load (1.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mActivity Load (2.9ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  [1m[36mRoute Load (1.5ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mActivity Create (3.2ms)[0m  [1m[32mINSERT INTO "activities" ("title", "sport", "duration", "distance", "elevation", "description", "user_id", "route_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "123"], ["sport", "Run"], ["duration", "123123123"], ["distance", 0.0], ["elevation", 0], ["description", "213123"], ["user_id", 1], ["route_id", 9], ["created_at", "2020-08-06 05:32:16.837676"], ["updated_at", "2020-08-06 05:32:16.837676"]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  Rendered api/activities/index.json.jbuilder (6.4ms)
+  ↳ app/controllers/api/activities_controller.rb:16
+Completed 200 OK in 18ms (Views: 11.4ms | ActiveRecord: 2.9ms)
+
+
+  [1m[36mRoute Load (1.9ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mActivity Create (1.7ms)[0m  [1m[32mINSERT INTO "activities" ("title", "sport", "duration", "distance", "elevation", "description", "user_id", "route_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "123"], ["sport", "Run"], ["duration", "123123123"], ["distance", 0.0], ["elevation", 0], ["description", "213123"], ["user_id", 1], ["route_id", 9], ["created_at", "2020-08-06 05:32:16.842751"], ["updated_at", "2020-08-06 05:32:16.842751"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+  ↳ app/controllers/api/activities_controller.rb:16
+Completed 500 Internal Server Error in 1183ms (ActiveRecord: 229.9ms)
+
+
+  [1m[36mActivity Create (3.3ms)[0m  [1m[32mINSERT INTO "activities" ("title", "sport", "duration", "distance", "elevation", "description", "user_id", "route_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "123"], ["sport", "Run"], ["duration", "123123123"], ["distance", 0.0], ["elevation", 0], ["description", "213123"], ["user_id", 1], ["route_id", 9], ["created_at", "2020-08-06 05:32:16.845939"], ["updated_at", "2020-08-06 05:32:16.845939"]]
+
+ActionView::MissingTemplate - Missing template api/activity/show with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/jameslam/Projects/striva/app/views"
+:
+  app/controllers/api/activities_controller.rb:17:in `create'
+
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[35m (40.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+Completed 500 Internal Server Error in 276ms (ActiveRecord: 52.1ms)
+
+
+
+ActionView::MissingTemplate - Missing template api/activity/show with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/jameslam/Projects/striva/app/views"
+:
+  app/controllers/api/activities_controller.rb:17:in `create'
+
+  [1m[35m (20.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+Completed 500 Internal Server Error in 498ms (ActiveRecord: 28.8ms)
+
+
+
+ActionView::MissingTemplate - Missing template api/activity/show with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/jameslam/Projects/striva/app/views"
+:
+  app/controllers/api/activities_controller.rb:17:in `create'
+
+Started GET "/" for ::1 at 2020-08-05 22:32:17 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ExBJPQh4ZmOnD9DHyn4D7w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.4ms)
+Started GET "/" for ::1 at 2020-08-05 22:32:17 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ExBJPQh4ZmOnD9DHyn4D7w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 98ms (Views: 96.6ms | ActiveRecord: 0.4ms)
+
+
+Completed 200 OK in 101ms (Views: 98.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-05 22:32:17 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.9ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (4.0ms)
+Completed 200 OK in 14ms (Views: 10.5ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/api/activities/4" for ::1 at 2020-08-05 22:32:20 -0700
+Processing by Api::ActivitiesController#destroy as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:26
+  [1m[36mActivity Destroy (0.4ms)[0m  [1m[31mDELETE FROM "activities" WHERE "activities"."id" = $1[0m  [["id", 4]]
+  ↳ app/controllers/api/activities_controller.rb:26
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/activities_controller.rb:26
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Activity"], ["name", "map_img"], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:26
+No template found for Api::ActivitiesController#destroy, rendering head :no_content
+Completed 204 No Content in 97ms (ActiveRecord: 7.8ms)
+
+
+Started DELETE "/api/activities/5" for ::1 at 2020-08-05 22:32:21 -0700
+Processing by Api::ActivitiesController#destroy as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:26
+  [1m[36mActivity Destroy (0.3ms)[0m  [1m[31mDELETE FROM "activities" WHERE "activities"."id" = $1[0m  [["id", 5]]
+  ↳ app/controllers/api/activities_controller.rb:26
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/activities_controller.rb:26
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Activity"], ["name", "map_img"], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:26
+No template found for Api::ActivitiesController#destroy, rendering head :no_content
+Completed 204 No Content in 77ms (ActiveRecord: 3.2ms)
+
+
+Started DELETE "/api/activities/6" for ::1 at 2020-08-05 22:32:22 -0700
+Processing by Api::ActivitiesController#destroy as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:26
+  [1m[36mActivity Destroy (0.3ms)[0m  [1m[31mDELETE FROM "activities" WHERE "activities"."id" = $1[0m  [["id", 6]]
+  ↳ app/controllers/api/activities_controller.rb:26
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/activities_controller.rb:26
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "Activity"], ["name", "map_img"], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:26
+No template found for Api::ActivitiesController#destroy, rendering head :no_content
+Completed 204 No Content in 75ms (ActiveRecord: 3.1ms)
+
+
+Started DELETE "/api/activities/7" for ::1 at 2020-08-05 22:32:23 -0700
+Processing by Api::ActivitiesController#destroy as JSON
+  Parameters: {"id"=>"7"}
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:26
+  [1m[36mActivity Destroy (0.3ms)[0m  [1m[31mDELETE FROM "activities" WHERE "activities"."id" = $1[0m  [["id", 7]]
+  ↳ app/controllers/api/activities_controller.rb:26
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/activities_controller.rb:26
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Activity"], ["name", "map_img"], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:26
+No template found for Api::ActivitiesController#destroy, rendering head :no_content
+Completed 204 No Content in 75ms (ActiveRecord: 3.2ms)
+
+
+Started DELETE "/api/activities/8" for ::1 at 2020-08-05 22:32:23 -0700
+Processing by Api::ActivitiesController#destroy as JSON
+  Parameters: {"id"=>"8"}
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:26
+  [1m[36mActivity Destroy (0.3ms)[0m  [1m[31mDELETE FROM "activities" WHERE "activities"."id" = $1[0m  [["id", 8]]
+  ↳ app/controllers/api/activities_controller.rb:26
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/activities_controller.rb:26
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 8], ["record_type", "Activity"], ["name", "map_img"], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:26
+No template found for Api::ActivitiesController#destroy, rendering head :no_content
+Completed 204 No Content in 75ms (ActiveRecord: 3.1ms)
+
+
+Started DELETE "/api/activities/9" for ::1 at 2020-08-05 22:32:24 -0700
+Processing by Api::ActivitiesController#destroy as JSON
+  Parameters: {"id"=>"9"}
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:26
+  [1m[36mActivity Destroy (0.3ms)[0m  [1m[31mDELETE FROM "activities" WHERE "activities"."id" = $1[0m  [["id", 9]]
+  ↳ app/controllers/api/activities_controller.rb:26
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/activities_controller.rb:26
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 9], ["record_type", "Activity"], ["name", "map_img"], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:26
+No template found for Api::ActivitiesController#destroy, rendering head :no_content
+Completed 204 No Content in 75ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/" for ::1 at 2020-08-05 22:33:08 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ExBJPQh4ZmOnD9DHyn4D7w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (27.3ms)
+Completed 200 OK in 86ms (Views: 73.7ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-05 22:33:08 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (7.3ms)
+Completed 200 OK in 20ms (Views: 10.1ms | ActiveRecord: 4.3ms)
+
+
+Started POST "/api/activities" for ::1 at 2020-08-05 22:33:25 -0700
+Processing by Api::ActivitiesController#create as JSON
+  Parameters: {"activity"=>{"title"=>"Afternoon Run", "duration"=>"100", "sport"=>"Run", "description"=>"It went great", "distance"=>"1", "elevation"=>"120", "route_id"=>"9", "user_id"=>"1"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("title", "sport", "duration", "distance", "elevation", "description", "user_id", "route_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Afternoon Run"], ["sport", "Run"], ["duration", "100"], ["distance", 1.0], ["elevation", 120], ["description", "It went great"], ["user_id", 1], ["route_id", 9], ["created_at", "2020-08-06 05:33:25.338422"], ["updated_at", "2020-08-06 05:33:25.338422"]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[35m (40.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+  Rendering api/activities/index.json.jbuilder
+  Rendered api/activities/index.json.jbuilder (3.7ms)
+Completed 500 Internal Server Error in 93ms (ActiveRecord: 52.4ms)
+
+
+
+ActionView::Template::Error - undefined method `each' for nil:NilClass:
+  app/views/api/activities/index.json.jbuilder:1:in `view template'
+  app/controllers/api/activities_controller.rb:17:in `create'
+
+Started POST "/api/activities" for ::1 at 2020-08-05 22:33:37 -0700
+Processing by Api::ActivitiesController#create as JSON
+  Parameters: {"activity"=>{"title"=>"Afternoon Run", "duration"=>"100", "sport"=>"Run", "description"=>"It went great", "distance"=>"1", "elevation"=>"120", "route_id"=>"9", "user_id"=>"1"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mActivity Create (0.3ms)[0m  [1m[32mINSERT INTO "activities" ("title", "sport", "duration", "distance", "elevation", "description", "user_id", "route_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Afternoon Run"], ["sport", "Run"], ["duration", "100"], ["distance", 1.0], ["elevation", 120], ["description", "It went great"], ["user_id", 1], ["route_id", 9], ["created_at", "2020-08-06 05:33:37.147120"], ["updated_at", "2020-08-06 05:33:37.147120"]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[35m (40.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+  Rendering api/activities/index.json.jbuilder
+  Rendered api/activities/index.json.jbuilder (3.7ms)
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 41.8ms)
+
+
+
+ActionView::Template::Error - undefined method `each' for nil:NilClass:
+  app/views/api/activities/index.json.jbuilder:1:in `view template'
+  app/controllers/api/activities_controller.rb:17:in `create'
+
+Started GET "/" for ::1 at 2020-08-05 22:34:52 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ExBJPQh4ZmOnD9DHyn4D7w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 78ms (Views: 76.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/activities" for ::1 at 2020-08-05 22:34:58 -0700
+Processing by Api::ActivitiesController#create as JSON
+  Parameters: {"activity"=>{"title"=>"asd", "duration"=>"111", "sport"=>"Run", "description"=>"asd", "distance"=>"0", "elevation"=>"0", "route_id"=>"9", "user_id"=>"1"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mRoute Load (0.9ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mActivity Create (0.7ms)[0m  [1m[32mINSERT INTO "activities" ("title", "sport", "duration", "distance", "elevation", "description", "user_id", "route_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "asd"], ["sport", "Run"], ["duration", "111"], ["distance", 0.0], ["elevation", 0], ["description", "asd"], ["user_id", 1], ["route_id", 9], ["created_at", "2020-08-06 05:34:58.198182"], ["updated_at", "2020-08-06 05:34:58.198182"]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[35m (40.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (2.9ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (5.4ms)
+Completed 200 OK in 99ms (Views: 9.4ms | ActiveRecord: 53.8ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-05 22:34:58 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (2.0ms)
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/activities" for ::1 at 2020-08-05 22:35:07 -0700
+Processing by Api::ActivitiesController#create as JSON
+  Parameters: {"activity"=>{"title"=>"nice", "duration"=>"111", "sport"=>"Run", "description"=>"123", "distance"=>"15", "elevation"=>"0", "route_id"=>"9", "user_id"=>"1"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mActivity Create (0.3ms)[0m  [1m[32mINSERT INTO "activities" ("title", "sport", "duration", "distance", "elevation", "description", "user_id", "route_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "nice"], ["sport", "Run"], ["duration", "111"], ["distance", 15.0], ["elevation", 0], ["description", "123"], ["user_id", 1], ["route_id", 9], ["created_at", "2020-08-06 05:35:07.534949"], ["updated_at", "2020-08-06 05:35:07.534949"]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[35m (40.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (2.6ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (4.7ms)
+Completed 200 OK in 62ms (Views: 8.5ms | ActiveRecord: 43.9ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-05 22:35:07 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (2.1ms)
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/activities" for ::1 at 2020-08-05 22:35:12 -0700
+Processing by Api::ActivitiesController#create as JSON
+  Parameters: {"activity"=>{"title"=>"", "duration"=>"", "sport"=>"Run", "description"=>"", "distance"=>"0", "elevation"=>"0", "route_id"=>"9", "user_id"=>"1"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-05 22:35:12 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (2.5ms)
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/activities" for ::1 at 2020-08-05 22:37:52 -0700
+Processing by Api::ActivitiesController#create as JSON
+  Parameters: {"activity"=>{"title"=>"", "duration"=>"", "sport"=>"Run", "description"=>"", "distance"=>"0", "elevation"=>"0", "route_id"=>"9", "user_id"=>"1"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-05 22:37:52 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (2.6ms)
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/activities" for ::1 at 2020-08-05 22:37:59 -0700
+Processing by Api::ActivitiesController#create as JSON
+  Parameters: {"activity"=>{"title"=>"", "duration"=>"", "sport"=>"Run", "description"=>"", "distance"=>"0", "elevation"=>"0", "route_id"=>"9", "user_id"=>"1"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-05 22:37:59 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (2.2ms)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/activities" for ::1 at 2020-08-05 22:38:20 -0700
+Processing by Api::ActivitiesController#create as JSON
+  Parameters: {"activity"=>{"title"=>"", "duration"=>"", "sport"=>"Run", "description"=>"", "distance"=>"0", "elevation"=>"0", "route_id"=>"9", "user_id"=>"1"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+Completed 200 OK in 5704ms (Views: 0.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-05 22:38:26 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (1.9ms)
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/activities" for ::1 at 2020-08-05 22:39:45 -0700
+Processing by Api::ActivitiesController#create as JSON
+  Parameters: {"activity"=>{"title"=>"", "duration"=>"", "sport"=>"Run", "description"=>"", "distance"=>"0", "elevation"=>"0", "route_id"=>"9", "user_id"=>"1"}}
+Started POST "/api/activities" for ::1 at 2020-08-05 22:40:00 -0700
+  [1m[35m (1.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+Completed 422 Unprocessable Entity in 15613ms (Views: 0.2ms | ActiveRecord: 19.0ms)
+
+
+Processing by Api::ActivitiesController#create as JSON
+  Parameters: {"activity"=>{"title"=>"", "duration"=>"", "sport"=>"Run", "description"=>"", "distance"=>"0", "elevation"=>"0", "route_id"=>"9", "user_id"=>"1"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+Completed 422 Unprocessable Entity in 3345ms (Views: 0.2ms | ActiveRecord: 19.0ms)
+
+
+Started GET "/" for ::1 at 2020-08-05 22:41:20 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ExBJPQh4ZmOnD9DHyn4D7w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 398ms (Views: 396.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/activities" for ::1 at 2020-08-05 22:41:23 -0700
+Processing by Api::ActivitiesController#create as JSON
+  Parameters: {"activity"=>{"title"=>"1", "duration"=>"", "sport"=>"Run", "description"=>"", "distance"=>"0", "elevation"=>"0", "route_id"=>"9", "user_id"=>"1"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+Completed 422 Unprocessable Entity in 2501ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/api/activities" for ::1 at 2020-08-05 22:41:44 -0700
+Processing by Api::ActivitiesController#create as JSON
+  Parameters: {"activity"=>{"title"=>"", "duration"=>"", "sport"=>"Run", "description"=>"", "distance"=>"0", "elevation"=>"0", "route_id"=>"9", "user_id"=>"1"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+Completed 422 Unprocessable Entity in 10ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/activities" for ::1 at 2020-08-05 22:41:51 -0700
+Processing by Api::ActivitiesController#create as JSON
+  Parameters: {"activity"=>{"title"=>"a", "duration"=>"", "sport"=>"Run", "description"=>"", "distance"=>"0", "elevation"=>"0", "route_id"=>"9", "user_id"=>"1"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+Completed 422 Unprocessable Entity in 11ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-08-05 22:41:55 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ExBJPQh4ZmOnD9DHyn4D7w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 54ms (Views: 52.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/activities" for ::1 at 2020-08-05 22:41:56 -0700
+Processing by Api::ActivitiesController#create as JSON
+  Parameters: {"activity"=>{"title"=>"", "duration"=>"", "sport"=>"Run", "description"=>"", "distance"=>"0", "elevation"=>"0", "route_id"=>"9", "user_id"=>"1"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+Completed 422 Unprocessable Entity in 44ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2020-08-05 22:42:05 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ExBJPQh4ZmOnD9DHyn4D7w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 60ms (Views: 57.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/activities" for ::1 at 2020-08-05 22:42:08 -0700
+Processing by Api::ActivitiesController#create as JSON
+  Parameters: {"activity"=>{"title"=>"", "duration"=>"", "sport"=>"Run", "description"=>"", "distance"=>"0", "elevation"=>"0", "route_id"=>"9", "user_id"=>"1"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+Completed 422 Unprocessable Entity in 11ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/activities" for ::1 at 2020-08-05 22:42:14 -0700
+Processing by Api::ActivitiesController#create as JSON
+  Parameters: {"activity"=>{"title"=>"", "duration"=>"", "sport"=>"Run", "description"=>"", "distance"=>"0", "elevation"=>"0", "route_id"=>"9", "user_id"=>"1"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+Completed 422 Unprocessable Entity in 4177ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2020-08-05 22:43:24 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ExBJPQh4ZmOnD9DHyn4D7w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 383ms (Views: 380.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-08-05 22:43:33 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ExBJPQh4ZmOnD9DHyn4D7w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 388ms (Views: 386.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/activities" for ::1 at 2020-08-05 22:43:35 -0700
+Processing by Api::ActivitiesController#create as JSON
+  Parameters: {"activity"=>{"title"=>"", "duration"=>"", "sport"=>"Run", "description"=>"", "distance"=>"0", "elevation"=>"0", "route_id"=>"9", "user_id"=>"1"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+Completed 422 Unprocessable Entity in 2567ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2020-08-05 22:44:10 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ExBJPQh4ZmOnD9DHyn4D7w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 77ms (Views: 69.1ms | ActiveRecord: 6.4ms)
+
+
+Started POST "/api/activities" for ::1 at 2020-08-05 22:44:11 -0700
+Processing by Api::ActivitiesController#create as JSON
+  Parameters: {"activity"=>{"title"=>"", "duration"=>"", "sport"=>"Run", "description"=>"", "distance"=>"0", "elevation"=>"0", "route_id"=>"9", "user_id"=>"1"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:15
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:15
+  [1m[36mRoute Load (0.5ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:15
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/activities_controller.rb:15
+Completed 422 Unprocessable Entity in 44ms (Views: 0.2ms | ActiveRecord: 10.4ms)
+
+
+Started POST "/api/activities" for ::1 at 2020-08-05 22:44:25 -0700
+Processing by Api::ActivitiesController#create as JSON
+  Parameters: {"activity"=>{"title"=>"Afternoon Run", "duration"=>"111", "sport"=>"Run", "description"=>"Great", "distance"=>"12", "elevation"=>"14", "route_id"=>"9", "user_id"=>"1"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:15
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:15
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:15
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("title", "sport", "duration", "distance", "elevation", "description", "user_id", "route_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Afternoon Run"], ["sport", "Run"], ["duration", "111"], ["distance", 12.0], ["elevation", 14], ["description", "Great"], ["user_id", 1], ["route_id", 9], ["created_at", "2020-08-06 05:44:25.222720"], ["updated_at", "2020-08-06 05:44:25.222720"]]
+  ↳ app/controllers/api/activities_controller.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/activities_controller.rb:15
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (2.7ms)
+Completed 200 OK in 14ms (Views: 6.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-05 22:44:25 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (2.8ms)
+Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-05 22:44:29 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.8ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (3.6ms)
+Completed 200 OK in 12ms (Views: 9.3ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/api/activities/undefined" for ::1 at 2020-08-05 22:44:41 -0700
+Processing by Api::ActivitiesController#update as JSON
+  Parameters: {"activity"=>{"title"=>"", "duration"=>"", "sport"=>"Run", "description"=>"", "distance"=>"0", "elevation"=>"0", "route_id"=>"9", "user_id"=>"1"}, "id"=>"undefined"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ExBJPQh4ZmOnD9DHyn4D7w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."user_id" = $1 AND "activities"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:33
+Completed 404 Not Found in 6ms (ActiveRecord: 0.5ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Activity with 'id'=undefined [WHERE "activities"."user_id" = $1]:
+  app/controllers/api/activities_controller.rb:33:in `update'
+
+Started GET "/" for ::1 at 2020-08-05 22:47:11 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ExBJPQh4ZmOnD9DHyn4D7w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (21.9ms)
+Completed 200 OK in 85ms (Views: 75.7ms | ActiveRecord: 7.4ms)
+
+
+Started PATCH "/api/activities/undefined" for ::1 at 2020-08-05 22:47:12 -0700
+Processing by Api::ActivitiesController#update as JSON
+  Parameters: {"activity"=>{"title"=>"", "duration"=>"", "sport"=>"Run", "description"=>"", "distance"=>"0", "elevation"=>"0", "route_id"=>"9", "user_id"=>"1"}, "id"=>"undefined"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ExBJPQh4ZmOnD9DHyn4D7w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."user_id" = $1 AND "activities"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:33
+Completed 404 Not Found in 14ms (ActiveRecord: 5.0ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Activity with 'id'=undefined [WHERE "activities"."user_id" = $1]:
+  app/controllers/api/activities_controller.rb:33:in `update'
+
+Started GET "/" for ::1 at 2020-08-05 22:48:04 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ExBJPQh4ZmOnD9DHyn4D7w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 446ms (Views: 443.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-05 22:48:07 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (17.0ms)
+Completed 200 OK in 25ms (Views: 23.1ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/api/activities/14" for ::1 at 2020-08-05 22:48:09 -0700
+Processing by Api::ActivitiesController#destroy as JSON
+  Parameters: {"id"=>"14"}
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:26
+  [1m[36mActivity Destroy (0.3ms)[0m  [1m[31mDELETE FROM "activities" WHERE "activities"."id" = $1[0m  [["id", 14]]
+  ↳ app/controllers/api/activities_controller.rb:26
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/activities_controller.rb:26
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 14], ["record_type", "Activity"], ["name", "map_img"], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:26
+No template found for Api::ActivitiesController#destroy, rendering head :no_content
+Completed 204 No Content in 127ms (ActiveRecord: 5.7ms)
+
+
+Started DELETE "/api/activities/13" for ::1 at 2020-08-05 22:48:10 -0700
+Processing by Api::ActivitiesController#destroy as JSON
+  Parameters: {"id"=>"13"}
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:26
+  [1m[36mActivity Destroy (0.3ms)[0m  [1m[31mDELETE FROM "activities" WHERE "activities"."id" = $1[0m  [["id", 13]]
+  ↳ app/controllers/api/activities_controller.rb:26
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/activities_controller.rb:26
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 13], ["record_type", "Activity"], ["name", "map_img"], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:26
+No template found for Api::ActivitiesController#destroy, rendering head :no_content
+Completed 204 No Content in 76ms (ActiveRecord: 3.1ms)
+
+
+Started DELETE "/api/activities/12" for ::1 at 2020-08-05 22:48:11 -0700
+Processing by Api::ActivitiesController#destroy as JSON
+  Parameters: {"id"=>"12"}
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:26
+  [1m[36mActivity Destroy (0.3ms)[0m  [1m[31mDELETE FROM "activities" WHERE "activities"."id" = $1[0m  [["id", 12]]
+  ↳ app/controllers/api/activities_controller.rb:26
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/activities_controller.rb:26
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 12], ["record_type", "Activity"], ["name", "map_img"], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:26
+No template found for Api::ActivitiesController#destroy, rendering head :no_content
+Completed 204 No Content in 75ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-05 22:48:14 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (2.0ms)
+Completed 200 OK in 9ms (Views: 6.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-05 22:48:15 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (0.4ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (19.8ms)
+Completed 200 OK in 30ms (Views: 19.2ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-05 22:48:16 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (10.4ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (19.4ms)
+Completed 200 OK in 27ms (Views: 16.6ms | ActiveRecord: 10.4ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-05 22:48:17 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (0.4ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (5.7ms)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-05 22:48:17 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (0.5ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (5.8ms)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/api/routes/41" for ::1 at 2020-08-05 22:48:22 -0700
+Processing by Api::RoutesController#destroy as JSON
+  Parameters: {"id"=>"41"}
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:24
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/routes_controller.rb:26
+  [1m[36mRoute Destroy (0.4ms)[0m  [1m[31mDELETE FROM "routes" WHERE "routes"."id" = $1[0m  [["id", 41]]
+  ↳ app/controllers/api/routes_controller.rb:26
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/routes_controller.rb:26
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 41], ["record_type", "Route"], ["name", "map_img"], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:26
+No template found for Api::RoutesController#destroy, rendering head :no_content
+Completed 204 No Content in 82ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-05 22:48:22 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (0.5ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (7.4ms)
+Completed 200 OK in 12ms (Views: 11.7ms | ActiveRecord: 0.5ms)
+
+

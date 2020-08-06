@@ -21,7 +21,7 @@ class ActivityIndexItem extends React.Component {
                 <td>{duration} </td>
                 <td>{distance} mi</td>
                 <td>{elevation} ft</td>
-                <td><NavLink className="activity-edit-index" to={`/activities/${id}/edit`} activity={this.props}>Edit</NavLink></td>
+                {/* <td><NavLink className="activity-edit-index" to={`/activities/${id}/edit`} activity={this.props}>Edit</NavLink></td> */}
                 <td><button className="activity-delete-index" onClick={() => this.props.deleteActivity(id)}>Delete</button></td>
             </tr>
         )

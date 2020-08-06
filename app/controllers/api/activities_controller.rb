@@ -12,11 +12,11 @@ class Api::ActivitiesController < ApplicationController
 
     def create
         @activity = Activity.new(activity_params)
-
         if @activity.save
-            render 'api/activity/show'
+            @activities = Activity.all
+            render 'api/activities/index'
         else
-            render json: ["Activity is invalid or fields are missing"]
+            render json: ["Activity is invalid or fields are missing"], status: 422
         end
     end
 
@@ -32,9 +32,10 @@ class Api::ActivitiesController < ApplicationController
      def update
         @activity = current_user.activities.find(params[:id])
         if @activity.update_attributes(activity_params)
-            render 'api/activities/show'
+            @activities = Activity.all
+            render 'api/activities/index'
         else
-            render json: @activity.errors.full_messages, status: 422
+            render json: ["Activity is invalid or fields are missing"], status: 422
         end
     end
 
