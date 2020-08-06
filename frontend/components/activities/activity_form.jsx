@@ -9,9 +9,12 @@ class ActivityForm extends React.Component {
             title: "",
             date: "",
             time: "",
-            distance: "",
+            dHour: "",
+            dMin: "",
+            dSec: "",
+            distance: "0",
             description: "",
-            elevation: "",
+            elevation: "0",
             sport: "",
         };
 
@@ -27,8 +30,8 @@ class ActivityForm extends React.Component {
         e.preventDefault();
         this.props.activityProcessForm({
                 title: this.state.title,
-                date: this.state.date,
-                time: this.state.time,
+                // date: this.state.date,
+                // time: this.state.time,
                 sport: this.state.sport,
                 description: this.state.description,
                 distance: this.state.distance,
@@ -51,7 +54,7 @@ class ActivityForm extends React.Component {
     render () {
         const {formName, processForm} = this.props;
         return (
-            <div className="activity-container">
+            <div className="activity-form-container">
                 <header className="activity-index-header">
                     <div className="activity-index-title-container">
                         <h1>{formName} Activity Form</h1>
@@ -63,7 +66,7 @@ class ActivityForm extends React.Component {
                 <form className="activity-form" onSubmit={this.handleSubmit}>
 
 
-                    <div>
+                    <div className="section-one">
                         <div className="title-container">
                             <label>Title</label>
                             <br />
@@ -75,22 +78,35 @@ class ActivityForm extends React.Component {
                                 value={this.state.title}
                             ></input>
                         </div>
+                    
+                    <div className="sport-container">
+                        <label>Sport</label>
+                        <br />
+                            <select className="select-form"
+                                onChange={this.update("sport")}
+                                value={this.state.sport}>
+
+                                <option value="Run">Run</option>
+                                <option value="Ride">Ride</option>
+                                <option value="Swim">Swim</option>
+                                <option value="Walk">Walk</option>
+                                <option value="Hike">Hike</option>
+
+                            </select>
+                        {/* <input
+                            className="input-sport form"
+                            onChange={this.update("sport")}
+                            type="text"
+                            placeholder="Run"
+                            value={this.state.sport}
+                        ></input> */}
+                    </div>
                     </div>
 
                     <div className="section-one">
-                        <div className="sport-container">
-                            <label>Sport</label>
-                            <br />
-                            <input
-                                className="input-sport form"
-                                onChange={this.update("sport")}
-                                type="text"
-                                placeholder="Run"
-                                value={this.state.sport}
-                            ></input>
-                        </div>
+       
 
-                        <div className="date-time-container">
+                        {/* <div className="date-time-container">
                             <label>Date & Time</label><br />
                             <input
                                 className="date-input form"
@@ -105,7 +121,7 @@ class ActivityForm extends React.Component {
                                 placeholder={this.state.time}
                                 value={this.state.time || ""}
                             ></input>
-                        </div>
+                        </div> */}
                     </div>
                     <hr />
                     <div className="section-two">
@@ -123,7 +139,7 @@ class ActivityForm extends React.Component {
                                 <input
                                     className="placeholders"
                                     type="text"
-                                    value="Miles"
+                                    value="miles"
                                     readOnly
                                 ></input>
                                 </div>

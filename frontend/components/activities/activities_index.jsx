@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import ActivityIndexItem from './activity_index_item';
 
+
 class ActivityIndex extends React.Component {
     constructor(props) {
         super(props)
@@ -13,7 +14,7 @@ class ActivityIndex extends React.Component {
 
     render() {
         const allActivities = this.props.activities.reverse().map((activity) => (
-            <ActivityIndexItem key={`${activity.id}`} activity={activity} />));
+            <ActivityIndexItem key={`${activity.id}`} deleteActivity={this.props.deleteActivity} activity={activity} />));
         const activityCount = this.props.activities.length;
         const activityWord = activityCount === 1 ? "Activity" : "Activities"
         return (
@@ -36,6 +37,7 @@ class ActivityIndex extends React.Component {
                                 <th>Title</th>
                                 <th>Time</th>
                                 <th>Distance</th>
+                                <th>Elevation</th>
                                 <th> </th>
                                 <th> </th>
                             </tr>

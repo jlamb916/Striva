@@ -1,3 +1,10 @@
+.activity-form-container {
+    font-size: 14px;
+     margin: 20px 200px 20px 200px;
+    padding: 0 16px;
+    min-height: 500px;
+}
+
 .section-one {
     display: flex;
 }
@@ -27,7 +34,7 @@ input.form {
     margin-right: 10px;
     margin-bottom: 15px;
     height: 25px;
-    width: 200px;
+    width: 150px;
     text-align: left;
     padding-left: 5px;
 }
@@ -46,8 +53,19 @@ input.form::placeholder {
     color: #ccccd1;
 }
 
+input::placeholder {
+    color: #ccccd1;
+}
+
+
 input.input-title {
-    width: 634px;    
+    width: 550px;    
+}
+
+.select-form {
+    margin-top: 15px;
+    height: 25px;
+    width: 100px;
 }
 
 .section-two {
