@@ -1,5 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import RouteFeedItem from './route_feed_item'
+
 
 class FeedIndex extends React.Component {
     constructor(props) {
@@ -41,6 +43,7 @@ class FeedIndex extends React.Component {
                         </div>
                     </div>
             </div>
+                <RouteFeedItem key={`${route.id}`} route={route} />
             </div>
         )
     }
