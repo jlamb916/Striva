@@ -9,6 +9,7 @@
 
 User.delete_all
 Route.delete_all
+Activity.delete_all
 
 demo = User.create!(username: 'demo', password: 'password', email: 'demo@email.com')
 john = User.create!(username: 'john', password: 'password', email: 'john@email.com')
@@ -35,3 +36,54 @@ route7 = Route.create!(route_name: "hiking to 7-11", route_description: "i hiked
 
 route6 = Route.create!(route_name: "walk to school", route_description: "i routed my walk to school", user_id: demo.id,
     route_data: '{"matchings":[{"confidence":0.000009946279264316793,"geometry":{"coordinates":[[-122.502907,37.711699],[-122.502543,37.711874],[-122.502203,37.711842],[-122.502029,37.711633],[-122.502258,37.711387],[-122.502143,37.711063],[-122.501737,37.710816],[-122.502015,37.710421],[-122.501342,37.709419],[-122.501421,37.709267],[-122.501073,37.708467],[-122.501666,37.707868],[-122.501682,37.707511],[-122.50066,37.706013],[-122.500518,37.705487],[-122.500623,37.705177],[-122.500201,37.704532],[-122.500287,37.703677],[-122.499869,37.702208],[-122.499721,37.701988],[-122.499319,37.70196],[-122.499075,37.701652],[-122.498616,37.701521],[-122.498461,37.701336],[-122.498076,37.698311],[-122.497594,37.696791],[-122.498114,37.696644],[-122.498224,37.696906],[-122.498548,37.696362],[-122.498691,37.696348]],"type":"LineString"},"legs":[{"summary":"","weight":669.4,"duration":669.4,"steps":[],"distance":2187.7}],"weight_name":"cyclability","weight":669.4,"duration":669.4,"distance":2187.7}],"tracepoints":[{"alternatives_count":0,"waypoint_index":0,"matchings_index":0,"distance":36.395555244454876,"name":"","location":[-122.502907,37.711699]},{"alternatives_count":1,"waypoint_index":1,"matchings_index":0,"distance":66.91572354879693,"name":"","location":[-122.498691,37.696348]}],"code":"Ok"}');
+
+
+activity1 = Activity.create!(
+    title: "Morning Run", sport: "Run",
+    duration: "25", distance: 3.2,
+    elevation: 45, description: "Going on a morning Run",
+    user_id: demo.id, route_id: route1.id
+)
+
+activity2 = Activity.create!(
+    title: "Afternoon Run", sport: "Run",
+    duration: "40", distance: 1.2,
+    elevation: 92, description: "Going on a morning Run",
+    user_id: demo.id, route_id: route2.id
+)
+activity3 = Activity.create!(
+    title: "Short Bikeride", sport: "Ride",
+    duration: "25", distance: 5.3,
+    elevation: 19, description: "Going on a morning Run",
+    user_id: demo.id, route_id: route3.id
+)
+activity4 = Activity.create!(
+    title: "Quick cycling warmup", sport: "Ride",
+    duration: "10", distance: 0.5,
+    elevation: 320, description: "Warmup bike ride",
+    user_id: demo.id, route_id: route4.id
+)
+activity5 = Activity.create!(
+    title: "Marathon training", sport: "Ride",
+    duration: "30", distance: 3.5,
+    elevation: 300, description: "Training for the upcoming marathon",
+    user_id: demo.id, route_id: route1.id
+)
+activity6 = Activity.create!(
+    title: "Preworkout run", sport: "Run",
+    duration: "52", distance: 2.1,
+    elevation: 60, description: "Going on a Run before the gym",
+    user_id: demo.id, route_id: route5.id
+)
+activity7 = Activity.create!(
+    title: "Afternoon Ride", sport: "Ride",
+    duration: "25", distance: 1.62,
+    elevation: 102, description: "Going on an Afternoon Ride",
+    user_id: demo.id, route_id: route6.id
+)
+activity8 = Activity.create!(
+    title: "Latenight run", sport: "Run",
+    duration: "40", distance: 2.3,
+    elevation: 41, description: "Going on a Latenight Run",
+    user_id: demo.id, route_id: route7.id
+)
