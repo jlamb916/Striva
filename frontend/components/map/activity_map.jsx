@@ -33,7 +33,7 @@ class MapBox extends React.Component {
                 zoom: map.getZoom().toFixed(2)
             });
         });
-        
+
         var draw = new MapboxDraw({
             // Instead of showing all the draw tools, show only the line string and delete tools
             displayControlsDefault: false,
@@ -100,7 +100,7 @@ class MapBox extends React.Component {
             // var coords = data.features[lastFeature].geometry.coordinates;
             var coords = routeData
             // Format the coordinates
-            
+
             var newCoords = coords.join(';')
             // Set the radius for each coordinate pair to 25 meters
             var radius = [];
@@ -113,7 +113,7 @@ class MapBox extends React.Component {
 
         // Make a Map Matching request
         function getMatch(coordinates, radius, profile) {
-           
+
             // Separate the radiuses with semicolons
             var radiuses = radius.join(';')
             // Create the query
@@ -163,7 +163,7 @@ class MapBox extends React.Component {
 
         }
 
-        map.on('load',  () => {
+        map.on('load', () => {
 
             updateRoute(this.routeData.matchings[0].geometry.coordinates);
             let coordArr = this.routeData.matchings[0].geometry.coordinates;
@@ -202,19 +202,14 @@ class MapBox extends React.Component {
 
 
         });
-    
-        
-       
 
- 
-
-}
+    }
 
     // specifies the mapContainer to be drawn on the new div
     render() {
         return (
             <div className="index-container">
-                <div className="map-container">
+                <div className="activity-map-container">
                     <div ref={el => this.mapContainer = el} id='map-leaflet' className='mapContainer' >
                     </div>
                 </div>
@@ -225,5 +220,3 @@ class MapBox extends React.Component {
 
 
 export default MapBox;
-
-

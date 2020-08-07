@@ -14,3 +14,9 @@
     width: 100%;
     margin: auto;
 }
+
+.activity-map-container {
+    width: 850px;
+    height: 340px;
+    position: relative;
+}
