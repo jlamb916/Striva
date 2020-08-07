@@ -9,7 +9,6 @@
     box-sizing: border-box;
     margin: 20px 15px;
     background-color: white;
-    width: 550px;
     border-radius: 3px;
 }
 
@@ -43,6 +42,9 @@
     color: gray;
     font-size: 12px;
 }
+.feed-username {
+    font-size: 18px;
+}
 
 .feed-activity-info {
     padding-left: 76px;
@@ -50,6 +52,11 @@
 
 .feed-activity-header {
     padding-bottom: 5px;
+}
+
+.feed-activity-header:hover {
+    color: #007fb6;
+    text-decoration: underline;
 }
 
 .feed-activity-data {
@@ -78,7 +85,7 @@
 .map-canvas-feed {
     margin: 15px auto;
     padding-bottom: 15px;
-    height: 225px;
+    height: 300px;
     position: relative;
   text-align: center;
     width: 95%;

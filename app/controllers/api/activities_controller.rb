@@ -12,6 +12,7 @@ class Api::ActivitiesController < ApplicationController
 
     def create
         @activity = Activity.new(activity_params)
+        debugger
         if @activity.save
             @activities = Activity.all
             render 'api/activities/index'

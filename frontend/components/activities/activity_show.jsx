@@ -32,7 +32,7 @@ class ActivityShow extends React.Component {
                         <div className="activity-left-container">
                         <div className="profile-image"></div>
                         <div className="activity-left-info">
-                                <h2 className="stat-label">{day}, {month}</h2>
+                                <div className="stat-label">{day}, {month}</div>
                             <h2>{activity.title}</h2>
                                 <NavLink className="activity-edit-index" to={`/activities/${activity.id}/edit`}>Edit</NavLink>
                         </div>

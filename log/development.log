@@ -69868,3 +69868,2717 @@ Completed 200 OK in 14ms (Views: 12.0ms | ActiveRecord: 0.6ms)
   ↳ db/seeds.rb:84
   [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
   ↳ db/seeds.rb:84
+Started GET "/" for ::1 at 2020-08-07 13:23:51 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ExBJPQh4ZmOnD9DHyn4D7w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered static_pages/root.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 68ms (Views: 65.5ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/api/session" for ::1 at 2020-08-07 13:23:53 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"demo", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "demo"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:32
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "demo"], ["id", 5], ["LIMIT", 1]]
+  ↳ app/models/user.rb:32
+  [1m[36mUser Update (4.0ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "fEUX68KwWmdua4LJf7wQLA"], ["updated_at", "2020-08-07 20:23:54.185203"], ["id", 5]]
+  ↳ app/models/user.rb:32
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:32
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/show.json.jbuilder (1.5ms)
+Completed 200 OK in 288ms (Views: 6.7ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-07 13:23:54 -0700
+Started GET "/api/routes" for ::1 at 2020-08-07 13:23:54 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (1.0ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (4.0ms)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 1.0ms)
+
+
+  [1m[36mActivity Load (42.0ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (44.7ms)
+Completed 200 OK in 52ms (Views: 8.2ms | ActiveRecord: 42.0ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 13:23:58 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fEUX68KwWmdua4LJf7wQLA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 52ms (Views: 50.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:23:58 -0700
+Processing by Api::RoutesController#index as JSON
+Started GET "/api/activities" for ::1 at 2020-08-07 13:23:58 -0700
+  Rendering api/routes/index.json.jbuilder
+Processing by Api::ActivitiesController#index as JSON
+  [1m[36mRoute Load (3.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendering api/activities/index.json.jbuilder
+  Rendered api/routes/index.json.jbuilder (14.1ms)
+Completed 200 OK in 22ms (Views: 18.2ms | ActiveRecord: 3.2ms)
+
+
+  [1m[36mActivity Load (2.0ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (5.7ms)
+Completed 200 OK in 18ms (Views: 14.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:24:52 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (0.4ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (3.6ms)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/routes" for ::1 at 2020-08-07 13:25:47 -0700
+Processing by Api::RoutesController#create as JSON
+  Parameters: {"route"=>{"route_name"=>"", "route_description"=>"", "user_id"=>"5", "route_data"=>"{\"matchings\":[{\"confidence\":0.9796591310329419,\"geometry\":{\"coordinates\":[[-122.499619,37.718547],[-122.499352,37.718038],[-122.498891,37.717522],[-122.498359,37.717138],[-122.497678,37.71682],[-122.494426,37.715853],[-122.493171,37.715355],[-122.492271,37.714663],[-122.491137,37.713274],[-122.489437,37.712134]],\"type\":\"LineString\"},\"legs\":[{\"summary\":\"\",\"weight\":190.9,\"duration\":190.9,\"steps\":[],\"distance\":265.2},{\"summary\":\"\",\"weight\":309.2,\"duration\":309.2,\"steps\":[],\"distance\":429.6},{\"summary\":\"\",\"weight\":353.5,\"duration\":353.5,\"steps\":[],\"distance\":491.1}],\"weight_name\":\"duration\",\"weight\":853.6,\"duration\":853.6,\"distance\":1185.9}],\"tracepoints\":[{\"alternatives_count\":0,\"waypoint_index\":0,\"matchings_index\":0,\"distance\":2.4198337680087354,\"name\":\"John Muir Drive\",\"location\":[-122.499619,37.718547]},{\"alternatives_count\":0,\"waypoint_index\":1,\"matchings_index\":0,\"distance\":14.165050498714443,\"name\":\"John Muir Drive\",\"location\":[-122.497678,37.71682]},{\"alternatives_count\":0,\"waypoint_index\":2,\"matchings_index\":0,\"distance\":15.229643045147556,\"name\":\"John Muir Drive\",\"location\":[-122.493171,37.715355]},{\"alternatives_count\":33,\"waypoint_index\":3,\"matchings_index\":0,\"distance\":1.6154804661459092,\"name\":\"John Muir Drive\",\"location\":[-122.489437,37.712134]}],\"code\":\"Ok\"}"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/routes_controller.rb:15
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:15
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/routes_controller.rb:15
+Completed 422 Unprocessable Entity in 25ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/routes" for ::1 at 2020-08-07 13:26:03 -0700
+Processing by Api::RoutesController#create as JSON
+  Parameters: {"route"=>{"route_name"=>"Lake route", "route_description"=>"run around the lake", "user_id"=>"5", "route_data"=>"{\"matchings\":[{\"confidence\":0.9796591310329419,\"geometry\":{\"coordinates\":[[-122.499619,37.718547],[-122.499352,37.718038],[-122.498891,37.717522],[-122.498359,37.717138],[-122.497678,37.71682],[-122.494426,37.715853],[-122.493171,37.715355],[-122.492271,37.714663],[-122.491137,37.713274],[-122.489437,37.712134]],\"type\":\"LineString\"},\"legs\":[{\"summary\":\"\",\"weight\":190.9,\"duration\":190.9,\"steps\":[],\"distance\":265.2},{\"summary\":\"\",\"weight\":309.2,\"duration\":309.2,\"steps\":[],\"distance\":429.6},{\"summary\":\"\",\"weight\":353.5,\"duration\":353.5,\"steps\":[],\"distance\":491.1}],\"weight_name\":\"duration\",\"weight\":853.6,\"duration\":853.6,\"distance\":1185.9}],\"tracepoints\":[{\"alternatives_count\":0,\"waypoint_index\":0,\"matchings_index\":0,\"distance\":2.4198337680087354,\"name\":\"John Muir Drive\",\"location\":[-122.499619,37.718547]},{\"alternatives_count\":0,\"waypoint_index\":1,\"matchings_index\":0,\"distance\":14.165050498714443,\"name\":\"John Muir Drive\",\"location\":[-122.497678,37.71682]},{\"alternatives_count\":0,\"waypoint_index\":2,\"matchings_index\":0,\"distance\":15.229643045147556,\"name\":\"John Muir Drive\",\"location\":[-122.493171,37.715355]},{\"alternatives_count\":33,\"waypoint_index\":3,\"matchings_index\":0,\"distance\":1.6154804661459092,\"name\":\"John Muir Drive\",\"location\":[-122.489437,37.712134]}],\"code\":\"Ok\"}"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/routes_controller.rb:15
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:15
+  [1m[36mRoute Create (2.9ms)[0m  [1m[32mINSERT INTO "routes" ("route_name", "route_data", "route_description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["route_name", "Lake route"], ["route_data", "{\"matchings\":[{\"confidence\":0.9796591310329419,\"geometry\":{\"coordinates\":[[-122.499619,37.718547],[-122.499352,37.718038],[-122.498891,37.717522],[-122.498359,37.717138],[-122.497678,37.71682],[-122.494426,37.715853],[-122.493171,37.715355],[-122.492271,37.714663],[-122.491137,37.713274],[-122.489437,37.712134]],\"type\":\"LineString\"},\"legs\":[{\"summary\":\"\",\"weight\":190.9,\"duration\":190.9,\"steps\":[],\"distance\":265.2},{\"summary\":\"\",\"weight\":309.2,\"duration\":309.2,\"steps\":[],\"distance\":429.6},{\"summary\":\"\",\"weight\":353.5,\"duration\":353.5,\"steps\":[],\"distance\":491.1}],\"weight_name\":\"duration\",\"weight\":853.6,\"duration\":853.6,\"distance\":1185.9}],\"tracepoints\":[{\"alternatives_count\":0,\"waypoint_index\":0,\"matchings_index\":0,\"distance\":2.4198337680087354,\"name\":\"John Muir Drive\",\"location\":[-122.499619,37.718547]},{\"alternatives_count\":0,\"waypoint_index\":1,\"matchings_index\":0,\"distance\":14.165050498714443,\"name\":\"John Muir Drive\",\"location\":[-122.497678,37.71682]},{\"alternatives_count\":0,\"waypoint_index\":2,\"matchings_index\":0,\"distance\":15.229643045147556,\"name\":\"John Muir Drive\",\"location\":[-122.493171,37.715355]},{\"alternatives_count\":33,\"waypoint_index\":3,\"matchings_index\":0,\"distance\":1.6154804661459092,\"name\":\"John Muir Drive\",\"location\":[-122.489437,37.712134]}],\"code\":\"Ok\"}"], ["route_description", "run around the lake"], ["user_id", 5], ["created_at", "2020-08-07 20:26:03.165025"], ["updated_at", "2020-08-07 20:26:03.165025"]]
+  ↳ app/controllers/api/routes_controller.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/routes_controller.rb:15
+  Rendering api/routes/show.json.jbuilder
+  Rendered api/routes/show.json.jbuilder (0.6ms)
+Completed 200 OK in 13ms (Views: 5.7ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:26:03 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (8.3ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (13.3ms)
+Completed 200 OK in 23ms (Views: 14.1ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:27:53 -0700
+Processing by Api::RoutesController#index as JSON
+Started GET "/api/activities" for ::1 at 2020-08-07 13:27:53 -0700
+  Rendering api/routes/index.json.jbuilder
+Processing by Api::ActivitiesController#index as JSON
+  [1m[36mRoute Load (2.9ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (12.9ms)
+Completed 200 OK in 20ms (Views: 16.6ms | ActiveRecord: 2.9ms)
+
+
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (3.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (20.9ms)
+Completed 200 OK in 34ms (Views: 28.5ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:27:56 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (5.5ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (8.1ms)
+Completed 200 OK in 16ms (Views: 10.6ms | ActiveRecord: 5.5ms)
+
+
+Started POST "/api/routes" for ::1 at 2020-08-07 13:28:36 -0700
+Processing by Api::RoutesController#create as JSON
+  Parameters: {"route"=>{"route_name"=>"SF route", "route_description"=>"sf route", "user_id"=>"5", "route_data"=>"{\"matchings\":[{\"confidence\":0.9835354446369798,\"geometry\":{\"coordinates\":[[-122.481915,37.727144],[-122.483755,37.72706],[-122.483861,37.727049],[-122.483855,37.726996],[-122.4839,37.726681],[-122.484862,37.724334],[-122.484771,37.724006],[-122.4836,37.722987],[-122.483421,37.722943],[-122.483401,37.722783],[-122.482534,37.722024],[-122.482161,37.721887],[-122.482106,37.721694],[-122.481369,37.721057],[-122.480954,37.720973],[-122.476246,37.720809],[-122.47582,37.720853],[-122.475362,37.720996],[-122.475046,37.726505],[-122.475187,37.726773],[-122.476159,37.726817],[-122.476152,37.726928],[-122.477966,37.727006],[-122.478468,37.727227],[-122.478645,37.727515],[-122.478718,37.728235],[-122.478935,37.728413],[-122.47936,37.728553],[-122.479885,37.728523],[-122.480283,37.72833],[-122.480953,37.727805]],\"type\":\"LineString\"},\"legs\":[{\"summary\":\"\",\"weight\":130.6,\"duration\":130.6,\"steps\":[],\"distance\":178.5},{\"summary\":\"\",\"weight\":227.1,\"duration\":227.1,\"steps\":[],\"distance\":310.1},{\"summary\":\"\",\"weight\":385.5,\"duration\":385.5,\"steps\":[],\"distance\":536.2},{\"summary\":\"\",\"weight\":357,\"duration\":357,\"steps\":[],\"distance\":495.9},{\"summary\":\"\",\"weight\":467.1,\"duration\":467.1,\"steps\":[],\"distance\":645.8},{\"summary\":\"\",\"weight\":225,\"duration\":225,\"steps\":[],\"distance\":312.7},{\"summary\":\"\",\"weight\":104,\"duration\":104,\"steps\":[],\"distance\":144.3},{\"summary\":\"\",\"weight\":152.3,\"duration\":152.3,\"steps\":[],\"distance\":211.7}],\"weight_name\":\"duration\",\"weight\":2048.6000000000004,\"duration\":2048.6000000000004,\"distance\":2835.2}],\"tracepoints\":[{\"alternatives_count\":0,\"waypoint_index\":0,\"matchings_index\":0,\"distance\":0.4776884298138355,\"name\":\"Winston Drive\",\"location\":[-122.481915,37.727144]},{\"alternatives_count\":0,\"waypoint_index\":1,\"matchings_index\":0,\"distance\":6.898962585689642,\"name\":\"Lake Merced Boulevard\",\"location\":[-122.483855,37.726996]},{\"alternatives_count\":0,\"waypoint_index\":2,\"matchings_index\":0,\"distance\":15.556090621947986,\"name\":\"\",\"location\":[-122.484862,37.724334]},{\"alternatives_count\":0,\"waypoint_index\":3,\"matchings_index\":0,\"distance\":19.3410133504189,\"name\":\"Holloway Avenue\",\"location\":[-122.480954,37.720973]},{\"alternatives_count\":0,\"waypoint_index\":4,\"matchings_index\":0,\"distance\":2.874944213198583,\"name\":\"Holloway Avenue\",\"location\":[-122.475362,37.720996]},{\"alternatives_count\":1,\"waypoint_index\":5,\"matchings_index\":0,\"distance\":14.119058545682023,\"name\":\"\",\"location\":[-122.475187,37.726773]},{\"alternatives_count\":4,\"waypoint_index\":6,\"matchings_index\":0,\"distance\":11.11442300027845,\"name\":\"Winston Drive\",\"location\":[-122.478468,37.727227]},{\"alternatives_count\":6,\"waypoint_index\":7,\"matchings_index\":0,\"distance\":3.4285537675414353,\"name\":\"Winston Drive\",\"location\":[-122.478935,37.728413]},{\"alternatives_count\":33,\"waypoint_index\":8,\"matchings_index\":0,\"distance\":1.5954309732899155,\"name\":\"Winston Drive\",\"location\":[-122.480953,37.727805]}],\"code\":\"Ok\"}"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/routes_controller.rb:15
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:15
+  [1m[36mRoute Create (3.8ms)[0m  [1m[32mINSERT INTO "routes" ("route_name", "route_data", "route_description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["route_name", "SF route"], ["route_data", "{\"matchings\":[{\"confidence\":0.9835354446369798,\"geometry\":{\"coordinates\":[[-122.481915,37.727144],[-122.483755,37.72706],[-122.483861,37.727049],[-122.483855,37.726996],[-122.4839,37.726681],[-122.484862,37.724334],[-122.484771,37.724006],[-122.4836,37.722987],[-122.483421,37.722943],[-122.483401,37.722783],[-122.482534,37.722024],[-122.482161,37.721887],[-122.482106,37.721694],[-122.481369,37.721057],[-122.480954,37.720973],[-122.476246,37.720809],[-122.47582,37.720853],[-122.475362,37.720996],[-122.475046,37.726505],[-122.475187,37.726773],[-122.476159,37.726817],[-122.476152,37.726928],[-122.477966,37.727006],[-122.478468,37.727227],[-122.478645,37.727515],[-122.478718,37.728235],[-122.478935,37.728413],[-122.47936,37.728553],[-122.479885,37.728523],[-122.480283,37.72833],[-122.480953,37.727805]],\"type\":\"LineString\"},\"legs\":[{\"summary\":\"\",\"weight\":130.6,\"duration\":130.6,\"steps\":[],\"distance\":178.5},{\"summary\":\"\",\"weight\":227.1,\"duration\":227.1,\"steps\":[],\"distance\":310.1},{\"summary\":\"\",\"weight\":385.5,\"duration\":385.5,\"steps\":[],\"distance\":536.2},{\"summary\":\"\",\"weight\":357,\"duration\":357,\"steps\":[],\"distance\":495.9},{\"summary\":\"\",\"weight\":467.1,\"duration\":467.1,\"steps\":[],\"distance\":645.8},{\"summary\":\"\",\"weight\":225,\"duration\":225,\"steps\":[],\"distance\":312.7},{\"summary\":\"\",\"weight\":104,\"duration\":104,\"steps\":[],\"distance\":144.3},{\"summary\":\"\",\"weight\":152.3,\"duration\":152.3,\"steps\":[],\"distance\":211.7}],\"weight_name\":\"duration\",\"weight\":2048.6000000000004,\"duration\":2048.6000000000004,\"distance\":2835.2}],\"tracepoints\":[{\"alternatives_count\":0,\"waypoint_index\":0,\"matchings_index\":0,\"distance\":0.4776884298138355,\"name\":\"Winston Drive\",\"location\":[-122.481915,37.727144]},{\"alternatives_count\":0,\"waypoint_index\":1,\"matchings_index\":0,\"distance\":6.898962585689642,\"name\":\"Lake Merced Boulevard\",\"location\":[-122.483855,37.726996]},{\"alternatives_count\":0,\"waypoint_index\":2,\"matchings_index\":0,\"distance\":15.556090621947986,\"name\":\"\",\"location\":[-122.484862,37.724334]},{\"alternatives_count\":0,\"waypoint_index\":3,\"matchings_index\":0,\"distance\":19.3410133504189,\"name\":\"Holloway Avenue\",\"location\":[-122.480954,37.720973]},{\"alternatives_count\":0,\"waypoint_index\":4,\"matchings_index\":0,\"distance\":2.874944213198583,\"name\":\"Holloway Avenue\",\"location\":[-122.475362,37.720996]},{\"alternatives_count\":1,\"waypoint_index\":5,\"matchings_index\":0,\"distance\":14.119058545682023,\"name\":\"\",\"location\":[-122.475187,37.726773]},{\"alternatives_count\":4,\"waypoint_index\":6,\"matchings_index\":0,\"distance\":11.11442300027845,\"name\":\"Winston Drive\",\"location\":[-122.478468,37.727227]},{\"alternatives_count\":6,\"waypoint_index\":7,\"matchings_index\":0,\"distance\":3.4285537675414353,\"name\":\"Winston Drive\",\"location\":[-122.478935,37.728413]},{\"alternatives_count\":33,\"waypoint_index\":8,\"matchings_index\":0,\"distance\":1.5954309732899155,\"name\":\"Winston Drive\",\"location\":[-122.480953,37.727805]}],\"code\":\"Ok\"}"], ["route_description", "sf route"], ["user_id", 5], ["created_at", "2020-08-07 20:28:36.900907"], ["updated_at", "2020-08-07 20:28:36.900907"]]
+  ↳ app/controllers/api/routes_controller.rb:15
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/routes_controller.rb:15
+  Rendering api/routes/show.json.jbuilder
+  Rendered api/routes/show.json.jbuilder (0.6ms)
+Completed 200 OK in 14ms (Views: 5.2ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:28:36 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (1.3ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (4.2ms)
+Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/api/routes/51" for ::1 at 2020-08-07 13:28:42 -0700
+Processing by Api::RoutesController#destroy as JSON
+  Parameters: {"id"=>"51"}
+  [1m[36mRoute Load (0.4ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/routes_controller.rb:25
+  [1m[36mRoute Destroy (0.4ms)[0m  [1m[31mDELETE FROM "routes" WHERE "routes"."id" = $1[0m  [["id", 51]]
+  ↳ app/controllers/api/routes_controller.rb:25
+  [1m[35m (39.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/routes_controller.rb:25
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 51], ["record_type", "Route"], ["name", "map_img"], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:25
+No template found for Api::RoutesController#destroy, rendering head :no_content
+Completed 204 No Content in 148ms (ActiveRecord: 47.4ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:28:42 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (0.4ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (2.9ms)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/routes" for ::1 at 2020-08-07 13:29:23 -0700
+Processing by Api::RoutesController#create as JSON
+  Parameters: {"route"=>{"route_name"=>"sf route", "route_description"=>"sfsu route", "user_id"=>"5", "route_data"=>"{\"matchings\":[{\"confidence\":0.7136357141084703,\"geometry\":{\"coordinates\":[[-122.479987,37.728488],[-122.480283,37.72833],[-122.481487,37.72735],[-122.481786,37.727182],[-122.483854,37.726984],[-122.483938,37.72658],[-122.484855,37.72441],[-122.484919,37.723923],[-122.483722,37.722898],[-122.483693,37.722763],[-122.483406,37.72267],[-122.482485,37.721814],[-122.482573,37.721645],[-122.482999,37.721291],[-122.483225,37.721237],[-122.484417,37.721269],[-122.484683,37.721171],[-122.484822,37.720976],[-122.484712,37.720947],[-122.484522,37.721131],[-122.484302,37.721201],[-122.482986,37.721161],[-122.482509,37.721545],[-122.482106,37.721694],[-122.481118,37.720826],[-122.480902,37.72078],[-122.480807,37.720572],[-122.479804,37.719704],[-122.479636,37.719663],[-122.479514,37.719751],[-122.478913,37.720136],[-122.476025,37.720013],[-122.475715,37.720102],[-122.475486,37.720275],[-122.475467,37.720188],[-122.475353,37.720271],[-122.475033,37.726879],[-122.475035,37.726994],[-122.476148,37.727016],[-122.476152,37.726928],[-122.477857,37.726996],[-122.478168,37.727055],[-122.478439,37.727198],[-122.478631,37.727468],[-122.478718,37.728235],[-122.478855,37.728365],[-122.479256,37.728533],[-122.479709,37.728553]],\"type\":\"LineString\"},\"legs\":[{\"summary\":\"\",\"weight\":155.5,\"duration\":155.5,\"steps\":[],\"distance\":216},{\"summary\":\"\",\"weight\":133.3,\"duration\":133.3,\"steps\":[],\"distance\":185.1},{\"summary\":\"\",\"weight\":259.8,\"duration\":259.8,\"steps\":[],\"distance\":355.6},{\"summary\":\"\",\"weight\":416.6,\"duration\":416.6,\"steps\":[],\"distance\":578.4},{\"summary\":\"\",\"weight\":197.9,\"duration\":197.9,\"steps\":[],\"distance\":275},{\"summary\":\"\",\"weight\":243.8,\"duration\":243.8,\"steps\":[],\"distance\":338.6},{\"summary\":\"\",\"weight\":49.4,\"duration\":49.4,\"steps\":[],\"distance\":68.7},{\"summary\":\"\",\"weight\":232.1,\"duration\":232.1,\"steps\":[],\"distance\":322.4},{\"summary\":\"\",\"weight\":549.8,\"duration\":549.8,\"steps\":[],\"distance\":749.4},{\"summary\":\"\",\"weight\":240.1,\"duration\":240.1,\"steps\":[],\"distance\":327.9},{\"summary\":\"\",\"weight\":100.6,\"duration\":100.6,\"steps\":[],\"distance\":139.6},{\"summary\":\"\",\"weight\":57.7,\"duration\":57.7,\"steps\":[],\"distance\":80.4}],\"weight_name\":\"duration\",\"weight\":2636.5999999999995,\"duration\":2636.5999999999995,\"distance\":3637.1}],\"tracepoints\":[{\"alternatives_count\":0,\"waypoint_index\":0,\"matchings_index\":0,\"distance\":17.10910851195227,\"name\":\"\",\"location\":[-122.479987,37.728488]},{\"alternatives_count\":0,\"waypoint_index\":1,\"matchings_index\":0,\"distance\":3.8650064234506667,\"name\":\"Winston Drive\",\"location\":[-122.481786,37.727182]},{\"alternatives_count\":0,\"waypoint_index\":2,\"matchings_index\":0,\"distance\":13.545491132730426,\"name\":\"Winston Drive\",\"location\":[-122.483854,37.726984]},{\"alternatives_count\":0,\"waypoint_index\":3,\"matchings_index\":0,\"distance\":21.12148173082085,\"name\":\"Font Boulevard\",\"location\":[-122.484919,37.723923]},{\"alternatives_count\":0,\"waypoint_index\":4,\"matchings_index\":0,\"distance\":43.65960225067979,\"name\":\"Vidal Drive\",\"location\":[-122.484822,37.720976]},{\"alternatives_count\":0,\"waypoint_index\":5,\"matchings_index\":0,\"distance\":30.72933340618637,\"name\":\"Font Boulevard\",\"location\":[-122.482106,37.721694]},{\"alternatives_count\":0,\"waypoint_index\":6,\"matchings_index\":0,\"distance\":7.062304416354118,\"name\":\"Serrano Drive\",\"location\":[-122.479514,37.719751]},{\"alternatives_count\":0,\"waypoint_index\":7,\"matchings_index\":0,\"distance\":0.4526243680898601,\"name\":\"Serrano Drive\",\"location\":[-122.478913,37.720136]},{\"alternatives_count\":1,\"waypoint_index\":8,\"matchings_index\":0,\"distance\":18.808853852601224,\"name\":\"\",\"location\":[-122.475467,37.720188]},{\"alternatives_count\":3,\"waypoint_index\":9,\"matchings_index\":0,\"distance\":13.490555183073077,\"name\":\"19th Avenue\",\"location\":[-122.475033,37.726879]},{\"alternatives_count\":6,\"waypoint_index\":10,\"matchings_index\":0,\"distance\":12.974730812953908,\"name\":\"Winston Drive\",\"location\":[-122.478439,37.727198]},{\"alternatives_count\":12,\"waypoint_index\":11,\"matchings_index\":0,\"distance\":5.244480028867546,\"name\":\"Winston Drive\",\"location\":[-122.478855,37.728365]},{\"alternatives_count\":55,\"waypoint_index\":12,\"matchings_index\":0,\"distance\":0.33296650701322394,\"name\":\"Winston Drive\",\"location\":[-122.479709,37.728553]}],\"code\":\"Ok\"}"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/routes_controller.rb:15
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:15
+  [1m[36mRoute Create (0.8ms)[0m  [1m[32mINSERT INTO "routes" ("route_name", "route_data", "route_description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["route_name", "sf route"], ["route_data", "{\"matchings\":[{\"confidence\":0.7136357141084703,\"geometry\":{\"coordinates\":[[-122.479987,37.728488],[-122.480283,37.72833],[-122.481487,37.72735],[-122.481786,37.727182],[-122.483854,37.726984],[-122.483938,37.72658],[-122.484855,37.72441],[-122.484919,37.723923],[-122.483722,37.722898],[-122.483693,37.722763],[-122.483406,37.72267],[-122.482485,37.721814],[-122.482573,37.721645],[-122.482999,37.721291],[-122.483225,37.721237],[-122.484417,37.721269],[-122.484683,37.721171],[-122.484822,37.720976],[-122.484712,37.720947],[-122.484522,37.721131],[-122.484302,37.721201],[-122.482986,37.721161],[-122.482509,37.721545],[-122.482106,37.721694],[-122.481118,37.720826],[-122.480902,37.72078],[-122.480807,37.720572],[-122.479804,37.719704],[-122.479636,37.719663],[-122.479514,37.719751],[-122.478913,37.720136],[-122.476025,37.720013],[-122.475715,37.720102],[-122.475486,37.720275],[-122.475467,37.720188],[-122.475353,37.720271],[-122.475033,37.726879],[-122.475035,37.726994],[-122.476148,37.727016],[-122.476152,37.726928],[-122.477857,37.726996],[-122.478168,37.727055],[-122.478439,37.727198],[-122.478631,37.727468],[-122.478718,37.728235],[-122.478855,37.728365],[-122.479256,37.728533],[-122.479709,37.728553]],\"type\":\"LineString\"},\"legs\":[{\"summary\":\"\",\"weight\":155.5,\"duration\":155.5,\"steps\":[],\"distance\":216},{\"summary\":\"\",\"weight\":133.3,\"duration\":133.3,\"steps\":[],\"distance\":185.1},{\"summary\":\"\",\"weight\":259.8,\"duration\":259.8,\"steps\":[],\"distance\":355.6},{\"summary\":\"\",\"weight\":416.6,\"duration\":416.6,\"steps\":[],\"distance\":578.4},{\"summary\":\"\",\"weight\":197.9,\"duration\":197.9,\"steps\":[],\"distance\":275},{\"summary\":\"\",\"weight\":243.8,\"duration\":243.8,\"steps\":[],\"distance\":338.6},{\"summary\":\"\",\"weight\":49.4,\"duration\":49.4,\"steps\":[],\"distance\":68.7},{\"summary\":\"\",\"weight\":232.1,\"duration\":232.1,\"steps\":[],\"distance\":322.4},{\"summary\":\"\",\"weight\":549.8,\"duration\":549.8,\"steps\":[],\"distance\":749.4},{\"summary\":\"\",\"weight\":240.1,\"duration\":240.1,\"steps\":[],\"distance\":327.9},{\"summary\":\"\",\"weight\":100.6,\"duration\":100.6,\"steps\":[],\"distance\":139.6},{\"summary\":\"\",\"weight\":57.7,\"duration\":57.7,\"steps\":[],\"distance\":80.4}],\"weight_name\":\"duration\",\"weight\":2636.5999999999995,\"duration\":2636.5999999999995,\"distance\":3637.1}],\"tracepoints\":[{\"alternatives_count\":0,\"waypoint_index\":0,\"matchings_index\":0,\"distance\":17.10910851195227,\"name\":\"\",\"location\":[-122.479987,37.728488]},{\"alternatives_count\":0,\"waypoint_index\":1,\"matchings_index\":0,\"distance\":3.8650064234506667,\"name\":\"Winston Drive\",\"location\":[-122.481786,37.727182]},{\"alternatives_count\":0,\"waypoint_index\":2,\"matchings_index\":0,\"distance\":13.545491132730426,\"name\":\"Winston Drive\",\"location\":[-122.483854,37.726984]},{\"alternatives_count\":0,\"waypoint_index\":3,\"matchings_index\":0,\"distance\":21.12148173082085,\"name\":\"Font Boulevard\",\"location\":[-122.484919,37.723923]},{\"alternatives_count\":0,\"waypoint_index\":4,\"matchings_index\":0,\"distance\":43.65960225067979,\"name\":\"Vidal Drive\",\"location\":[-122.484822,37.720976]},{\"alternatives_count\":0,\"waypoint_index\":5,\"matchings_index\":0,\"distance\":30.72933340618637,\"name\":\"Font Boulevard\",\"location\":[-122.482106,37.721694]},{\"alternatives_count\":0,\"waypoint_index\":6,\"matchings_index\":0,\"distance\":7.062304416354118,\"name\":\"Serrano Drive\",\"location\":[-122.479514,37.719751]},{\"alternatives_count\":0,\"waypoint_index\":7,\"matchings_index\":0,\"distance\":0.4526243680898601,\"name\":\"Serrano Drive\",\"location\":[-122.478913,37.720136]},{\"alternatives_count\":1,\"waypoint_index\":8,\"matchings_index\":0,\"distance\":18.808853852601224,\"name\":\"\",\"location\":[-122.475467,37.720188]},{\"alternatives_count\":3,\"waypoint_index\":9,\"matchings_index\":0,\"distance\":13.490555183073077,\"name\":\"19th Avenue\",\"location\":[-122.475033,37.726879]},{\"alternatives_count\":6,\"waypoint_index\":10,\"matchings_index\":0,\"distance\":12.974730812953908,\"name\":\"Winston Drive\",\"location\":[-122.478439,37.727198]},{\"alternatives_count\":12,\"waypoint_index\":11,\"matchings_index\":0,\"distance\":5.244480028867546,\"name\":\"Winston Drive\",\"location\":[-122.478855,37.728365]},{\"alternatives_count\":55,\"waypoint_index\":12,\"matchings_index\":0,\"distance\":0.33296650701322394,\"name\":\"Winston Drive\",\"location\":[-122.479709,37.728553]}],\"code\":\"Ok\"}"], ["route_description", "sfsu route"], ["user_id", 5], ["created_at", "2020-08-07 20:29:23.228881"], ["updated_at", "2020-08-07 20:29:23.228881"]]
+  ↳ app/controllers/api/routes_controller.rb:15
+  [1m[35m (40.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/routes_controller.rb:15
+  Rendering api/routes/show.json.jbuilder
+  Rendered api/routes/show.json.jbuilder (0.6ms)
+Completed 200 OK in 53ms (Views: 7.7ms | ActiveRecord: 41.6ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:29:23 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (1.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (5.0ms)
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 1.2ms)
+
+
+Started DELETE "/api/routes/52" for ::1 at 2020-08-07 13:29:27 -0700
+Processing by Api::RoutesController#destroy as JSON
+  Parameters: {"id"=>"52"}
+  [1m[36mRoute Load (0.4ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 52], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:23
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/routes_controller.rb:25
+  [1m[36mRoute Destroy (0.4ms)[0m  [1m[31mDELETE FROM "routes" WHERE "routes"."id" = $1[0m  [["id", 52]]
+  ↳ app/controllers/api/routes_controller.rb:25
+  [1m[35m (39.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/routes_controller.rb:25
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 52], ["record_type", "Route"], ["name", "map_img"], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:25
+No template found for Api::RoutesController#destroy, rendering head :no_content
+Completed 204 No Content in 119ms (ActiveRecord: 40.9ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:29:28 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (0.8ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (4.5ms)
+Completed 200 OK in 13ms (Views: 11.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:30:38 -0700
+Started GET "/api/activities" for ::1 at 2020-08-07 13:30:38 -0700
+Processing by Api::RoutesController#index as JSON
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mRoute Load (7.4ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (12.0ms)
+Completed 200 OK in 22ms (Views: 14.9ms | ActiveRecord: 7.4ms)
+
+
+  [1m[36mActivity Load (4.0ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (8.0ms)
+Completed 200 OK in 25ms (Views: 11.5ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:30:39 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (0.5ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (3.0ms)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/routes" for ::1 at 2020-08-07 13:31:07 -0700
+Processing by Api::RoutesController#create as JSON
+  Parameters: {"route"=>{"route_name"=>"Fort Route", "route_description"=>"run near the fort", "user_id"=>"5", "route_data"=>"{\"matchings\":[{\"confidence\":0.9849250755586588,\"geometry\":{\"coordinates\":[[-122.478303,37.799947],[-122.478209,37.800254],[-122.477673,37.800955],[-122.477345,37.801647],[-122.476716,37.802259],[-122.475869,37.803555],[-122.475707,37.803909],[-122.475663,37.804326],[-122.475629,37.804925],[-122.4755,37.805303],[-122.475233,37.805371],[-122.474853,37.805805]],\"type\":\"LineString\"},\"legs\":[{\"summary\":\"\",\"weight\":394.6,\"duration\":394.6,\"steps\":[],\"distance\":547.8},{\"summary\":\"\",\"weight\":140.6,\"duration\":140.6,\"steps\":[],\"distance\":195.4}],\"weight_name\":\"duration\",\"weight\":535.2,\"duration\":535.2,\"distance\":743.1999999999999}],\"tracepoints\":[{\"alternatives_count\":1,\"waypoint_index\":0,\"matchings_index\":0,\"distance\":0.17620465769604604,\"name\":\"Lincoln Boulevard\",\"location\":[-122.478303,37.799947]},{\"alternatives_count\":4,\"waypoint_index\":1,\"matchings_index\":0,\"distance\":7.511761608410354,\"name\":\"Lincoln Boulevard\",\"location\":[-122.475663,37.804326]},{\"alternatives_count\":39,\"waypoint_index\":2,\"matchings_index\":0,\"distance\":25.925633384730983,\"name\":\"\",\"location\":[-122.474853,37.805805]}],\"code\":\"Ok\"}"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/routes_controller.rb:15
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:15
+  [1m[36mRoute Create (0.4ms)[0m  [1m[32mINSERT INTO "routes" ("route_name", "route_data", "route_description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["route_name", "Fort Route"], ["route_data", "{\"matchings\":[{\"confidence\":0.9849250755586588,\"geometry\":{\"coordinates\":[[-122.478303,37.799947],[-122.478209,37.800254],[-122.477673,37.800955],[-122.477345,37.801647],[-122.476716,37.802259],[-122.475869,37.803555],[-122.475707,37.803909],[-122.475663,37.804326],[-122.475629,37.804925],[-122.4755,37.805303],[-122.475233,37.805371],[-122.474853,37.805805]],\"type\":\"LineString\"},\"legs\":[{\"summary\":\"\",\"weight\":394.6,\"duration\":394.6,\"steps\":[],\"distance\":547.8},{\"summary\":\"\",\"weight\":140.6,\"duration\":140.6,\"steps\":[],\"distance\":195.4}],\"weight_name\":\"duration\",\"weight\":535.2,\"duration\":535.2,\"distance\":743.1999999999999}],\"tracepoints\":[{\"alternatives_count\":1,\"waypoint_index\":0,\"matchings_index\":0,\"distance\":0.17620465769604604,\"name\":\"Lincoln Boulevard\",\"location\":[-122.478303,37.799947]},{\"alternatives_count\":4,\"waypoint_index\":1,\"matchings_index\":0,\"distance\":7.511761608410354,\"name\":\"Lincoln Boulevard\",\"location\":[-122.475663,37.804326]},{\"alternatives_count\":39,\"waypoint_index\":2,\"matchings_index\":0,\"distance\":25.925633384730983,\"name\":\"\",\"location\":[-122.474853,37.805805]}],\"code\":\"Ok\"}"], ["route_description", "run near the fort"], ["user_id", 5], ["created_at", "2020-08-07 20:31:07.404040"], ["updated_at", "2020-08-07 20:31:07.404040"]]
+  ↳ app/controllers/api/routes_controller.rb:15
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/routes_controller.rb:15
+  Rendering api/routes/show.json.jbuilder
+  Rendered api/routes/show.json.jbuilder (0.6ms)
+Completed 200 OK in 40ms (Views: 6.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:31:07 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (0.4ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (4.8ms)
+Completed 200 OK in 24ms (Views: 23.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:31:38 -0700
+Started GET "/api/activities" for ::1 at 2020-08-07 13:31:38 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+Processing by Api::ActivitiesController#index as JSON
+  [1m[36mRoute Load (4.5ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (10.5ms)
+Completed 200 OK in 21ms (Views: 15.9ms | ActiveRecord: 4.5ms)
+
+
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.9ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (4.8ms)
+Completed 200 OK in 17ms (Views: 12.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 13:32:25 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fEUX68KwWmdua4LJf7wQLA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 69ms (Views: 67.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:32:26 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+Started GET "/api/activities" for ::1 at 2020-08-07 13:32:26 -0700
+  [1m[36mRoute Load (1.0ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (3.8ms)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 1.0ms)
+
+
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.6ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (3.3ms)
+Completed 200 OK in 14ms (Views: 11.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 13:32:29 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fEUX68KwWmdua4LJf7wQLA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 59ms (Views: 56.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:32:30 -0700
+Processing by Api::RoutesController#index as JSON
+Started GET "/api/activities" for ::1 at 2020-08-07 13:32:30 -0700
+  Rendering api/routes/index.json.jbuilder
+Processing by Api::ActivitiesController#index as JSON
+  [1m[36mRoute Load (2.9ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (8.8ms)
+  Rendering api/activities/index.json.jbuilder
+Completed 200 OK in 18ms (Views: 14.6ms | ActiveRecord: 2.9ms)
+
+
+  [1m[36mActivity Load (8.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (10.7ms)
+Completed 200 OK in 22ms (Views: 11.8ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:32:36 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (10.5ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (14.1ms)
+Completed 200 OK in 21ms (Views: 10.1ms | ActiveRecord: 10.5ms)
+
+
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Destroy (41.6ms)[0m  [1m[31mDELETE FROM "users"[0m
+  ↳ db/seeds.rb:10
+  [1m[36mRoute Destroy (41.1ms)[0m  [1m[31mDELETE FROM "routes"[0m
+  ↳ db/seeds.rb:11
+  [1m[36mActivity Destroy (42.5ms)[0m  [1m[31mDELETE FROM "activities"[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "demo"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "demo"], ["email", "demo@email.com"], ["password_digest", "$2a$12$r/vKknUBzm4yT//mxqsxbefJoeQ5n5JGZ6OHyJVGIPZBU7EL53pyG"], ["session_token", "VpW0b3UkT6XV_t2TH_W24w"], ["created_at", "2020-08-07 20:32:50.316412"], ["updated_at", "2020-08-07 20:32:50.316412"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (39.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "john"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "john"], ["email", "john@email.com"], ["password_digest", "$2a$12$uDv8Fkaf/zdXCKcdMbNTMOST7w7X7QE2OKWHx3vLjszF2I/sUrUPW"], ["session_token", "_Img7Nr7Vus4Vov4l63aHg"], ["created_at", "2020-08-07 20:32:50.628474"], ["updated_at", "2020-08-07 20:32:50.628474"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mRoute Create (0.7ms)[0m  [1m[32mINSERT INTO "routes" ("route_name", "route_data", "route_description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["route_name", "Park run"], ["route_data", "{\"matchings\":[{\"confidence\":0.9802630104472951,\"geometry\":{\"coordinates\":[[-122.418675,37.804911],[-122.424955,37.804093]],\"type\":\"LineString\"},\"legs\":[{\"summary\":\"\",\"weight\":403,\"duration\":403,\"steps\":[],\"distance\":559.4}],\"weight_name\":\"duration\",\"weight\":403,\"duration\":403,\"distance\":559.4}],\"tracepoints\":[{\"alternatives_count\":5,\"waypoint_index\":0,\"matchings_index\":0,\"distance\":2.13802814228339,\"name\":\"\",\"location\":[-122.418675,37.804911]},{\"alternatives_count\":73,\"waypoint_index\":1,\"matchings_index\":0,\"distance\":2.4811607572865526,\"name\":\"\",\"location\":[-122.424955,37.804093]}],\"code\":\"Ok\"}"], ["route_description", "a nice day for a run in the park!"], ["user_id", 7], ["created_at", "2020-08-07 20:32:50.657463"], ["updated_at", "2020-08-07 20:32:50.657463"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (39.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mRoute Create (0.7ms)[0m  [1m[32mINSERT INTO "routes" ("route_name", "route_data", "route_description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["route_name", "Fort Mason Route"], ["route_data", "{\"matchings\":[{\"confidence\":0.9817908316874712,\"geometry\":{\"coordinates\":[[-122.499619,37.718547],[-122.499352,37.718038],[-122.498891,37.717522],[-122.498359,37.717138],[-122.497678,37.71682],[-122.494426,37.715853],[-122.493171,37.715355],[-122.492271,37.714663],[-122.491137,37.713274],[-122.489437,37.712134]],\"type\":\"LineString\"},\"legs\":[{\"summary\":\"\",\"weight\":47.8,\"duration\":39.6,\"steps\":[],\"distance\":61.6},{\"summary\":\"\",\"weight\":16.9,\"duration\":16.9,\"steps\":[],\"distance\":70.4},{\"summary\":\"\",\"weight\":15.2,\"duration\":15.2,\"steps\":[],\"distance\":63.5},{\"summary\":\"\",\"weight\":16.8,\"duration\":16.8,\"steps\":[],\"distance\":69.7},{\"summary\":\"\",\"weight\":73.5,\"duration\":73.5,\"steps\":[],\"distance\":305.7},{\"summary\":\"\",\"weight\":29.8,\"duration\":29.8,\"steps\":[],\"distance\":123.9},{\"summary\":\"\",\"weight\":26.6,\"duration\":26.6,\"steps\":[],\"distance\":110.8},{\"summary\":\"\",\"weight\":44.1,\"duration\":44.1,\"steps\":[],\"distance\":184.1},{\"summary\":\"\",\"weight\":47,\"duration\":47,\"steps\":[],\"distance\":196.1}],\"weight_name\":\"cyclability\",\"weight\":317.7,\"duration\":309.5,\"distance\":1185.8}],\"tracepoints\":[{\"alternatives_count\":0,\"waypoint_index\":0,\"matchings_index\":0,\"distance\":0,\"name\":\"John Muir Drive\",\"location\":[-122.499619,37.718547]},{\"alternatives_count\":0,\"waypoint_index\":1,\"matchings_index\":0,\"distance\":0,\"name\":\"John Muir Drive\",\"location\":[-122.499352,37.718038]},{\"alternatives_count\":0,\"waypoint_index\":2,\"matchings_index\":0,\"distance\":0,\"name\":\"John Muir Drive\",\"location\":[-122.498891,37.717522]},{\"alternatives_count\":0,\"waypoint_index\":3,\"matchings_index\":0,\"distance\":0,\"name\":\"John Muir Drive\",\"location\":[-122.498359,37.717138]},{\"alternatives_count\":0,\"waypoint_index\":4,\"matchings_index\":0,\"distance\":0,\"name\":\"John Muir Drive\",\"location\":[-122.497678,37.71682]},{\"alternatives_count\":1,\"waypoint_index\":5,\"matchings_index\":0,\"distance\":0,\"name\":\"John Muir Drive\",\"location\":[-122.494426,37.715853]},{\"alternatives_count\":1,\"waypoint_index\":6,\"matchings_index\":0,\"distance\":0,\"name\":\"John Muir Drive\",\"location\":[-122.493171,37.715355]},{\"alternatives_count\":1,\"waypoint_index\":7,\"matchings_index\":0,\"distance\":0,\"name\":\"John Muir Drive\",\"location\":[-122.492271,37.714663]},{\"alternatives_count\":1,\"waypoint_index\":8,\"matchings_index\":0,\"distance\":0,\"name\":\"John Muir Drive\",\"location\":[-122.491137,37.713274]},{\"alternatives_count\":47,\"waypoint_index\":9,\"matchings_index\":0,\"distance\":0,\"name\":\"John Muir Drive\",\"location\":[-122.489437,37.712134]}],\"code\":\"Ok\"}"], ["route_description", "Warmup"], ["user_id", 7], ["created_at", "2020-08-07 20:32:50.701346"], ["updated_at", "2020-08-07 20:32:50.701346"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:25
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mRoute Create (0.5ms)[0m  [1m[32mINSERT INTO "routes" ("route_name", "route_data", "route_description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["route_name", "Beach Route"], ["route_data", "{\"matchings\":[{\"confidence\":0.9729077982089133,\"geometry\":{\"coordinates\":[[-122.470458,37.808013],[-122.470338,37.807644],[-122.47009,37.807348],[-122.468282,37.805941],[-122.466728,37.804937],[-122.465183,37.804638],[-122.464479,37.804591],[-122.461509,37.804698],[-122.460971,37.804652],[-122.453613,37.805613],[-122.452463,37.805931]],\"type\":\"LineString\"},\"legs\":[{\"summary\":\"\",\"weight\":492.4,\"duration\":492.4,\"steps\":[],\"distance\":684},{\"summary\":\"\",\"weight\":772,\"duration\":772,\"steps\":[],\"distance\":1072.5}],\"weight_name\":\"duration\",\"weight\":1264.4,\"duration\":1264.4,\"distance\":1756.5}],\"tracepoints\":[{\"alternatives_count\":1,\"waypoint_index\":0,\"matchings_index\":0,\"distance\":14.296936666127197,\"name\":\"\",\"location\":[-122.470458,37.808013]},{\"alternatives_count\":1,\"waypoint_index\":1,\"matchings_index\":0,\"distance\":55.35941244570629,\"name\":\"Golden Gate Promenade\",\"location\":[-122.464479,37.804591]},{\"alternatives_count\":69,\"waypoint_index\":2,\"matchings_index\":0,\"distance\":16.57439572810366,\"name\":\"\",\"location\":[-122.452463,37.805931]}],\"code\":\"Ok\"}"], ["route_description", "beach run"], ["user_id", 7], ["created_at", "2020-08-07 20:32:50.707799"], ["updated_at", "2020-08-07 20:32:50.707799"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:28
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mRoute Create (0.4ms)[0m  [1m[32mINSERT INTO "routes" ("route_name", "route_data", "route_description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["route_name", "sf bikeride"], ["route_data", "{\"matchings\":[{\"confidence\":0.5928045879755698,\"geometry\":{\"coordinates\":[[-122.455565,37.77465],[-122.456307,37.774556],[-122.456496,37.775495],[-122.458461,37.775246],[-122.458488,37.775617],[-122.502556,37.773611],[-122.502423,37.771757]],\"type\":\"LineString\"},\"legs\":[{\"summary\":\"\",\"weight\":1157.1,\"duration\":1148.7,\"steps\":[],\"distance\":4475.4}],\"weight_name\":\"cyclability\",\"weight\":1157.1,\"duration\":1148.7,\"distance\":4475.4}],\"tracepoints\":[{\"alternatives_count\":0,\"waypoint_index\":0,\"matchings_index\":0,\"distance\":38.003899413259965,\"name\":\"Fulton Street\",\"location\":[-122.455565,37.77465]},{\"alternatives_count\":29,\"waypoint_index\":1,\"matchings_index\":0,\"distance\":40.235941205940044,\"name\":\"42nd Avenue\",\"location\":[-122.502423,37.771757]}],\"code\":\"Ok\"}"], ["route_description", "cycling time!"], ["user_id", 7], ["created_at", "2020-08-07 20:32:50.711804"], ["updated_at", "2020-08-07 20:32:50.711804"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:32
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:32
+  [1m[36mRoute Create (0.5ms)[0m  [1m[32mINSERT INTO "routes" ("route_name", "route_data", "route_description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["route_name", "nyc biking"], ["route_data", "{\"matchings\":[{\"confidence\":0.9802614080903042,\"geometry\":{\"coordinates\":[[-122.417863,37.805096],[-122.424926,37.804177]],\"type\":\"LineString\"},\"legs\":[{\"summary\":\"\",\"weight\":310.1,\"duration\":159,\"steps\":[],\"distance\":629.1}],\"weight_name\":\"cyclability\",\"weight\":310.1,\"duration\":159,\"distance\":629.1}],\"tracepoints\":[{\"alternatives_count\":5,\"waypoint_index\":0,\"matchings_index\":0,\"distance\":15.061536273714449,\"name\":\"Bay Street\",\"location\":[-122.417863,37.805096]},{\"alternatives_count\":71,\"waypoint_index\":1,\"matchings_index\":0,\"distance\":18.666056605124762,\"name\":\"Bay Street\",\"location\":[-122.424926,37.804177]}],\"code\":\"Ok\"}"], ["route_description", "a nice ride during the day"], ["user_id", 7], ["created_at", "2020-08-07 20:32:50.715499"], ["updated_at", "2020-08-07 20:32:50.715499"]]
+  ↳ db/seeds.rb:32
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:32
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mRoute Create (0.4ms)[0m  [1m[32mINSERT INTO "routes" ("route_name", "route_data", "route_description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["route_name", "hiking to 7-11"], ["route_data", "{\"matchings\":[{\"confidence\":0.5426496328511495,\"geometry\":{\"coordinates\":[[-122.466758,37.772729],[-122.466752,37.772566],[-122.467998,37.772526],[-122.469021,37.772326],[-122.471084,37.771043],[-122.472009,37.770711],[-122.472738,37.770833],[-122.475062,37.771657],[-122.47569,37.771708],[-122.477639,37.771356],[-122.479924,37.770497],[-122.480495,37.771134],[-122.481027,37.771438],[-122.48258,37.771797],[-122.483719,37.771814],[-122.484431,37.772252],[-122.487612,37.772026],[-122.489822,37.772098],[-122.491983,37.771771],[-122.492746,37.772006],[-122.495061,37.771876],[-122.495638,37.77168]],\"type\":\"LineString\"},\"legs\":[{\"summary\":\"\",\"weight\":889.3,\"duration\":1173.8,\"steps\":[],\"distance\":2766.2}],\"weight_name\":\"cyclability\",\"weight\":889.3,\"duration\":1173.8,\"distance\":2766.2}],\"tracepoints\":[{\"alternatives_count\":2,\"waypoint_index\":0,\"matchings_index\":0,\"distance\":74.42686815360544,\"name\":\"\",\"location\":[-122.466758,37.772729]},{\"alternatives_count\":39,\"waypoint_index\":1,\"matchings_index\":0,\"distance\":64.04066940014499,\"name\":\"\",\"location\":[-122.495638,37.77168]}],\"code\":\"Ok\"}"], ["route_description", "i hiked to get a slurpy"], ["user_id", 7], ["created_at", "2020-08-07 20:32:50.719261"], ["updated_at", "2020-08-07 20:32:50.719261"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:38
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:38
+  [1m[36mRoute Create (0.6ms)[0m  [1m[32mINSERT INTO "routes" ("route_name", "route_data", "route_description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["route_name", "walk to school"], ["route_data", "{\"matchings\":[{\"confidence\":0.984196739204709,\"geometry\":{\"coordinates\":[[-122.478303,37.799947],[-122.478209,37.800254],[-122.477673,37.800955],[-122.477345,37.801647],[-122.476716,37.802259],[-122.475869,37.803555],[-122.475707,37.803909],[-122.475663,37.804326],[-122.475629,37.804925],[-122.4755,37.805303],[-122.475233,37.805371],[-122.474853,37.805805]],\"type\":\"LineString\"},\"legs\":[{\"summary\":\"\",\"weight\":13,\"duration\":8.4,\"steps\":[],\"distance\":35.3},{\"summary\":\"\",\"weight\":23.2,\"duration\":21.8,\"steps\":[],\"distance\":91.2},{\"summary\":\"\",\"weight\":19.8,\"duration\":19.8,\"steps\":[],\"distance\":82.3},{\"summary\":\"\",\"weight\":21.2,\"duration\":21.2,\"steps\":[],\"distance\":88.1},{\"summary\":\"\",\"weight\":39,\"duration\":39,\"steps\":[],\"distance\":162.3},{\"summary\":\"\",\"weight\":10.1,\"duration\":10.1,\"steps\":[],\"distance\":42},{\"summary\":\"\",\"weight\":11.3,\"duration\":11.3,\"steps\":[],\"distance\":46.6},{\"summary\":\"\",\"weight\":16,\"duration\":16,\"steps\":[],\"distance\":66.7},{\"summary\":\"\",\"weight\":10.4,\"duration\":10.4,\"steps\":[],\"distance\":43.6},{\"summary\":\"\",\"weight\":53.7,\"duration\":23.7,\"steps\":[],\"distance\":24.7},{\"summary\":\"\",\"weight\":54.2,\"duration\":54.2,\"steps\":[],\"distance\":60.4}],\"weight_name\":\"cyclability\",\"weight\":271.9,\"duration\":235.89999999999998,\"distance\":743.2}],\"tracepoints\":[{\"alternatives_count\":0,\"waypoint_index\":0,\"matchings_index\":0,\"distance\":0,\"name\":\"Lincoln Boulevard\",\"location\":[-122.478303,37.799947]},{\"alternatives_count\":0,\"waypoint_index\":1,\"matchings_index\":0,\"distance\":0,\"name\":\"Lincoln Boulevard\",\"location\":[-122.478209,37.800254]},{\"alternatives_count\":0,\"waypoint_index\":2,\"matchings_index\":0,\"distance\":0,\"name\":\"Lincoln Boulevard\",\"location\":[-122.477673,37.800955]},{\"alternatives_count\":0,\"waypoint_index\":3,\"matchings_index\":0,\"distance\":0,\"name\":\"Lincoln Boulevard\",\"location\":[-122.477345,37.801647]},{\"alternatives_count\":0,\"waypoint_index\":4,\"matchings_index\":0,\"distance\":0,\"name\":\"Lincoln Boulevard\",\"location\":[-122.476716,37.802259]},{\"alternatives_count\":0,\"waypoint_index\":5,\"matchings_index\":0,\"distance\":0,\"name\":\"Lincoln Boulevard\",\"location\":[-122.475869,37.803555]},{\"alternatives_count\":0,\"waypoint_index\":6,\"matchings_index\":0,\"distance\":0,\"name\":\"Lincoln Boulevard\",\"location\":[-122.475707,37.803909]},{\"alternatives_count\":1,\"waypoint_index\":7,\"matchings_index\":0,\"distance\":0,\"name\":\"Lincoln Boulevard\",\"location\":[-122.475663,37.804326]},{\"alternatives_count\":1,\"waypoint_index\":8,\"matchings_index\":0,\"distance\":0,\"name\":\"Lincoln Boulevard\",\"location\":[-122.475629,37.804925]},{\"alternatives_count\":1,\"waypoint_index\":9,\"matchings_index\":0,\"distance\":0,\"name\":\"Lincoln Boulevard\",\"location\":[-122.4755,37.805303]},{\"alternatives_count\":2,\"waypoint_index\":10,\"matchings_index\":0,\"distance\":0,\"name\":\"\",\"location\":[-122.475233,37.805371]},{\"alternatives_count\":5,\"waypoint_index\":11,\"matchings_index\":0,\"distance\":0,\"name\":\"\",\"location\":[-122.474853,37.805805]}],\"code\":\"Ok\"}"], ["route_description", "i routed my walk to school"], ["user_id", 7], ["created_at", "2020-08-07 20:32:50.722723"], ["updated_at", "2020-08-07 20:32:50.722723"]]
+  ↳ db/seeds.rb:38
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:43
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:43
+  [1m[36mRoute Load (0.5ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 54], ["LIMIT", 1]]
+  ↳ db/seeds.rb:43
+  [1m[36mActivity Create (0.6ms)[0m  [1m[32mINSERT INTO "activities" ("title", "sport", "duration", "distance", "elevation", "description", "user_id", "route_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Morning Run"], ["sport", "Run"], ["duration", "25"], ["distance", 3.2], ["elevation", 45], ["description", "Going on a morning Run"], ["user_id", 7], ["route_id", 54], ["created_at", "2020-08-07 20:32:50.745757"], ["updated_at", "2020-08-07 20:32:50.745757"]]
+  ↳ db/seeds.rb:43
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:43
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:50
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mRoute Load (0.4ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 55], ["LIMIT", 1]]
+  ↳ db/seeds.rb:50
+  [1m[36mActivity Create (0.5ms)[0m  [1m[32mINSERT INTO "activities" ("title", "sport", "duration", "distance", "elevation", "description", "user_id", "route_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Afternoon Run"], ["sport", "Run"], ["duration", "40"], ["distance", 1.2], ["elevation", 92], ["description", "Going on a morning Run"], ["user_id", 7], ["route_id", 55], ["created_at", "2020-08-07 20:32:50.750182"], ["updated_at", "2020-08-07 20:32:50.750182"]]
+  ↳ db/seeds.rb:50
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:50
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:56
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:56
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 56], ["LIMIT", 1]]
+  ↳ db/seeds.rb:56
+  [1m[36mActivity Create (0.6ms)[0m  [1m[32mINSERT INTO "activities" ("title", "sport", "duration", "distance", "elevation", "description", "user_id", "route_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Short Bikeride"], ["sport", "Ride"], ["duration", "25"], ["distance", 5.3], ["elevation", 19], ["description", "Going on a morning Run"], ["user_id", 7], ["route_id", 56], ["created_at", "2020-08-07 20:32:50.754465"], ["updated_at", "2020-08-07 20:32:50.754465"]]
+  ↳ db/seeds.rb:56
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:56
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:62
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:62
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 57], ["LIMIT", 1]]
+  ↳ db/seeds.rb:62
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("title", "sport", "duration", "distance", "elevation", "description", "user_id", "route_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Quick cycling warmup"], ["sport", "Ride"], ["duration", "10"], ["distance", 0.5], ["elevation", 320], ["description", "Warmup bike ride"], ["user_id", 7], ["route_id", 57], ["created_at", "2020-08-07 20:32:50.758416"], ["updated_at", "2020-08-07 20:32:50.758416"]]
+  ↳ db/seeds.rb:62
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:62
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:68
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 54], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("title", "sport", "duration", "distance", "elevation", "description", "user_id", "route_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Marathon training"], ["sport", "Ride"], ["duration", "30"], ["distance", 3.5], ["elevation", 300], ["description", "Training for the upcoming marathon"], ["user_id", 7], ["route_id", 54], ["created_at", "2020-08-07 20:32:50.761950"], ["updated_at", "2020-08-07 20:32:50.761950"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:74
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:74
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 58], ["LIMIT", 1]]
+  ↳ db/seeds.rb:74
+  [1m[36mActivity Create (1.9ms)[0m  [1m[32mINSERT INTO "activities" ("title", "sport", "duration", "distance", "elevation", "description", "user_id", "route_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Preworkout run"], ["sport", "Run"], ["duration", "52"], ["distance", 2.1], ["elevation", 60], ["description", "Going on a Run before the gym"], ["user_id", 7], ["route_id", 58], ["created_at", "2020-08-07 20:32:50.765972"], ["updated_at", "2020-08-07 20:32:50.765972"]]
+  ↳ db/seeds.rb:74
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:74
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:80
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:80
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 60], ["LIMIT", 1]]
+  ↳ db/seeds.rb:80
+  [1m[36mActivity Create (0.5ms)[0m  [1m[32mINSERT INTO "activities" ("title", "sport", "duration", "distance", "elevation", "description", "user_id", "route_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Afternoon Ride"], ["sport", "Ride"], ["duration", "25"], ["distance", 1.62], ["elevation", 102], ["description", "Going on an Afternoon Ride"], ["user_id", 7], ["route_id", 60], ["created_at", "2020-08-07 20:32:50.771371"], ["updated_at", "2020-08-07 20:32:50.771371"]]
+  ↳ db/seeds.rb:80
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:80
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:86
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:86
+  [1m[36mRoute Load (0.2ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 59], ["LIMIT", 1]]
+  ↳ db/seeds.rb:86
+  [1m[36mActivity Create (0.4ms)[0m  [1m[32mINSERT INTO "activities" ("title", "sport", "duration", "distance", "elevation", "description", "user_id", "route_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Latenight run"], ["sport", "Run"], ["duration", "40"], ["distance", 2.3], ["elevation", 41], ["description", "Going on a Latenight Run"], ["user_id", 7], ["route_id", 59], ["created_at", "2020-08-07 20:32:50.775448"], ["updated_at", "2020-08-07 20:32:50.775448"]]
+  ↳ db/seeds.rb:86
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:86
+Started GET "/" for ::1 at 2020-08-07 13:32:52 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fEUX68KwWmdua4LJf7wQLA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered static_pages/root.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 59ms (Views: 57.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/session" for ::1 at 2020-08-07 13:32:54 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"demo", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "demo"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:32
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "demo"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:32
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["updated_at", "2020-08-07 20:32:54.547578"], ["id", 7]]
+  ↳ app/models/user.rb:32
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:32
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.4ms)
+Completed 200 OK in 284ms (Views: 6.1ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:32:54 -0700
+Started GET "/api/activities" for ::1 at 2020-08-07 13:32:54 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+Processing by Api::ActivitiesController#index as JSON
+  [1m[36mRoute Load (1.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (6.6ms)
+Completed 200 OK in 15ms (Views: 13.0ms | ActiveRecord: 1.2ms)
+
+
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (2.7ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (5.8ms)
+Completed 200 OK in 18ms (Views: 10.5ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-07 13:33:02 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (3.5ms)
+Completed 200 OK in 12ms (Views: 9.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-07 13:33:08 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.6ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (4.1ms)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 13:34:05 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 443ms (Views: 440.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/activities/31" for ::1 at 2020-08-07 13:34:05 -0700
+Processing by Api::ActivitiesController#show as JSON
+  Parameters: {"id"=>"31"}
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:4
+  Rendering api/activities/show.json.jbuilder
+  Rendered api/activities/show.json.jbuilder (0.8ms)
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-07 13:34:07 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.6ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (3.2ms)
+Completed 200 OK in 11ms (Views: 8.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/routes/59" for ::1 at 2020-08-07 13:34:08 -0700
+Processing by Api::RoutesController#show as JSON
+  Parameters: {"id"=>"59"}
+  [1m[36mRoute Load (1.0ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 59], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:4
+  Rendering api/routes/show.json.jbuilder
+  Rendered api/routes/show.json.jbuilder (0.8ms)
+Completed 200 OK in 9ms (Views: 6.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 13:34:14 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 67ms (Views: 65.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/activities/31" for ::1 at 2020-08-07 13:34:14 -0700
+Processing by Api::ActivitiesController#show as JSON
+  Parameters: {"id"=>"31"}
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:4
+  Rendering api/activities/show.json.jbuilder
+  Rendered api/activities/show.json.jbuilder (0.9ms)
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-07 13:34:15 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (2.7ms)
+Completed 200 OK in 10ms (Views: 7.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/routes/59" for ::1 at 2020-08-07 13:34:16 -0700
+Processing by Api::RoutesController#show as JSON
+  Parameters: {"id"=>"59"}
+  [1m[36mRoute Load (1.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 59], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:4
+  Rendering api/routes/show.json.jbuilder
+  Rendered api/routes/show.json.jbuilder (0.6ms)
+Completed 200 OK in 9ms (Views: 6.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 13:34:23 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 431ms (Views: 428.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/activities/31" for ::1 at 2020-08-07 13:34:23 -0700
+Processing by Api::ActivitiesController#show as JSON
+  Parameters: {"id"=>"31"}
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:4
+  Rendering api/activities/show.json.jbuilder
+  Rendered api/activities/show.json.jbuilder (1.2ms)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-07 13:34:25 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.7ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (2.9ms)
+Completed 200 OK in 11ms (Views: 8.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/routes/60" for ::1 at 2020-08-07 13:34:26 -0700
+Processing by Api::RoutesController#show as JSON
+  Parameters: {"id"=>"60"}
+  [1m[36mRoute Load (0.5ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 60], ["LIMIT", 1]]
+  ↳ app/controllers/api/routes_controller.rb:4
+  Rendering api/routes/show.json.jbuilder
+  Rendered api/routes/show.json.jbuilder (0.8ms)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 13:34:32 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 54ms (Views: 52.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:34:33 -0700
+Processing by Api::RoutesController#index as JSON
+Started GET "/api/activities" for ::1 at 2020-08-07 13:34:33 -0700
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (1.1ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (4.0ms)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 1.1ms)
+
+
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.7ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (3.9ms)
+Completed 200 OK in 13ms (Views: 9.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-07 13:34:35 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (3.0ms)
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-07 13:34:38 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (2.8ms)
+Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-07 13:34:40 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.6ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (3.0ms)
+Completed 200 OK in 11ms (Views: 8.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-07 13:34:43 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.6ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (3.2ms)
+Completed 200 OK in 13ms (Views: 8.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-07 13:34:45 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (2.8ms)
+Completed 200 OK in 12ms (Views: 8.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-07 13:34:47 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (3.1ms)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-07 13:34:50 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (4.0ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (7.2ms)
+Completed 200 OK in 18ms (Views: 11.2ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-07 13:34:51 -0700
+Started GET "/api/routes" for ::1 at 2020-08-07 13:34:51 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+Processing by Api::RoutesController#index as JSON
+  [1m[36mActivity Load (2.9ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (8.9ms)
+Completed 200 OK in 23ms (Views: 17.2ms | ActiveRecord: 2.9ms)
+
+
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (0.9ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (3.3ms)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:34:54 -0700
+Started GET "/api/activities" for ::1 at 2020-08-07 13:34:54 -0700
+Processing by Api::RoutesController#index as JSON
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mRoute Load (4.1ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (6.3ms)
+Completed 200 OK in 17ms (Views: 12.4ms | ActiveRecord: 4.1ms)
+
+
+  [1m[36mActivity Load (1.9ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (5.4ms)
+Completed 200 OK in 13ms (Views: 9.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:35:02 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (12.4ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (16.9ms)
+Completed 200 OK in 26ms (Views: 13.2ms | ActiveRecord: 12.4ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:35:03 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+Started GET "/api/activities" for ::1 at 2020-08-07 13:35:03 -0700
+  [1m[36mRoute Load (1.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (4.4ms)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 1.2ms)
+
+
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (2.9ms)
+Completed 200 OK in 10ms (Views: 7.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 13:36:19 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (1.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 439ms (Views: 437.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:36:20 -0700
+Started GET "/api/activities" for ::1 at 2020-08-07 13:36:20 -0700
+Processing by Api::RoutesController#index as JSON
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mRoute Load (8.8ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (13.5ms)
+Completed 200 OK in 23ms (Views: 13.5ms | ActiveRecord: 8.8ms)
+
+
+  [1m[36mActivity Load (6.6ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (10.2ms)
+Completed 200 OK in 27ms (Views: 11.7ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 13:39:25 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 110ms (Views: 106.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:39:25 -0700
+Started GET "/api/activities" for ::1 at 2020-08-07 13:39:25 -0700
+Processing by Api::ActivitiesController#index as JSON
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mRoute Load (6.1ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (9.5ms)
+  [1m[36mActivity Load (3.0ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+Completed 200 OK in 20ms (Views: 13.5ms | ActiveRecord: 6.1ms)
+
+
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (8.3ms)
+Completed 200 OK in 27ms (Views: 19.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 13:40:17 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (5.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 102ms (Views: 95.3ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:40:17 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+Started GET "/api/activities" for ::1 at 2020-08-07 13:40:17 -0700
+  [1m[36mRoute Load (0.4ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (4.1ms)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.4ms)
+
+
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (5.9ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (9.7ms)
+Completed 200 OK in 20ms (Views: 11.8ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 13:40:42 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 513ms (Views: 510.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:40:43 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+Started GET "/api/activities" for ::1 at 2020-08-07 13:40:43 -0700
+  [1m[36mRoute Load (0.6ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (5.4ms)
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.6ms)
+
+
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (6.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (9.6ms)
+Completed 200 OK in 23ms (Views: 14.3ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 13:41:15 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 469ms (Views: 467.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:41:16 -0700
+Started GET "/api/activities" for ::1 at 2020-08-07 13:41:16 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mRoute Load (9.7ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  [1m[36mActivity Load (0.8ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  Rendered api/routes/index.json.jbuilder (14.5ms)
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (6.3ms)
+Completed 200 OK in 20ms (Views: 10.0ms | ActiveRecord: 9.7ms)
+
+
+Completed 200 OK in 17ms (Views: 14.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 13:41:23 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 97ms (Views: 94.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:41:24 -0700
+Processing by Api::RoutesController#index as JSON
+Started GET "/api/activities" for ::1 at 2020-08-07 13:41:24 -0700
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (7.1ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (12.1ms)
+Completed 200 OK in 22ms (Views: 15.1ms | ActiveRecord: 7.1ms)
+
+
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (1.0ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (3.2ms)
+Completed 200 OK in 12ms (Views: 8.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 13:41:28 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 106ms (Views: 104.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:41:29 -0700
+Started GET "/api/activities" for ::1 at 2020-08-07 13:41:29 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (1.0ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (4.0ms)
+Completed 200 OK in 16ms (Views: 11.5ms | ActiveRecord: 1.0ms)
+
+
+  [1m[36mRoute Load (16.8ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (27.7ms)
+Completed 200 OK in 36ms (Views: 18.7ms | ActiveRecord: 16.8ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 13:41:47 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 69ms (Views: 66.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:41:47 -0700
+Processing by Api::RoutesController#index as JSON
+Started GET "/api/activities" for ::1 at 2020-08-07 13:41:47 -0700
+  Rendering api/routes/index.json.jbuilder
+Processing by Api::ActivitiesController#index as JSON
+  [1m[36mRoute Load (3.8ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (9.0ms)
+Completed 200 OK in 15ms (Views: 11.4ms | ActiveRecord: 3.8ms)
+
+
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (2.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (4.9ms)
+Completed 200 OK in 19ms (Views: 13.0ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:42:06 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (0.4ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (2.6ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:42:08 -0700
+Started GET "/api/activities" for ::1 at 2020-08-07 13:42:08 -0700
+Processing by Api::RoutesController#index as JSON
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (2.1ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (7.8ms)
+Completed 200 OK in 15ms (Views: 12.9ms | ActiveRecord: 2.1ms)
+
+
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.9ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (3.4ms)
+Completed 200 OK in 16ms (Views: 10.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-07 13:42:09 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (2.5ms)
+Completed 200 OK in 10ms (Views: 7.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:42:18 -0700
+Started GET "/api/activities" for ::1 at 2020-08-07 13:42:18 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+Processing by Api::ActivitiesController#index as JSON
+  [1m[36mRoute Load (2.9ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (7.5ms)
+Completed 200 OK in 16ms (Views: 13.0ms | ActiveRecord: 2.9ms)
+
+
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (3.2ms)
+Completed 200 OK in 13ms (Views: 10.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-07 13:42:19 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.6ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (3.8ms)
+Completed 200 OK in 13ms (Views: 10.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-07 13:42:23 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (2.4ms)
+Completed 200 OK in 10ms (Views: 7.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:42:29 -0700
+Processing by Api::RoutesController#index as JSON
+Started GET "/api/activities" for ::1 at 2020-08-07 13:42:29 -0700
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (0.5ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (3.6ms)
+Processing by Api::ActivitiesController#index as JSON
+Completed 200 OK in 13ms (Views: 12.6ms | ActiveRecord: 0.5ms)
+
+
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (2.9ms)
+Completed 200 OK in 11ms (Views: 8.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-07 13:42:30 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.7ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (2.9ms)
+Completed 200 OK in 11ms (Views: 8.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/activities/NaN" for ::1 at 2020-08-07 13:42:33 -0700
+Processing by Api::ActivitiesController#show as JSON
+  Parameters: {"id"=>"NaN"}
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:4
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Activity with 'id'=NaN:
+  app/controllers/api/activities_controller.rb:4:in `show'
+
+Started GET "/api/activities" for ::1 at 2020-08-07 13:42:35 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (2.5ms)
+Completed 200 OK in 10ms (Views: 7.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/activities/NaN" for ::1 at 2020-08-07 13:42:36 -0700
+Processing by Api::ActivitiesController#show as JSON
+  Parameters: {"id"=>"NaN"}
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:4
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Activity with 'id'=NaN:
+  app/controllers/api/activities_controller.rb:4:in `show'
+
+Started GET "/api/activities" for ::1 at 2020-08-07 13:42:37 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (3.2ms)
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-07 13:42:41 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (2.4ms)
+Completed 200 OK in 10ms (Views: 7.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/activities/NaN" for ::1 at 2020-08-07 13:42:42 -0700
+Processing by Api::ActivitiesController#show as JSON
+  Parameters: {"id"=>"NaN"}
+  [1m[36mActivity Load (0.9ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:4
+Completed 404 Not Found in 2ms (ActiveRecord: 0.9ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Activity with 'id'=NaN:
+  app/controllers/api/activities_controller.rb:4:in `show'
+
+Started GET "/api/activities" for ::1 at 2020-08-07 13:42:43 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (3.0ms)
+Completed 200 OK in 11ms (Views: 7.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 13:43:17 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 77ms (Views: 74.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-07 13:43:18 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (1.8ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (4.9ms)
+Completed 200 OK in 13ms (Views: 8.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/activities/NaN" for ::1 at 2020-08-07 13:43:19 -0700
+Processing by Api::ActivitiesController#show as JSON
+  Parameters: {"id"=>"NaN"}
+  [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:4
+Completed 404 Not Found in 2ms (ActiveRecord: 0.5ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Activity with 'id'=NaN:
+  app/controllers/api/activities_controller.rb:4:in `show'
+
+Started GET "/api/activities/NaN" for ::1 at 2020-08-07 13:43:30 -0700
+Processing by Api::ActivitiesController#show as JSON
+  Parameters: {"id"=>"NaN"}
+  [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:4
+Completed 404 Not Found in 2ms (ActiveRecord: 0.5ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Activity with 'id'=NaN:
+  app/controllers/api/activities_controller.rb:4:in `show'
+
+Started POST "/__better_errors/004e854f308b4be5/variables" for ::1 at 2020-08-07 13:43:30 -0700
+Started GET "/api/activities/NaN" for ::1 at 2020-08-07 13:43:41 -0700
+Processing by Api::ActivitiesController#show as JSON
+  Parameters: {"id"=>"NaN"}
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:4
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Activity with 'id'=NaN:
+  app/controllers/api/activities_controller.rb:4:in `show'
+
+Started POST "/__better_errors/fa8e087b5580341c/variables" for ::1 at 2020-08-07 13:43:42 -0700
+Started GET "/api/activities/NaN" for ::1 at 2020-08-07 13:43:42 -0700
+Processing by Api::ActivitiesController#show as JSON
+  Parameters: {"id"=>"NaN"}
+  [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:4
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Activity with 'id'=NaN:
+  app/controllers/api/activities_controller.rb:4:in `show'
+
+Started POST "/__better_errors/75c39395f35b85fd/variables" for ::1 at 2020-08-07 13:43:42 -0700
+Started GET "/api/activities/NaN" for ::1 at 2020-08-07 13:43:43 -0700
+Processing by Api::ActivitiesController#show as JSON
+  Parameters: {"id"=>"NaN"}
+  [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:4
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Activity with 'id'=NaN:
+  app/controllers/api/activities_controller.rb:4:in `show'
+
+Started POST "/__better_errors/b7e7c5a3075fe26f/variables" for ::1 at 2020-08-07 13:43:43 -0700
+Started GET "/api/activities" for ::1 at 2020-08-07 13:43:48 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.7ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (3.4ms)
+Completed 200 OK in 12ms (Views: 9.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/activities/NaN" for ::1 at 2020-08-07 13:43:49 -0700
+Processing by Api::ActivitiesController#show as JSON
+  Parameters: {"id"=>"NaN"}
+  [1m[36mActivity Load (0.2ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:4
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Activity with 'id'=NaN:
+  app/controllers/api/activities_controller.rb:4:in `show'
+
+Started GET "/" for ::1 at 2020-08-07 13:44:53 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 442ms (Views: 439.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/activities/NaN" for ::1 at 2020-08-07 13:44:54 -0700
+Processing by Api::ActivitiesController#show as JSON
+  Parameters: {"id"=>"NaN"}
+  [1m[36mActivity Load (2.3ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:4
+Completed 404 Not Found in 4ms (ActiveRecord: 2.3ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Activity with 'id'=NaN:
+  app/controllers/api/activities_controller.rb:4:in `show'
+
+Started GET "/" for ::1 at 2020-08-07 13:45:13 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 441ms (Views: 434.8ms | ActiveRecord: 5.0ms)
+
+
+Started POST "/api/activities" for ::1 at 2020-08-07 13:45:52 -0700
+Processing by Api::ActivitiesController#create as JSON
+  Parameters: {"activity"=>{"title"=>"Good morning run", "duration"=>"20", "sport"=>"Run", "description"=>"Nice weather for a great run", "distance"=>"15", "elevation"=>"20", "route_id"=>"1", "user_id"=>"7"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:15
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:15
+  [1m[36mRoute Load (0.6ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:15
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/activities_controller.rb:15
+Completed 422 Unprocessable Entity in 13ms (Views: 0.2ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/api/activities" for ::1 at 2020-08-07 13:45:58 -0700
+Processing by Api::ActivitiesController#create as JSON
+  Parameters: {"activity"=>{"title"=>"Good morning run", "duration"=>"0200", "sport"=>"Run", "description"=>"Nice weather for a great run", "distance"=>"15", "elevation"=>"20", "route_id"=>"1", "user_id"=>"7"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:15
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:15
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:15
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/activities_controller.rb:15
+Completed 422 Unprocessable Entity in 6ms (Views: 0.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/api/activities" for ::1 at 2020-08-07 13:46:12 -0700
+Processing by Api::ActivitiesController#create as JSON
+  Parameters: {"activity"=>{"title"=>"Good morning run", "duration"=>"20", "sport"=>"Run", "description"=>"Nice weather for a great run", "distance"=>"15", "elevation"=>"20", "route_id"=>"1", "user_id"=>"7"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:15
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:15
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:15
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/activities_controller.rb:15
+Completed 422 Unprocessable Entity in 5ms (Views: 0.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/api/activities" for ::1 at 2020-08-07 13:46:25 -0700
+Processing by Api::ActivitiesController#create as JSON
+  Parameters: {"activity"=>{"title"=>"Good morning run", "duration"=>"0200", "sport"=>"Run", "description"=>"Nice weather for a great run", "distance"=>"15", "elevation"=>"20", "route_id"=>"1", "user_id"=>"7"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:15
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:15
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:15
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/activities_controller.rb:15
+Completed 422 Unprocessable Entity in 5ms (Views: 0.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:46:30 -0700
+Started GET "/api/activities" for ::1 at 2020-08-07 13:46:30 -0700
+Processing by Api::RoutesController#index as JSON
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (1.7ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (9.3ms)
+Completed 200 OK in 17ms (Views: 15.1ms | ActiveRecord: 1.7ms)
+
+
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.7ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (3.9ms)
+Completed 200 OK in 20ms (Views: 12.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-07 13:46:32 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (2.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (5.6ms)
+Completed 200 OK in 15ms (Views: 10.4ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/api/activities" for ::1 at 2020-08-07 13:46:51 -0700
+Processing by Api::ActivitiesController#create as JSON
+  Parameters: {"activity"=>{"title"=>"new run", "duration"=>"1", "sport"=>"Run", "description"=>"it's a nice day to run", "distance"=>"15", "elevation"=>"20", "route_id"=>"1", "user_id"=>"7"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:15
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:15
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:15
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/activities_controller.rb:15
+Completed 422 Unprocessable Entity in 7ms (Views: 0.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 13:47:04 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (29.5ms)
+Completed 200 OK in 96ms (Views: 80.8ms | ActiveRecord: 13.9ms)
+
+
+Started POST "/api/activities" for ::1 at 2020-08-07 13:47:26 -0700
+Processing by Api::ActivitiesController#create as JSON
+  Parameters: {"activity"=>{"title"=>"morning ", "duration"=>"015", "sport"=>"Run", "description"=>"great", "distance"=>"51", "elevation"=>"21", "route_id"=>"1", "user_id"=>"7"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mRoute Load (0.3ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+Completed 422 Unprocessable Entity in 20429ms (Views: 0.2ms | ActiveRecord: 14.6ms)
+
+
+  [1m[36mActivity Load (1.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+Started GET "/" for ::1 at 2020-08-07 13:48:21 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 444ms (Views: 442.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/activities" for ::1 at 2020-08-07 13:48:38 -0700
+Processing by Api::ActivitiesController#create as JSON
+  Parameters: {"activity"=>{"title"=>"morning", "duration"=>"20", "sport"=>"Run", "description"=>"great run", "distance"=>"1", "elevation"=>"0", "route_id"=>"54", "user_id"=>"7"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mRoute Load (0.5ms)[0m  [1m[34mSELECT  "routes".* FROM "routes" WHERE "routes"."id" = $1 LIMIT $2[0m  [["id", 54], ["LIMIT", 1]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[36mActivity Create (41.6ms)[0m  [1m[32mINSERT INTO "activities" ("title", "sport", "duration", "distance", "elevation", "description", "user_id", "route_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "morning"], ["sport", "Run"], ["duration", "20"], ["distance", 1.0], ["elevation", 0], ["description", "great run"], ["user_id", 7], ["route_id", 54], ["created_at", "2020-08-07 20:48:45.023624"], ["updated_at", "2020-08-07 20:48:45.023624"]]
+  ↳ app/controllers/api/activities_controller.rb:16
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/activities_controller.rb:16
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (2.6ms)
+Completed 200 OK in 6398ms (Views: 7.1ms | ActiveRecord: 45.3ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-07 13:48:45 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (2.7ms)
+Completed 200 OK in 12ms (Views: 8.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 13:48:54 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 61ms (Views: 58.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:48:55 -0700
+Started GET "/api/activities" for ::1 at 2020-08-07 13:48:55 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+Processing by Api::RoutesController#index as JSON
+  [1m[36mActivity Load (14.8ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (20.0ms)
+  Rendering api/routes/index.json.jbuilder
+Completed 200 OK in 35ms (Views: 17.9ms | ActiveRecord: 14.8ms)
+
+
+  [1m[36mRoute Load (4.1ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (7.0ms)
+Completed 200 OK in 18ms (Views: 13.2ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 13:49:00 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 75ms (Views: 72.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:49:00 -0700
+Started GET "/api/activities" for ::1 at 2020-08-07 13:49:00 -0700
+Processing by Api::RoutesController#index as JSON
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mRoute Load (9.5ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  [1m[36mActivity Load (0.8ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (13.9ms)
+  Rendered api/activities/index.json.jbuilder (6.8ms)
+Completed 200 OK in 25ms (Views: 14.7ms | ActiveRecord: 9.5ms)
+
+
+Completed 200 OK in 19ms (Views: 14.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 13:49:02 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 60ms (Views: 58.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:49:02 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+Started GET "/api/activities" for ::1 at 2020-08-07 13:49:02 -0700
+  [1m[36mRoute Load (6.0ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (10.1ms)
+Completed 200 OK in 17ms (Views: 10.9ms | ActiveRecord: 6.0ms)
+
+
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (1.8ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (8.1ms)
+Completed 200 OK in 17ms (Views: 13.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 13:50:01 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 496ms (Views: 493.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:50:02 -0700
+Started GET "/api/activities" for ::1 at 2020-08-07 13:50:02 -0700
+Processing by Api::ActivitiesController#index as JSON
+Processing by Api::RoutesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mActivity Load (6.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (10.2ms)
+Completed 200 OK in 22ms (Views: 13.9ms | ActiveRecord: 6.1ms)
+
+
+  [1m[36mRoute Load (5.4ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (8.7ms)
+Completed 200 OK in 23ms (Views: 17.7ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 13:50:11 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 55ms (Views: 53.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:50:12 -0700
+Started GET "/api/activities" for ::1 at 2020-08-07 13:50:12 -0700
+Processing by Api::RoutesController#index as JSON
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mRoute Load (6.1ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (11.2ms)
+Completed 200 OK in 20ms (Views: 13.7ms | ActiveRecord: 6.1ms)
+
+
+  [1m[36mActivity Load (7.8ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (11.3ms)
+Completed 200 OK in 26ms (Views: 9.9ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 13:50:13 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 57ms (Views: 55.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:50:13 -0700
+Started GET "/api/activities" for ::1 at 2020-08-07 13:50:13 -0700
+Processing by Api::RoutesController#index as JSON
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mActivity Load (8.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (13.7ms)
+Completed 200 OK in 27ms (Views: 15.3ms | ActiveRecord: 8.4ms)
+
+
+  [1m[36mRoute Load (8.0ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (14.3ms)
+Completed 200 OK in 37ms (Views: 28.6ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 13:50:35 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 112ms (Views: 108.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:50:35 -0700
+Started GET "/api/activities" for ::1 at 2020-08-07 13:50:35 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (20.4ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+Processing by Api::ActivitiesController#index as JSON
+  Rendered api/routes/index.json.jbuilder (25.6ms)
+Completed 200 OK in 38ms (Views: 17.8ms | ActiveRecord: 20.4ms)
+
+
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (13.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (17.3ms)
+Completed 200 OK in 31ms (Views: 14.2ms | ActiveRecord: 13.3ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 13:50:36 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 428ms (Views: 426.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:50:37 -0700
+Started GET "/api/activities" for ::1 at 2020-08-07 13:50:37 -0700
+Processing by Api::ActivitiesController#index as JSON
+Processing by Api::RoutesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mActivity Load (1.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (6.3ms)
+Completed 200 OK in 24ms (Views: 18.2ms | ActiveRecord: 1.3ms)
+
+
+  [1m[36mRoute Load (3.8ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (9.2ms)
+Completed 200 OK in 27ms (Views: 22.8ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 13:50:38 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 64ms (Views: 62.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:50:38 -0700
+Started GET "/api/activities" for ::1 at 2020-08-07 13:50:38 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (3.8ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (8.0ms)
+Processing by Api::ActivitiesController#index as JSON
+Completed 200 OK in 18ms (Views: 14.0ms | ActiveRecord: 3.8ms)
+
+
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (1.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (5.2ms)
+Completed 200 OK in 17ms (Views: 11.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 13:50:40 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 56ms (Views: 54.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:50:40 -0700
+Processing by Api::RoutesController#index as JSON
+Started GET "/api/activities" for ::1 at 2020-08-07 13:50:40 -0700
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (0.9ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+Processing by Api::ActivitiesController#index as JSON
+  Rendered api/routes/index.json.jbuilder (6.6ms)
+Completed 200 OK in 18ms (Views: 16.9ms | ActiveRecord: 0.9ms)
+
+
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (5.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (8.5ms)
+Completed 200 OK in 21ms (Views: 11.7ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 13:50:42 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 57ms (Views: 55.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:50:43 -0700
+Started GET "/api/activities" for ::1 at 2020-08-07 13:50:43 -0700
+Processing by Api::RoutesController#index as JSON
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mRoute Load (11.5ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (19.6ms)
+  [1m[36mActivity Load (4.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (9.3ms)
+Completed 200 OK in 32ms (Views: 15.9ms | ActiveRecord: 4.4ms)
+
+
+Completed 200 OK in 32ms (Views: 20.0ms | ActiveRecord: 11.5ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 13:51:58 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 420ms (Views: 418.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:51:59 -0700
+Processing by Api::RoutesController#index as JSON
+Started GET "/api/activities" for ::1 at 2020-08-07 13:51:59 -0700
+  Rendering api/routes/index.json.jbuilder
+Processing by Api::ActivitiesController#index as JSON
+  [1m[36mRoute Load (3.3ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (9.1ms)
+Completed 200 OK in 16ms (Views: 12.2ms | ActiveRecord: 3.3ms)
+
+
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (1.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (4.4ms)
+Completed 200 OK in 16ms (Views: 12.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 13:52:00 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 62ms (Views: 60.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:52:00 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+Started GET "/api/activities" for ::1 at 2020-08-07 13:52:00 -0700
+  [1m[36mRoute Load (1.6ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+Processing by Api::ActivitiesController#index as JSON
+  Rendered api/routes/index.json.jbuilder (6.4ms)
+Completed 200 OK in 16ms (Views: 14.4ms | ActiveRecord: 1.6ms)
+
+
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (1.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (4.8ms)
+Completed 200 OK in 16ms (Views: 11.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 13:52:01 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 66ms (Views: 64.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:52:01 -0700
+Started GET "/api/activities" for ::1 at 2020-08-07 13:52:01 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (1.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (5.7ms)
+Completed 200 OK in 15ms (Views: 13.0ms | ActiveRecord: 1.2ms)
+
+
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (8.8ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (18.9ms)
+Completed 200 OK in 31ms (Views: 20.1ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 13:52:02 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 82ms (Views: 76.5ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:52:02 -0700
+Started GET "/api/activities" for ::1 at 2020-08-07 13:52:02 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mRoute Load (20.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (25.1ms)
+Completed 200 OK in 35ms (Views: 14.1ms | ActiveRecord: 20.2ms)
+
+
+  [1m[36mActivity Load (10.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (15.0ms)
+Completed 200 OK in 27ms (Views: 14.2ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 13:52:03 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 74ms (Views: 71.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:52:03 -0700
+Started GET "/api/activities" for ::1 at 2020-08-07 13:52:03 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+Processing by Api::ActivitiesController#index as JSON
+  [1m[36mRoute Load (4.8ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  Rendering api/activities/index.json.jbuilder
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (14.7ms)
+Completed 200 OK in 24ms (Views: 19.3ms | ActiveRecord: 4.8ms)
+
+
+  [1m[36mActivity Load (4.7ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (9.6ms)
+Completed 200 OK in 19ms (Views: 12.2ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 13:52:24 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 444ms (Views: 442.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:52:25 -0700
+Processing by Api::RoutesController#index as JSON
+Started GET "/api/activities" for ::1 at 2020-08-07 13:52:25 -0700
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (6.1ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+Processing by Api::ActivitiesController#index as JSON
+  Rendered api/routes/index.json.jbuilder (11.3ms)
+Completed 200 OK in 22ms (Views: 15.7ms | ActiveRecord: 6.1ms)
+
+
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (2.7ms)
+Completed 200 OK in 12ms (Views: 8.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 13:53:41 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 449ms (Views: 447.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:53:41 -0700
+Started GET "/api/activities" for ::1 at 2020-08-07 13:53:41 -0700
+Processing by Api::RoutesController#index as JSON
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mRoute Load (2.0ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  [1m[36mActivity Load (0.7ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (7.7ms)
+Completed 200 OK in 23ms (Views: 14.6ms | ActiveRecord: 0.7ms)
+
+
+  Rendered api/routes/index.json.jbuilder (5.6ms)
+Completed 200 OK in 27ms (Views: 24.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 13:53:43 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 68ms (Views: 66.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:53:44 -0700
+Started GET "/api/activities" for ::1 at 2020-08-07 13:53:44 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+Processing by Api::ActivitiesController#index as JSON
+  [1m[36mRoute Load (3.0ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (7.0ms)
+Completed 200 OK in 17ms (Views: 13.7ms | ActiveRecord: 3.0ms)
+
+
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (3.7ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (9.3ms)
+Completed 200 OK in 23ms (Views: 12.7ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 13:53:47 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 121ms (Views: 119.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:53:48 -0700
+Started GET "/api/activities" for ::1 at 2020-08-07 13:53:48 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mRoute Load (14.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (22.1ms)
+Completed 200 OK in 32ms (Views: 16.8ms | ActiveRecord: 14.2ms)
+
+
+  [1m[36mActivity Load (2.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (15.5ms)
+Completed 200 OK in 26ms (Views: 21.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 13:55:09 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 133ms (Views: 131.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:55:10 -0700
+Started GET "/api/activities" for ::1 at 2020-08-07 13:55:10 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mRoute Load (28.5ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (33.5ms)
+Completed 200 OK in 45ms (Views: 15.8ms | ActiveRecord: 28.5ms)
+
+
+  [1m[36mActivity Load (32.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (37.3ms)
+Completed 200 OK in 49ms (Views: 14.1ms | ActiveRecord: 32.2ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 13:56:05 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 106ms (Views: 104.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:56:05 -0700
+Processing by Api::RoutesController#index as JSON
+Started GET "/api/activities" for ::1 at 2020-08-07 13:56:05 -0700
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (1.6ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (6.2ms)
+Completed 200 OK in 13ms (Views: 11.3ms | ActiveRecord: 1.6ms)
+
+
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (4.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (8.9ms)
+Completed 200 OK in 21ms (Views: 11.6ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 13:56:11 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 113ms (Views: 110.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:56:11 -0700
+Processing by Api::RoutesController#index as JSON
+Started GET "/api/activities" for ::1 at 2020-08-07 13:56:11 -0700
+  Rendering api/routes/index.json.jbuilder
+Processing by Api::ActivitiesController#index as JSON
+  [1m[36mRoute Load (6.0ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendering api/activities/index.json.jbuilder
+  Rendered api/routes/index.json.jbuilder (15.6ms)
+Completed 200 OK in 23ms (Views: 16.6ms | ActiveRecord: 6.0ms)
+
+
+  [1m[36mActivity Load (5.8ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (10.3ms)
+Completed 200 OK in 24ms (Views: 16.3ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 13:56:19 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 111ms (Views: 108.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:56:19 -0700
+Started GET "/api/activities" for ::1 at 2020-08-07 13:56:19 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (4.8ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (9.1ms)
+Completed 200 OK in 15ms (Views: 10.4ms | ActiveRecord: 4.8ms)
+
+
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (3.7ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (7.2ms)
+Completed 200 OK in 18ms (Views: 11.7ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 13:59:05 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 100ms (Views: 98.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:59:05 -0700
+Started GET "/api/activities" for ::1 at 2020-08-07 13:59:05 -0700
+Processing by Api::RoutesController#index as JSON
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mRoute Load (17.9ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  [1m[36mActivity Load (9.0ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (12.6ms)
+  Rendered api/routes/index.json.jbuilder (24.0ms)
+Completed 200 OK in 30ms (Views: 14.5ms | ActiveRecord: 9.0ms)
+
+
+Completed 200 OK in 33ms (Views: 15.0ms | ActiveRecord: 17.9ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 13:59:12 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 81ms (Views: 79.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 13:59:13 -0700
+Started GET "/api/activities" for ::1 at 2020-08-07 13:59:13 -0700
+Processing by Api::ActivitiesController#index as JSON
+Processing by Api::RoutesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mActivity Load (4.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (9.4ms)
+Completed 200 OK in 21ms (Views: 14.7ms | ActiveRecord: 4.1ms)
+
+
+  [1m[36mRoute Load (3.3ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (8.5ms)
+Completed 200 OK in 21ms (Views: 17.7ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 14:00:24 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 127ms (Views: 125.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-07 14:00:24 -0700
+Started GET "/api/routes" for ::1 at 2020-08-07 14:00:24 -0700
+Processing by Api::ActivitiesController#index as JSON
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mRoute Load (6.5ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  [1m[36mActivity Load (0.9ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (5.2ms)
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (15.2ms)
+Completed 200 OK in 27ms (Views: 20.4ms | ActiveRecord: 6.5ms)
+
+
+Completed 200 OK in 26ms (Views: 12.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 14:00:31 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 67ms (Views: 64.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-07 14:00:31 -0700
+Started GET "/api/routes" for ::1 at 2020-08-07 14:00:31 -0700
+Processing by Api::RoutesController#index as JSON
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mRoute Load (2.6ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (7.0ms)
+Completed 200 OK in 26ms (Views: 23.4ms | ActiveRecord: 2.6ms)
+
+
+  [1m[36mActivity Load (6.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (12.5ms)
+Completed 200 OK in 31ms (Views: 16.1ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 14:00:32 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 145ms (Views: 142.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 14:00:32 -0700
+Processing by Api::RoutesController#index as JSON
+Started GET "/api/activities" for ::1 at 2020-08-07 14:00:32 -0700
+  Rendering api/routes/index.json.jbuilder
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mRoute Load (30.0ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (34.7ms)
+  [1m[36mActivity Load (17.6ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (22.5ms)
+Completed 200 OK in 36ms (Views: 15.6ms | ActiveRecord: 17.6ms)
+
+
+Completed 200 OK in 43ms (Views: 12.3ms | ActiveRecord: 30.0ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 14:01:44 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 456ms (Views: 454.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 14:02:01 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 63ms (Views: 60.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 14:02:14 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 630ms (Views: 627.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 14:02:15 -0700
+Started GET "/api/activities" for ::1 at 2020-08-07 14:02:15 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+Processing by Api::RoutesController#index as JSON
+  [1m[36mActivity Load (1.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (8.3ms)
+Completed 200 OK in 21ms (Views: 16.3ms | ActiveRecord: 1.4ms)
+
+
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (16.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (19.5ms)
+Completed 200 OK in 37ms (Views: 20.3ms | ActiveRecord: 16.2ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 14:02:29 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 64ms (Views: 61.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 14:02:30 -0700
+Started GET "/api/activities" for ::1 at 2020-08-07 14:02:30 -0700
+Processing by Api::RoutesController#index as JSON
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mRoute Load (4.8ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (8.0ms)
+  [1m[36mActivity Load (2.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+Completed 200 OK in 16ms (Views: 11.2ms | ActiveRecord: 4.8ms)
+
+
+  Rendered api/activities/index.json.jbuilder (5.2ms)
+Completed 200 OK in 17ms (Views: 8.6ms | ActiveRecord: 2.1ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-08-07 14:02:36 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "12WnwJyyu3RRixXa1cDfOw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:32
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "demo"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:32
+  [1m[36mUser Update (41.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "iuNukKk3s7BgXJFIH_vIoA"], ["updated_at", "2020-08-07 21:02:36.585977"], ["id", 7]]
+  ↳ app/models/user.rb:32
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:32
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.5ms)
+Completed 200 OK in 57ms (Views: 6.6ms | ActiveRecord: 45.0ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 14:02:40 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered static_pages/root.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 59ms (Views: 56.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/session" for ::1 at 2020-08-07 14:02:42 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"demo", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "demo"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:32
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "demo"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:32
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "Yh7ix9uJ4jSeSH2v2iyX0Q"], ["updated_at", "2020-08-07 21:02:42.830461"], ["id", 7]]
+  ↳ app/models/user.rb:32
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:32
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered api/users/show.json.jbuilder (1.2ms)
+Completed 200 OK in 283ms (Views: 5.8ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 14:02:42 -0700
+Processing by Api::RoutesController#index as JSON
+Started GET "/api/activities" for ::1 at 2020-08-07 14:02:42 -0700
+  Rendering api/routes/index.json.jbuilder
+Processing by Api::ActivitiesController#index as JSON
+  [1m[36mRoute Load (1.2ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (7.0ms)
+Completed 200 OK in 15ms (Views: 12.9ms | ActiveRecord: 1.2ms)
+
+
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (1.0ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (3.6ms)
+Completed 200 OK in 14ms (Views: 10.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 14:02:45 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (0.4ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (2.9ms)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 14:02:47 -0700
+Started GET "/api/activities" for ::1 at 2020-08-07 14:02:47 -0700
+Processing by Api::RoutesController#index as JSON
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (1.5ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (10.1ms)
+Completed 200 OK in 17ms (Views: 15.6ms | ActiveRecord: 1.5ms)
+
+
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.7ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (3.7ms)
+Completed 200 OK in 16ms (Views: 13.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 14:03:03 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Yh7ix9uJ4jSeSH2v2iyX0Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 83ms (Views: 80.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 14:03:03 -0700
+Started GET "/api/activities" for ::1 at 2020-08-07 14:03:03 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+Processing by Api::ActivitiesController#index as JSON
+  [1m[36mRoute Load (1.4ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (7.0ms)
+Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 1.4ms)
+
+
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (1.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (4.2ms)
+Completed 200 OK in 17ms (Views: 11.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2020-08-07 14:03:18 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Yh7ix9uJ4jSeSH2v2iyX0Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 480ms (Views: 478.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 14:03:19 -0700
+Started GET "/api/activities" for ::1 at 2020-08-07 14:03:19 -0700
+Processing by Api::RoutesController#index as JSON
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (2.0ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendering api/activities/index.json.jbuilder
+  Rendered api/routes/index.json.jbuilder (10.1ms)
+Completed 200 OK in 19ms (Views: 16.3ms | ActiveRecord: 2.0ms)
+
+
+  [1m[36mActivity Load (1.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (5.1ms)
+Completed 200 OK in 18ms (Views: 13.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 14:03:26 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (0.7ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (5.4ms)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-07 14:03:27 -0700
+Started GET "/api/routes" for ::1 at 2020-08-07 14:03:27 -0700
+Processing by Api::RoutesController#index as JSON
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mRoute Load (4.8ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (7.1ms)
+Completed 200 OK in 16ms (Views: 10.7ms | ActiveRecord: 4.8ms)
+
+
+  [1m[36mActivity Load (2.7ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (8.1ms)
+Completed 200 OK in 20ms (Views: 15.1ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-07 14:03:27 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (1.0ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (4.3ms)
+Completed 200 OK in 12ms (Views: 8.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 14:03:30 -0700
+Started GET "/api/activities" for ::1 at 2020-08-07 14:03:30 -0700
+Processing by Api::RoutesController#index as JSON
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mRoute Load (4.4ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (7.3ms)
+  [1m[36mActivity Load (2.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+Completed 200 OK in 18ms (Views: 12.9ms | ActiveRecord: 4.4ms)
+
+
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (7.5ms)
+Completed 200 OK in 21ms (Views: 16.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 14:03:30 -0700
+Processing by Api::RoutesController#index as JSON
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mRoute Load (0.7ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (3.5ms)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 14:03:31 -0700
+Started GET "/api/activities" for ::1 at 2020-08-07 14:03:31 -0700
+Processing by Api::ActivitiesController#index as JSON
+Processing by Api::RoutesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mActivity Load (0.7ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (3.1ms)
+  [1m[36mRoute Load (2.0ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (4.5ms)
+Completed 200 OK in 16ms (Views: 13.8ms | ActiveRecord: 2.0ms)
+
+
+Completed 200 OK in 15ms (Views: 10.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/activities" for ::1 at 2020-08-07 14:03:36 -0700
+Processing by Api::ActivitiesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (2.9ms)
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/routes" for ::1 at 2020-08-07 14:03:38 -0700
+Started GET "/api/activities" for ::1 at 2020-08-07 14:03:38 -0700
+Processing by Api::ActivitiesController#index as JSON
+Processing by Api::RoutesController#index as JSON
+  Rendering api/activities/index.json.jbuilder
+  Rendering api/routes/index.json.jbuilder
+  [1m[36mActivity Load (3.7ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/api/activities/index.json.jbuilder:1
+  Rendered api/activities/index.json.jbuilder (13.1ms)
+Completed 200 OK in 21ms (Views: 14.6ms | ActiveRecord: 3.7ms)
+
+
+  [1m[36mRoute Load (9.4ms)[0m  [1m[34mSELECT "routes".* FROM "routes"[0m
+  ↳ app/views/api/routes/index.json.jbuilder:1
+  Rendered api/routes/index.json.jbuilder (12.1ms)
+Completed 200 OK in 23ms (Views: 13.2ms | ActiveRecord: 9.4ms)
+
+

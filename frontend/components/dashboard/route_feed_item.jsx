@@ -8,8 +8,8 @@ class RouteFeedItem extends React.Component {
     constructor(props) {
         super(props);
         this.routeData = JSON.parse(this.props.route.route_data);
-        this.routeDuration = this.routeData.matchings[0].duration;
-        this.routeDistance = this.routeData.matchings[0].distance;
+        // this.routeDuration = this.routeData.matchings[0].duration;
+        // this.routeDistance = this.routeData.matchings[0].distance;
     }
 
     // getStaticMapImg() {
@@ -35,7 +35,7 @@ class RouteFeedItem extends React.Component {
 
         return (
                 <div className="map-canvas-feed">
-                    <Link className="route-card-title" to={`/routes/${route.id}`}><img className="map-static-img" src={imgUrl} /></Link>
+                    <Link className="route-card-title" to={`/routes/${route.id}`}><img className="map-static-image" src={imgUrl} /></Link>
                 </div>
         )
     }

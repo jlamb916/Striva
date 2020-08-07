@@ -17,7 +17,7 @@ class ActivityForm extends React.Component {
             description: "",
             elevation: "0",
             sport: "Run",
-            route_id: "9"
+            route_id: "54"
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);

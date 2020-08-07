@@ -13,13 +13,14 @@ class FeedIndex extends React.Component {
         let date = Date(activity.created_at).split(" ")
         let day = date[0];
         let month = date[1] + " " + date[2] + " " + " " + date[3] 
+        if (activity) {
         return (
             <div className="feed">
             <div className="feed-header">
                 <div className="profile-image-feed"></div>
                 <div className="user-data">
                     <div className="user-feed">
-                            <p>{user.username}</p>
+                            <p className="feed-username">{user.username}</p>
                     </div>
                         <div className="stat-label-feed">
                             <p>{day}, {month}</p>
@@ -27,7 +28,7 @@ class FeedIndex extends React.Component {
                 </div>
             </div>
             <div className="feed-activity-info">
-                    <div className='feed-activity-header'><h2>{activity.title}</h2></div>
+                    <NavLink to={`/activities/${activity.id}`}><div className='feed-activity-header'><h2>{activity.title}</h2></div></NavLink>
                     <div className="feed-activity-data">
                         <div className='flex-column-feed'>
                             <p className="stat-label-feed" >Distance</p>
@@ -43,9 +44,12 @@ class FeedIndex extends React.Component {
                         </div>
                     </div>
             </div>
-                <RouteFeedItem key={`${route.id}`} route={route} />
+                {{route} && <RouteFeedItem key={route.id} route={route} />}
             </div>
-        )
+        ) }
+        else{
+            return ""
+        }
     }
 }
 
