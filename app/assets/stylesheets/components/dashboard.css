@@ -20,3 +20,56 @@
 }
 
 
+
+.github-image-feed {
+ width: 50px; /* width of container */
+  height: 50px; /* height of container */
+  object-fit: cover;
+  border-radius: 50%;
+  background-image: url('https://cdn3.iconfinder.com/data/icons/social-icons-hex-grey/512/GITHUB-512.png');
+ background-size: cover;
+}
+
+
+.linkedin-image-feed {
+ width: 50px; /* width of container */
+  height: 50px; /* height of container */
+  object-fit: cover;
+  border-radius: 50%;
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRxozXApbLiC3S6agNus-2Egm_goIPccPPlWQ&usqp=CAU');
+ background-size: cover;
+}
+
+.angel-image-feed {
+ width: 50px; /* width of container */
+  height: 50px; /* height of container */
+  object-fit: cover;
+  border-radius: 50%;
+  background-image: url('https://cdn1.iconfinder.com/data/icons/logos-and-brands-3/512/20_Angellist_logo_logos-512.png');
+ background-size: cover;
+}
+
+.links-container {
+    margin: 90px 0 0 30px;
+    box-sizing: border-box;
+}
+
+.link {
+    height:100px;
+    display: flex;
+}
+
+.link1 {
+    padding-left: 10px;
+}
+
+.link-title {
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.link a {
+ font-size: 12px;
+ color: orangered;
+ font-weight: bold;
+}
