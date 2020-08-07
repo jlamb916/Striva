@@ -1,5 +1,5 @@
 import React from 'react';
-
+import FeedIndexContainer from './feed_index_container';
 
 class Feed extends React.Component {
     constructor (props) {
@@ -8,26 +8,20 @@ class Feed extends React.Component {
 
     componentDidMount() {
         this.props.fetchAllRoutes();
+        this.props.fetchActivities();
     }
 
     render () {
-        const allRoutes = this.props.routes.map((route) => (
-            <li className="feed" key={`${route.id}`}>
-                <ul>
-                    <li>
-                        {`${route.route_name}`}
-                    </li>
-                    <li>
-                        {`${route.route_description}`}
-                    </li>
-                </ul>
-            </li>
-        ))
+        const allActivities = this.props.activities.map((activity) => {
+            return (
+                <FeedIndexContainer key={activity.id} activity={activity} />
+            )
+        })
         
         return (
             <div className="feeds-container">
                 <ul>
-                    {allRoutes}
+                    {allActivities}
                 </ul>
             </div>
         )

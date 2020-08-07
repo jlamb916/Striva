@@ -19,19 +19,4 @@
     margin-top: 43px;
 }
 
-.feed-container {
-    display: flex;
-    align-items: center;
-
-}
-
-
-.feed {
-    display: block;
-    margin: 20px 15px;
-    background-color: white;
-    width: 550px;
-    height: 225px;
-    border-radius: 3px;
-}
 
