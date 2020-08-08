@@ -53,7 +53,7 @@ class ActivityShow extends React.Component {
                             <div className="activity-bottom-stats">
                                 <div className="flex-column">
                                 <span className="stats elevation">Elevation </span> 
-                                <span className="stats">ElapsedTime  </span>
+                                <span className="stats">Elapsed Time  </span>
                                 </div>
                                 <div className="flex-column-right">
                                 <span className="stats-right elevation">  {activity.elevation} ft</span>
