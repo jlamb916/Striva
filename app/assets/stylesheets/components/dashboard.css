@@ -10,7 +10,7 @@
 
 .dash-container-right {
     background-color: #f7f7fa;
-    width: 26%;
+    width: 28%;
 }
 
 .dash-container-mid {
@@ -50,17 +50,22 @@
 }
 
 .links-container {
-    margin: 90px 0 0 30px;
+    margin: 70px 0 0 30px;
     box-sizing: border-box;
 }
 
 .link {
     height:100px;
     display: flex;
+    border-bottom: 0.5px solid gainsboro;
+    width: 200px;
+    padding-top: 20px;
+     padding-bottom: 20px;
 }
 
 .link1 {
     padding-left: 10px;
+    
 }
 
 .link-title {
