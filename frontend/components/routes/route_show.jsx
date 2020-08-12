@@ -37,7 +37,6 @@ class RouteShow extends React.Component {
 
     render () {
         const { route } = this.props
-        
         let routeData;
         let routeDuration;
         let routeDistance;

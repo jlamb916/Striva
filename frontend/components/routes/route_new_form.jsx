@@ -98,7 +98,7 @@ class NewRouteForm extends React.Component {
         // Use the coordinates you drew to make the Map Matching API request
         function updateRoute() {
             // Set the profile
-            var profile = "walking";
+            var profile = "driving";
             // Get the coordinates that were drawn on the map
             var data = draw.getAll();
             var lastFeature = data.features.length - 1;

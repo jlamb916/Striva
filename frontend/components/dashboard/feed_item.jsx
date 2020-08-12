@@ -28,6 +28,10 @@ class FeedIndex extends React.Component {
                 </div>
             </div>
             <div className="feed-activity-info">
+                    <div className="feed-icon-container">
+                        <span className={`icon ${activity.sport}`}></span>
+                    </div>
+                    <div >
                     <NavLink to={`/activities/${activity.id}`}><div className='feed-activity-header'><h2>{activity.title}</h2></div></NavLink>
                     <div className="feed-activity-data">
                         <div className='flex-column-feed'>
@@ -42,6 +46,7 @@ class FeedIndex extends React.Component {
                             <p className="stat-label-feed" >Time</p>
                             <p className="stat-data">{activity.duration} m</p>
                         </div>
+                    </div>
                     </div>
             </div>
                 {{route} && <RouteFeedItem key={route.id} route={route} />}
