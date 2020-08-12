@@ -118,7 +118,7 @@ class MapBox extends React.Component {
             var radiuses = radius.join(';')
             // Create the query
             var query = 'https://api.mapbox.com/matching/v5/mapbox/' + profile + '/' + coordinates + '?geometries=geojson&radiuses=' + radiuses + '&steps=false&access_token=' + mapboxgl.accessToken;
-            console.log(query);
+            // console.log(query);
             $.ajax({
                 method: 'GET',
                 url: query

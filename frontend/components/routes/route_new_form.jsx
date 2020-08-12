@@ -127,7 +127,7 @@ class NewRouteForm extends React.Component {
             }).done(function (data) {
                 // Get the coordinates from the response
                 if (data.code === 'NoMatch') {
-                    console.log("route couldn't be found")
+                    // console.log("route couldn't be found")
                 } else {
                 var coords = data.matchings[0].geometry;
                 routeData = data;
