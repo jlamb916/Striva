@@ -7,6 +7,8 @@ Striva is a web application for users to create, share, and log their workouts. 
 
 ![alt text](https://github.com/jlamb916/Striva/blob/master/app/assets/images/Striva_splash.png "Striva splash page")
 
+![alt text](https://github.com/jlamb916/Striva/blob/master/app/assets/images/dashboard.png "Striva dashboard")
+
 
 # Features
 
@@ -14,6 +16,30 @@ Striva is a web application for users to create, share, and log their workouts. 
 
 
 * Advanced route creation utilizing MapBox match api
+
+Attached Mapbox api map to react enabling rendering manipulation of the map by user
+
+```
+   componentDidMount() {
+        const map = new mapboxgl.Map({
+            // tells mapbox to render map inside a specific dom element
+            container: this.mapContainer,
+            // style defines style to be used
+            style: 'mapbox://styles/mapbox/streets-v11',
+            //set the center coords and zoom level
+            center: [this.state.lng, this.state.lat],
+            zoom: this.state.zoom
+        });
+        // when map moves set state resets the values
+        map.on('move', () => {
+            this.setState({
+                lng: map.getCenter().lng.toFixed(4),
+                lat: map.getCenter().lat.toFixed(4),
+                zoom: map.getZoom().toFixed(2)
+            });
+        });
+```
+
 * Feed that shows all user's recent activity
 
 
