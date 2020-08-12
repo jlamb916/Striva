@@ -13,7 +13,7 @@ class FeedIndex extends React.Component {
         let date = Date(activity.created_at).split(" ")
         let day = date[0];
         let month = date[1] + " " + date[2] + " " + " " + date[3] 
-        if (activity) {
+        if (activity && route) {
         return (
             <div className="feed">
             <div className="feed-header">

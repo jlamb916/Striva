@@ -21,7 +21,7 @@ class Feed extends React.Component {
         return (
             <div className="feeds-container">
                 <ul>
-                    {allActivities}
+                    {allActivities ? allActivities : ""}
                 </ul>
             </div>
         )
