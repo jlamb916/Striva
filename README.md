@@ -4,6 +4,8 @@
 
 Striva is a web application for users to create, share, and log their workouts. Inspired by Strava, Striva allows users to create their favorite running routes, view a list of their exercise activities overtime, and track their progress all while sharing it with friends! 
 
+# Technology
+Striva is a single-page application built on Rails, React.js, Redux, hosted on heroku, and other additional dependencies.
 
 ![alt text](https://github.com/jlamb916/Striva/blob/master/app/assets/images/Striva_splash.png "Striva splash page")
 
@@ -53,9 +55,6 @@ Attached Mapbox api map to react enabling rendering manipulation of the map by u
 Striva was designed and built in 10 days!
 
 A proposal was drafted alongside a database schema to help provide an implementation timeline during the development process.
-
-# Technology
-Striva is a single-page application built on Rails, React.js, hosted on heroku, and other additional dependencies
 
 ## Backend
 
