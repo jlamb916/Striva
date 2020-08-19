@@ -59,7 +59,7 @@ input::placeholder {
 
 
 input.input-title {
-    width: 550px;    
+    width: 360px;
 }
 
 .select-form {
@@ -119,4 +119,11 @@ textarea::placeholder {
 
 .input {
     padding-left: 5px;
+}
+
+.activity-route {
+    margin-left: 20px;
+}
+.select-route {
+    width: 150px;
 }

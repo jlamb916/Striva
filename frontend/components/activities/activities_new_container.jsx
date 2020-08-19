@@ -5,11 +5,14 @@ import ActivityForm from './activity_form';
 const mapStateToProps = (state) => {
     const currentUserId = state.session.id;
     const errors = state.errors.activity;
+    let routeArr = Object.values(state.entities.routes);
+
     return ({
         userId: currentUserId,
         errors,
         formName: "New",
-        processForm: "Create"
+        processForm: "Create",
+        routes: routeArr
     })
 }
 

@@ -7,12 +7,14 @@ const mapStateToProps = (state, ownProps) => {
     const errors = state.errors.activity;
     const activityId = ownProps.match.params.activitiesId;
     const activity = state.entities.activities[activityId];
+    let routeArr = Object.values(state.entities.routes);
     return ({
         userId: currentUserId,
         activity: activity,
         errors,
         formName: "Edit",
-        processForm: "Edit"
+        processForm: "Edit",
+        routes: routeArr
     })
 }
 

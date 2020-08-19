@@ -15,7 +15,7 @@ class Api::RoutesController < ApplicationController
         if @route.save
             render 'api/routes/show'
         else
-            render json: ["Route is Invalid or fields are missing"], status: 422
+            render json: ["Route is Invalid"], status: 422
         end
     end
 

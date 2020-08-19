@@ -5,24 +5,25 @@ class ActivityForm extends React.Component {
     constructor(props) {
         super(props)
 
-
+        
         this.state = {
             title: "",
             date: "",
-            time: "",
+            time:  "",
             dHour: "",
             dMin: "",
             dSec: "",
-            distance: "0",
+            distance:  "0",
             description: "",
             elevation: "0",
             sport: "Run",
-            route_id: "61"
+            route: ""
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+   
 
     update(field) {
         return (e) => this.setState({ [field]: e.currentTarget.value });
@@ -30,6 +31,7 @@ class ActivityForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        const route = this.props.routes.find((route) => route.route_name = this.state.route)
         this.props.activityProcessForm({
                 title: this.state.title,
                 duration: this.state.dHour + this.state.dMin + this.state.dSec,
@@ -38,7 +40,7 @@ class ActivityForm extends React.Component {
                 description: this.state.description,
                 distance: this.state.distance,
                 elevation: this.state.elevation,
-                route_id: this.state.route_id,
+                route_id: route.id,
                 user_id: this.props.userId,
             })
             .then((res) => this.props.history.push("/activities"));
@@ -58,6 +60,20 @@ class ActivityForm extends React.Component {
 
     render () {
         const {formName, processForm} = this.props;
+        const routeOptions = Object.values(this.props.routes).map((route) => (
+            <option key={route.id} value={route.route_name}> {route.route_name}</option>
+        ));
+        
+        const selectRoutes = (
+                    <select className = "select-form select-route"
+                        onChange = { this.update("route") }
+                        value = {this.state.route}
+                        >
+                    <option value="">Choose a Route</option>
+                        {routeOptions}
+                    </select >
+            )
+        
         return (
             <div className="activity-form-container">
                 <header className="activity-index-header">
@@ -81,6 +97,7 @@ class ActivityForm extends React.Component {
                                 type="text"
                                 placeholder="Afternoon Run"
                                 value={this.state.title}
+                                required
                             ></input>
                         </div>
                     
@@ -89,7 +106,8 @@ class ActivityForm extends React.Component {
                         <br />
                             <select className="select-form"
                                 onChange={this.update("sport")}
-                                value={this.state.sport}>
+                                value={this.state.sport}
+                                required>
 
                                 <option value="Run">Run</option>
                                 <option value="Ride">Ride</option>
@@ -98,14 +116,14 @@ class ActivityForm extends React.Component {
                                 <option value="Hike">Hike</option>
 
                             </select>
-                        {/* <input
-                            className="input-sport form"
-                            onChange={this.update("sport")}
-                            type="text"
-                            placeholder="Run"
-                            value={this.state.sport}
-                        ></input> */}
+                   
                     </div>
+
+                        <div className="sport-container activity-route">
+                            <label>Route</label>
+                            <br />
+                             {selectRoutes}
+                        </div>
                     </div>
 
                     <div className="section-one">
@@ -137,9 +155,11 @@ class ActivityForm extends React.Component {
                                 <div className="distance-div">
                                 <input
                                     className="distance-input form"
-                                    type="text"
+                                    type="number"
+                                    min="0"
                                     value={this.state.distance}
                                     onChange={this.update("distance")}
+                                    required
                                 />
                                 <input
                                     className="placeholders"
@@ -161,8 +181,9 @@ class ActivityForm extends React.Component {
                                         <input
                                             className="duration-hour time"
                                             onChange={this.update("dHour")}
-                                            type="text"
                                             placeholder="hr"
+                                            type="number"
+                                            min="0"
                                             value={this.state.dHour || ""}
                                         />
                                     </div>
@@ -173,7 +194,10 @@ class ActivityForm extends React.Component {
                                             onChange={this.update("dMin")}
                                             type="text"
                                             placeholder="min"
+                                            type="number"
+                                            min="0"
                                             value={this.state.dMin || ""}
+                                            required
                                         />
                                     </div>
 
@@ -183,6 +207,8 @@ class ActivityForm extends React.Component {
                                             onChange={this.update("dSec")}
                                             type="text"
                                             placeholder="sec"
+                                            type="number"
+                                            min="0"
                                             value={this.state.dSec || ""}
                                         />
                                     </div>
@@ -197,7 +223,8 @@ class ActivityForm extends React.Component {
                                     <input
                                         className="elevation-input form"
                                         onChange={this.update("elevation")}
-                                        type="text"
+                                        type="number"
+                                        min="0"
                                         value={this.state.elevation || ""}
                                     />
 
@@ -222,6 +249,7 @@ class ActivityForm extends React.Component {
                                 onChange={this.update("description")}
                                 value={this.state.description || ""}
                                 placeholder="How did it go? Were you tired or rested? How was the weather?"
+                                required
                             ></textarea>
                         </div>
                     </div>

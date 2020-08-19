@@ -228,6 +228,7 @@ class NewRouteForm extends React.Component {
                                         className="route-form-data input"
                                         placeholder="Route name"
                                         onChange={this.update('route_name')} 
+                                        required
                                 />
                             </label>
                         </div>
