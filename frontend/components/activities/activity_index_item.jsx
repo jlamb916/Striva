@@ -18,7 +18,7 @@ class ActivityIndexItem extends React.Component {
                 <td>{sport}</td>
                 <td>{day}, {month}</td>
                 <td><NavLink className="activity-title-index" to={`/activities/${id}`}>{title}</NavLink></td>
-                <td>{duration} </td>
+                <td>{duration} min</td>
                 <td>{distance} mi</td>
                 <td>{elevation} ft</td>
                 <td><NavLink className="activity-edit-index" to={`/activities/${id}/edit`} activity={this.props}>Edit</NavLink></td>
