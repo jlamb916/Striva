@@ -18,6 +18,11 @@
         mapboxgl.accessToken = window.mapboxAPIKey;
     </script>
 
+    <meta property="og:title" content="Project Title" />
+    <meta property='og:image' content="<%= image_url('dashboard.png') %>" />
+    <meta property="og:description" content="A brief description of your project." />
+    <meta property="og:url" content="http://projectname.herokuapp.com/" />
+
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
