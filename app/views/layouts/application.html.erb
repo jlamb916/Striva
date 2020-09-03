@@ -3,6 +3,11 @@
 
 <head>
 
+    <meta property="og:title" content="Striva" />
+    <meta property='og:image' content="<%= image_url('dashboard.png') %>" />
+    <meta property="og:description" content="Striva is a web application for users to create, share, and log their workouts. Inspired by Strava, Striva allows users to create their favorite running routes, view a list of their exercise activities overtime, and track their progress all while sharing it with friends!" />
+    <meta property="og:url" content="https://striva2.herokuapp.com/" />
+    
     <title>Striva</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <%= favicon_link_tag asset_path('mountain.png') %>
@@ -18,10 +23,7 @@
         mapboxgl.accessToken = window.mapboxAPIKey;
     </script>
 
-    <meta property="og:title" content="Striva" />
-    <meta property='og:image' content="<%= image_url('dashboard.png') %>" />
-    <meta property="og:description" content="Striva is a web application for users to create, share, and log their workouts. Inspired by Strava, Striva allows users to create their favorite running routes, view a list of their exercise activities overtime, and track their progress all while sharing it with friends!" />
-    <meta property="og:url" content="https://striva2.herokuapp.com/" />
+
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
