@@ -34,7 +34,7 @@ class Dashboard extends React.Component {
                             <div className="github-image-feed"></div>
                             <div className='link1'>
                                 <div className="link-title">Github</div>
-                                <a target="_target" href="https://github.com/jlamb916/jumpman">View my Github</a>
+                                <a target="_target" href="https://github.com/jlamb916">View my Github</a>
                             </div>
                         </div>
                         <div className="link">
