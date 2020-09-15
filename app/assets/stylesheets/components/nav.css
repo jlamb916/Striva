@@ -59,14 +59,21 @@ body {
 
 .footer {
     background-color: rgb(36,36,40);
-    height: 40px;
+    height: 50px;
     padding: 20px;
 }
 
 .footer > h2 {
     color: white;
-    margin: 10px auto;
+    /* margin: 10px auto; */
     font-weight: bold;
+    font-size: 28px;
+}
+
+.footer > h3 {
+    color: gray;
+    margin: 3px 3px 3px 0px;
+    font-size: 12px;
 }
 
 .nav-left  {
