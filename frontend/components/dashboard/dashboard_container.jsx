@@ -16,6 +16,7 @@ class Dashboard extends React.Component {
         this.props.fetchAllRoutes();
         this.props.fetchActivities();
     }
+    
     //example
     render() {
         const user = this.props.currentUser;

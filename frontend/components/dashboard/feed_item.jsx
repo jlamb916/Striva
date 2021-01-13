@@ -52,7 +52,7 @@ class FeedIndex extends React.Component {
                 {{route} && <RouteFeedItem key={route.id} route={route} />}
             </div>
         ) }
-        else{
+        else {
             return ""
         }
     }

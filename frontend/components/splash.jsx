@@ -15,7 +15,7 @@ const Splash = () => {
 
     return (
         <div className="splash-main">
-            <h1 className="splash-title">Take your fitness to the ext level</h1>
+            <h1 className="splash-title">Take Fitness To The Next Level</h1>
             <div className="splash-containers container">
                 <div className="splash-img-container">
                     <img className="splash-img" src="https://d3nn82uaxijpm6.cloudfront.net/assets/website/show_simple/devices-header@2x-5e0be9810fb0366d567d4d53f19c61b4d7bf4275c5b13356456efc4b5e16fc67.jpg"/>
